@@ -74,7 +74,7 @@ theme: landscape
 #    github: git@github.com:siyongshuai/siyongshuai.github.io.git,master
   
 deploy:
-  type: github
+  type: git
   repository: git@github.com:siyongshuai/siyongshuai.github.io.git
   branch: master
 

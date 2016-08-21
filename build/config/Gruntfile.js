@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         'copy': {
             source: {
                 'src': ['source/**/*'],
-                'dest': 'build/',
+                'dest': 'siyongshuai.github.io/build/',
             },
             config: {
                 'src': [
@@ -18,13 +18,13 @@ module.exports = function(grunt) {
                     'Gruntfile.js',
                     '_config.yml'
                 ],
-                'dest': 'build/config/'
+                'dest': 'siyongshuai.github.io/build/config/'
             },
             theme: {
                 'src': [
                     'themes/landscape/_config.yml'
                 ],
-                'dest': 'build/theme/',
+                'dest': 'siyongshuai.github.io/build/theme/',
                 expand: true,
                 flatten: true
             },
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
                 'src': [
                     'README.md'
                 ],
-                'dest': 'build/'
+                'dest': 'siyongshuai.github.io/build/'
             }
         },
         'gh-pages': {

@@ -2,7 +2,7 @@
 title: URL的一些问题
 tags:
 - url
-- http 
+- http
 - request
 - response
 categories: http
