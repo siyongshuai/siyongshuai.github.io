@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hello yongshuai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="hello yongshuai">
+<meta property="og:url" content="http://yoursite.com/page/7/index.html">
+<meta property="og:site_name" content="hello yongshuai">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello yongshuai">
+  
+    <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hello yongshuai</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">司永帅个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-shell拼接url" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/21/shell拼接url/" class="article-date">
+  <time datetime="2016-10-20T22:07:21.000Z" itemprop="datePublished">2016-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/21/shell拼接url/">shell拼接url</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/21/shell拼接url/" data-id="cj9muktln0043jclx59wxj9hi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-添加行号" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/21/添加行号/" class="article-date">
+  <time datetime="2016-10-20T22:06:58.000Z" itemprop="datePublished">2016-10-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/21/添加行号/">添加行号</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vim版"><a href="#vim版" class="headerlink" title="vim版"></a>vim版</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># line(.)获取当前行号</span></div><div class="line">:%s/^/\=line(.)/g</div><div class="line"><span class="comment"># 行号与正文内容以\t分割</span></div><div class="line">:%s/^\(\d\+\)/\1\t/g</div></pre></td></tr></table></figure>
+<h1 id="sed版"><a href="#sed版" class="headerlink" title="sed版"></a>sed版</h1><p><a href="http://www.cnblogs.com/gaojian/archive/2013/01/09/2853406.html" target="_blank" rel="external">用sed 给文本文件加行号</a></p>
+<h1 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">awk <span class="string">'&#123;print NR ","$1","$2&#125;'</span> old.log &gt; new.log</div><div class="line">awk <span class="string">'&#123;print NR " "$0'</span> old.log &gt; new.log</div><div class="line">awk <span class="string">'&#123;print NR "\t"$1"\t"$2&#125;'</span> old.log &gt; new.log</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/21/添加行号/" data-id="cj9muktm5005ujclxh2aj823i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/awk/">awk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sed/">sed</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-shell-自动输入密码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/20/shell-自动输入密码/" class="article-date">
+  <time datetime="2016-10-19T20:46:50.000Z" itemprop="datePublished">2016-10-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>►<a class="article-category-link" href="/categories/linux/shell/">shell</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/20/shell-自动输入密码/">shell 自动输入密码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="管道加选项"><a href="#管道加选项" class="headerlink" title="管道加选项"></a>管道加选项</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"password"</span> | sudo -S apt-get update</div></pre></td></tr></table></figure>
+<h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><p><a href="http://blog.csdn.net/zhangjikuan/article/details/51105166" target="_blank" rel="external">Shell脚本交互之：自动输入密码</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/20/shell-自动输入密码/" data-id="cj9muktll003yjclx9j6qopmn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动输入密码/">自动输入密码</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-shell版wordcount" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/20/shell版wordcount/" class="article-date">
+  <time datetime="2016-10-19T19:56:50.000Z" itemprop="datePublished">2016-10-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/20/shell版wordcount/">shell版wordcount</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="测试数据-hello-txt"><a href="#测试数据-hello-txt" class="headerlink" title="测试数据 hello.txt"></a>测试数据 hello.txt</h1>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">hello hadoop</div><div class="line">hello hbase</div><div class="line">hello hive</div><div class="line">hello zookeeper</div><div class="line">hello flume</div><div class="line">hello kafka</div><div class="line">hello storm</div><div class="line">hello spark</div><div class="line">hello spark sql</div><div class="line">hello spark core</div></pre></td></tr></table></figure>
+<h1 id="shell-wordcount"><a href="#shell-wordcount" class="headerlink" title="shell wordcount"></a>shell wordcount</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat  hello.txt | tr <span class="string">' '</span> <span class="string">'\n'</span> | sort -k 1 | uniq -c | awk <span class="string">'&#123;print $2"\t"$1&#125;'</span> |sort -k2 -nr |head -n 5</div></pre></td></tr></table></figure>
+<h1 id="步骤详解"><a href="#步骤详解" class="headerlink" title="步骤详解"></a>步骤详解</h1><h2 id="按分割符处理成行"><a href="#按分割符处理成行" class="headerlink" title="按分割符处理成行"></a>按分割符处理成行</h2><p>tr ‘ ‘ ‘\n’ #将空格换成换行符，linux很多工具都是针对行的</p>
+<p>替换指定的字符<br>tr [options] string1 string2</p>
+<p>tr通常带有两个参数：string1 和 string2 ，当tr发现与string1中有匹配的字符时，它将使用string2中对应的字符来替换输入中的字符</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>对string1取反，使得tr匹配除了在string1中出现的所有字符</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>删除与string1中制定的字符匹配的字符</td>
+</tr>
+</tbody>
+</table>
+<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> abcdef | tr <span class="string">'abcdef'</span> <span class="string">'xyzabd'</span></div><div class="line">xyzabd</div><div class="line">$ <span class="built_in">echo</span> abcdef | tr <span class="string">'a-f'</span> <span class="string">'x-za-c'</span></div><div class="line">xyzabc</div></pre></td></tr></table></figure></p>
+<h2 id="分割之后排序（这一步是必须的，uniq是根据连续重复的行统计的）"><a href="#分割之后排序（这一步是必须的，uniq是根据连续重复的行统计的）" class="headerlink" title="分割之后排序（这一步是必须的，uniq是根据连续重复的行统计的）"></a>分割之后排序（这一步是必须的，uniq是根据连续重复的行统计的）</h2><p> sort -k 1 #根据第一列内容排序</p>
+<h2 id="统计并显示次数"><a href="#统计并显示次数" class="headerlink" title="统计并显示次数"></a>统计并显示次数</h2><p>uniq [选项] 文件<br>uniq -c<br>说明：这个命令读取输入文件，并比较相邻的行。在正常情况下，第二个及以后更多个重复行将被删去，行比较是根据所用字符集的排序序列进行的。该命令加工后的结果写到输出文件中。输入文件和输出文件必须不同。如果输入文件用“- ”表示，则从标准输入读取。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>显示输出中，在每行行首加上本行在文件中出现的次数。它可取代- u和- d选项</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>只显示重复行</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>只显示文件中不重复的各行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="调换列的位置"><a href="#调换列的位置" class="headerlink" title="调换列的位置"></a>调换列的位置</h2><p>awk ‘{print $2”\t”$1}’ # 调换列的位置并以tab键分割显示</p>
+<h2 id="根据频率逆序排列"><a href="#根据频率逆序排列" class="headerlink" title="根据频率逆序排列"></a>根据频率逆序排列</h2><p>sort -k2 -nr<br>sort将文件的每一行作为一个单位，相互比较，比较原则是从首字符向后，依次按ASCII码值进行比较，最后将他们按升序输出。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-u</td>
+<td>在输出行中去除重复行。</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>sort默认的排序方式是升序，如果想改成降序，就加个-r就搞定了。</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>由于sort默认是把结果输出到标准输出,如果你想把排序结果输出到原文件中,用-o</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>使用-n选项，来告诉sort，“要以数值来排序” 避免出现 10 在 2的前面这种情况</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>指定了间隔符</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>指定了间隔符之后，就可以用-k来指定列数了。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="显示前N行"><a href="#显示前N行" class="headerlink" title="显示前N行"></a>显示前N行</h2><p>head -n N</p>
+<h2 id="补充tr与sed之间的关系"><a href="#补充tr与sed之间的关系" class="headerlink" title="补充tr与sed之间的关系"></a>补充tr与sed之间的关系</h2><p> 通过使用 tr，您可以非常容易地实现 sed 的许多最基本功能。您可以将 tr 看作为 sed 的（极其）简化的变体：它可以用一个字符来替换另一个字符，或者可以完全除去一些字符。您也可以用它来除去重复字符。这就是所有 tr 所能够做的。</p>
+<h1 id="去除空行"><a href="#去除空行" class="headerlink" title="去除空行"></a>去除空行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat  hello.txt | tr <span class="string">' '</span> <span class="string">'\n'</span> | sed <span class="string">'/^$/d'</span>|sort -k 1 | uniq -c | awk <span class="string">'&#123;print $2"\t"$1&#125;'</span> |sort -k2 -nr |head</div></pre></td></tr></table></figure>
+<h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><ol>
+<li><p><a href="http://blog.itpub.net/30180323/viewspace-2144730/" target="_blank" rel="external">shell编写wordcount </a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/nerxious/archive/2013/01/09/2853707.html" target="_blank" rel="external">简明Linux命令行笔记：tr</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/51linux/archive/2012/05/23/2515299.html" target="_blank" rel="external">linux sort 命令详解</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/20/shell版wordcount/" data-id="cj9muktlq004cjclx5sdskdk8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/object-Object/">[object Object]</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordcount/">wordcount</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-spark-topN问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/18/spark-topN问题/" class="article-date">
+  <time datetime="2016-10-18T12:54:39.000Z" itemprop="datePublished">2016-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/18/spark-topN问题/">spark-topN问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="业务场景-统计ip"><a href="#业务场景-统计ip" class="headerlink" title="业务场景 统计ip"></a>业务场景 统计ip</h1><p>加载hdfs数据文件</p>
+<p>统计出现频率前N的ip</p>
+<p><a href="http://blog.csdn.net/oopsoom/article/details/25815443" target="_blank" rel="external">Spark实例TopN—Spark学习笔记11</a></p>
+<h1 id="正则表达式基础知识"><a href="#正则表达式基础知识" class="headerlink" title="正则表达式基础知识"></a>正则表达式基础知识</h1><p>String 类的 r() 方法构造了一个Regex对象。</p>
+<p>然后使用 findFirstIn 方法找到首个匹配项。</p>
+<p>如果需要查看所有的匹配项可以使用 findAllIn 方法。</p>
+<p>Scala 的正则表达式继承了 Java 的语法规则，Java 则大部分使用了 Perl 语言的规则</p>
+<p>可以使用 mkString( ) 方法来连接正则表达式匹配结果的字符串，并可以使用管道(|)来设置不同的模式：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> pattern = <span class="string">"Scala"</span>.r</div><div class="line"><span class="keyword">val</span> str = <span class="string">"Scala is Scalable and cool"</span></div><div class="line">println(pattern findFirstIn str)</div></pre></td></tr></table></figure></p>
+<h2 id="构造ip正则表达式"><a href="#构造ip正则表达式" class="headerlink" title="构造ip正则表达式"></a>构造ip正则表达式</h2><p>对于大量转义字符及换行的字符串可以使用三个双引号<br>简单的正则表达式<br>（(\d+.){3}\d+）<br>正则是没有办法做数字运算的，如何表示范围？分析ip地址规律，按不同情况分组再组合<br>((25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d))).){3}(25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))</p>
+<p><a href="http://www.cnblogs.com/olive987/p/5844501.html" target="_blank" rel="external">IP地址的正则表达式写法</a></p>
+<p>如果内容比较复杂，正则表达式可能会匹配冗余内容<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  data = sc.textFile(<span class="string">"hdfs://toshiba:9000/user/xiaohei/hadoop/access.20120104.log"</span>)</div><div class="line"><span class="keyword">var</span> top50 =  data.map(line =&gt; <span class="string">""</span><span class="string">"(\d+\.)&#123;3&#125;\d+"</span><span class="string">""</span>.r.findFirstIn(line).mkString).filter(_!=<span class="string">""</span>).map(word =&gt; (word,<span class="number">1</span>)).reduceByKey(_+_).map(word=&gt;(word._2,word._1)).sortByKey(<span class="literal">false</span>).map(word=&gt;(word._2,word._1)) take <span class="number">50</span>  </div><div class="line">top50.foreach(x =&gt; println(x))</div></pre></td></tr></table></figure></p>
+<h2 id="利用元组位置"><a href="#利用元组位置" class="headerlink" title="利用元组位置"></a>利用元组位置</h2><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  data = sc.textFile(<span class="string">"hdfs://toshiba:9000/user/xiaohei/hadoop/access.20120104.log"</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> top10 = data.map(_.split(<span class="string">" "</span>)).map(line =&gt; (line(<span class="number">0</span>),<span class="number">1</span>)).reduceByKey(_+_).map(word =&gt; (word._2,word._1)).sortByKey(<span class="literal">false</span>).map(word =&gt; (word._2,word._1)) take <span class="number">10</span></div><div class="line"></div><div class="line">top10.foreach(x =&gt; println(x))</div></pre></td></tr></table></figure>
+<h2 id="代码注解"><a href="#代码注解" class="headerlink" title="代码注解"></a>代码注解</h2><p>  line(0) 表示元组第一个元素</p>
+<p>  sortByKey(flase)代表逆序 sortByKey 默认值是sortByKey(true)代表升序</p>
+<p>  将map的k,v互换，变成(value, IP) 这样才能利用sortByKey排序找出top的IPs</p>
+<p>  互换两次则回原来的格式</p>
+<h2 id="引出问题"><a href="#引出问题" class="headerlink" title="引出问题"></a>引出问题</h2><p>如何根据value 进行排序？<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sortBy(_._x,flase)  # 根据元组的第x字段进行排序</div><div class="line"><span class="keyword">var</span> top20 = data.map(_.split(<span class="string">" "</span>)).map(line =&gt; (line(<span class="number">0</span>),<span class="number">1</span>)).reduceByKey(_+_).sortBy(_._2,<span class="literal">false</span>) take <span class="number">20</span></div><div class="line">top20.foreach(x =&gt; println(x))</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/18/spark-topN问题/" data-id="cj9muktlp0049jclxvjmm6sru" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/topN/">topN</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hbase学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/17/hbase学习笔记/" class="article-date">
+  <time datetime="2016-10-17T15:19:32.000Z" itemprop="datePublished">2016-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bigdata/">bigdata</a>►<a class="article-category-link" href="/categories/bigdata/hbase/">hbase</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/17/hbase学习笔记/">hbase学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hbase-基本架构"><a href="#hbase-基本架构" class="headerlink" title="hbase 基本架构"></a>hbase 基本架构</h1><h1 id="版本选用"><a href="#版本选用" class="headerlink" title="版本选用"></a>版本选用</h1><ul>
+<li>hadoop 2.7.4</li>
+<li>hbase 1.2.6<h2 id="hadoop-hbase版本兼容"><a href="#hadoop-hbase版本兼容" class="headerlink" title="hadoop hbase版本兼容"></a>hadoop hbase版本兼容</h2></li>
+</ul>
+<h1 id="hbase-定位"><a href="#hbase-定位" class="headerlink" title="hbase 定位"></a>hbase 定位</h1><h1 id="与hadoop对接"><a href="#与hadoop对接" class="headerlink" title="与hadoop对接"></a>与hadoop对接</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://namenode.example.org:8020/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="与zookeeper对接"><a href="#与zookeeper对接" class="headerlink" title="与zookeeper对接"></a>与zookeeper对接</h1><h2 id="hbase-自带的zookeeper"><a href="#hbase-自带的zookeeper" class="headerlink" title="hbase 自带的zookeeper"></a>hbase 自带的zookeeper</h2><p>hbase-env.sh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Tell HBase whether it should manage its own instance of ZooKeeper or not.</span></div><div class="line"><span class="built_in">export</span> HBASE_MANAGES_ZK=<span class="literal">true</span></div></pre></td></tr></table></figure>
+<p><strong>startup</strong></p>
+<p>When HBase manages ZooKeeper, it will start/stop the ZooKeeper servers as a part of the regular start/stop scripts. If you would like to run ZooKeeper yourself, independent of HBase start/stop, you would do the following</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$&#123;HBASE_HOME&#125;</span>/bin/hbase-daemons.sh &#123;start,stop&#125; zookeeper</div></pre></td></tr></table></figure>
+<h2 id="外部的zookeeper"><a href="#外部的zookeeper" class="headerlink" title="外部的zookeeper"></a>外部的zookeeper</h2><p>hbase-env.sh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Tell HBase whether it should manage its own instance of ZooKeeper or not.</span></div><div class="line"><span class="built_in">export</span> HBASE_MANAGES_ZK=<span class="literal">false</span></div></pre></td></tr></table></figure></p>
+<p>hbase-site.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.quorum<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>node-a.example.com,node-b.example.com,node-c.example.com<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="单机配置与安装"><a href="#单机配置与安装" class="headerlink" title="单机配置与安装"></a>单机配置与安装</h1><h2 id="存储在本地文件"><a href="#存储在本地文件" class="headerlink" title="存储在本地文件"></a>存储在本地文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:///home/testuser/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.property.dataDir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/home/testuser/zookeeper<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="存储在HDFS"><a href="#存储在HDFS" class="headerlink" title="存储在HDFS"></a>存储在HDFS</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://namenode.example.org:8020/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="伪分布式配置与安装"><a href="#伪分布式配置与安装" class="headerlink" title="伪分布式配置与安装"></a>伪分布式配置与安装</h1><p> hbase-site.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:8020/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="分布式安装"><a href="#分布式安装" class="headerlink" title="分布式安装"></a>分布式安装</h1><table>
+<thead>
+<tr>
+<th>Node Name</th>
+<th>Master</th>
+<th>ZooKeeper</th>
+<th>RegionServer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>node-a.example.com</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>node-b.example.com</td>
+<td>backup</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>node-c.example.com</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p>hbase-site.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.quorum<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>node-a.example.com,node-b.example.com,node-c.example.com<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>conf/regionservers<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">node-a.example.com</div><div class="line">node-b.example.com</div><div class="line">node-c.example.com</div></pre></td></tr></table></figure></p>
+<p>conf/backup-masters<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node-b.example.com</div><div class="line">node-c.example.com</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/17/hbase学习笔记/" data-id="cj9muktl4002ejclxi6jv29yg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-kfaka安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/kfaka安装/" class="article-date">
+  <time datetime="2016-10-16T13:06:51.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/kfaka安装/">kfaka安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/kfaka安装/" data-id="cj9muktl9002ujclxbebrtts0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kfaka/">kfaka</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/消息中间件/">消息中间件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Docker容器和镜像管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/Docker容器和镜像管理/" class="article-date">
+  <time datetime="2016-10-16T02:14:36.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cloud-computing/">cloud-computing</a>►<a class="article-category-link" href="/categories/cloud-computing/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/Docker容器和镜像管理/">docker容器和镜像管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>docker images往往不知不觉就占满了硬盘空间，为了清理冗余的image，可采用以下方法：</p>
+<h1 id="1-进入root权限"><a href="#1-进入root权限" class="headerlink" title="1.进入root权限"></a>1.进入root权限</h1><p>sudo su</p>
+<h1 id="2-停止所有的container，这样才能够删除其中的images："><a href="#2-停止所有的container，这样才能够删除其中的images：" class="headerlink" title="2.停止所有的container，这样才能够删除其中的images："></a>2.停止所有的container，这样才能够删除其中的images：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker stop $(docker ps -a -q)</div></pre></td></tr></table></figure>
+<p>如果想要删除所有container的话再加一个指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm $(docker ps -a -q)</div></pre></td></tr></table></figure>
+<h1 id="3-查看当前有些什么images"><a href="#3-查看当前有些什么images" class="headerlink" title="3.查看当前有些什么images"></a>3.查看当前有些什么images</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images</div></pre></td></tr></table></figure>
+<h1 id="4-删除images，通过image的id来指定删除谁"><a href="#4-删除images，通过image的id来指定删除谁" class="headerlink" title="4.删除images，通过image的id来指定删除谁"></a>4.删除images，通过image的id来指定删除谁</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">docker rmi &lt;image id&gt;</div></pre></td></tr></table></figure>
+<p>想要删除untagged images，也就是那些id为<none>的image的话可以用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">docker rmi $(docker images | grep <span class="string">"^&lt;none&gt;"</span> | awk <span class="string">"&#123;print <span class="variable">$3</span>&#125;"</span>)</div></pre></td></tr></table></figure></none></p>
+<p>要删除全部image的话<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/Docker容器和镜像管理/" data-id="cj9muktjx0000jclxpduwg4yk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-docker网络位置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/docker网络位置/" class="article-date">
+  <time datetime="2016-10-16T02:12:10.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cloud-computing/">cloud-computing</a>►<a class="article-category-link" href="/categories/cloud-computing/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/docker网络位置/">docker网络位置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/docker网络位置/" data-id="cj9muktkt001ijclxypv1kik5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-docker数据共享" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/docker数据共享/" class="article-date">
+  <time datetime="2016-10-16T01:59:28.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cloud-computing/">cloud-computing</a>►<a class="article-category-link" href="/categories/cloud-computing/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/docker数据共享/">docker数据共享</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>docker 数据共享</p>
+<p>方式1</p>
+<h1 id="docker之文件夹共享"><a href="#docker之文件夹共享" class="headerlink" title="docker之文件夹共享"></a>docker之文件夹共享</h1><h2 id="共享宿主机的目录给容器"><a href="#共享宿主机的目录给容器" class="headerlink" title="共享宿主机的目录给容器"></a>共享宿主机的目录给容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -d --name=<span class="built_in">test</span> -v /opt/<span class="built_in">test</span>:/usr/databases  docker-test</div></pre></td></tr></table></figure>
+<p>test是容器的名字，需唯一；-v表示创建一个数据卷并挂载到容器里，示例表示把宿主机的/opt/test目录挂载到容器的/usr/databases目录下；docker-test是镜像的名字</p>
+<h2 id="有时候需要共享容器的volume，则需采用其他方式来访问"><a href="#有时候需要共享容器的volume，则需采用其他方式来访问" class="headerlink" title="有时候需要共享容器的volume，则需采用其他方式来访问"></a>有时候需要共享容器的volume，则需采用其他方式来访问</h2><p>采用–volumes-from<br>可以使用最小的镜像busybox来帮忙实现<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --name=storedata -v /data/bigdata:/usr/data busybox <span class="literal">true</span></div></pre></td></tr></table></figure></p>
+<p>定义一个名称为storedata的目录映射，示例表示把宿主机的/data目录挂载到容器的/usr/data目录下。其他的容器就可以采用–volumes-from来使用该目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -d --name=test1 --volumes-from storedata docker-test</div><div class="line">docker run -d --name=test2 --volumes-from storedata docker-test</div></pre></td></tr></table></figure></p>
+<h1 id="采用ln链接的方式把不同目录挂载到同一个目录下"><a href="#采用ln链接的方式把不同目录挂载到同一个目录下" class="headerlink" title="采用ln链接的方式把不同目录挂载到同一个目录下"></a>采用ln链接的方式把不同目录挂载到同一个目录下</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ln -s /data /opt/es1/</div><div class="line">ln -s /data /opt/es2/</div></pre></td></tr></table></figure>
+<p>示例在/opt/es1/和/opt/es2/目录下都生成了一个指向/data目录的快捷方式，因此访问/opt/es1/data和/opt/es2/data都是访问的/data目录</p>
+<p>搞定了链接，现在就可以直接采用-v来映射目录了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -d --name=test3 -v /opt/es1/data:/usr/data docker-test</div><div class="line">docker run -d --name=test4 -v /opt/es2/data:/usr/data docker-test</div></pre></td></tr></table></figure></p>
+<p>这样，在test3和test4容器内部操作/usr/data目录都是操作的宿主机的/data目录</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
+<li><a href="http://www.cnblogs.com/greatadmin/p/5005454.html" target="_blank" rel="external">docker 文件共享</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/docker数据共享/" data-id="cj9muktko001djclxf7ewi33g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dokcer/">dokcer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据共享/">数据共享</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/6/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/8/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/面试准备-java基础/">面试准备-java基础</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/面试准备-java设计模式/">面试准备-java设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/sbt实用操作/">sbt实用操作</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/not-use/面试准备-sparkSql/">面试准备-sparkSql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hadoop/">hadoop</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hbase/">hbase</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/spark/">spark</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/">cloud-computing</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/docker/">docker</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/redis/">redis</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/centos/">centos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 11.25px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 11.25px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 13.75px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 11.25px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 12.5px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 13.75px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 12.5px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 11.25px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 13.75px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 11.25px;">sparkSql</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 11.25px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 11.25px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 11.25px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 11.25px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 11.25px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 11.25px;">难点</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/项目/" style="font-size: 11.25px;">项目</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Si Yongshuai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hello yongshuai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="hello yongshuai">
+<meta property="og:url" content="http://yoursite.com/page/8/index.html">
+<meta property="og:site_name" content="hello yongshuai">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello yongshuai">
+  
+    <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hello yongshuai</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">司永帅个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-批量拷贝文件到特定目录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/批量拷贝文件到特定目录/" class="article-date">
+  <time datetime="2016-10-16T01:39:08.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/批量拷贝文件到特定目录/">批量拷贝文件到特定目录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="拷贝出当前目录及子目录下面的某类文件"><a href="#拷贝出当前目录及子目录下面的某类文件" class="headerlink" title="拷贝出当前目录及子目录下面的某类文件"></a>拷贝出当前目录及子目录下面的某类文件</h1><h2 id="find-exec"><a href="#find-exec" class="headerlink" title="find+exec"></a>find+exec</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find ~/ffmpeg -name <span class="string">"*.a"</span> -<span class="built_in">type</span> f -<span class="built_in">exec</span> cp &#123;&#125; ./ffmpeg/lib \;</div></pre></td></tr></table></figure>
+<p>\;是转义分号,不让shell去解释,因为这个分号是给-exec用的.<br><a href="http://blog.csdn.net/wangchenggggdn/article/details/8548257" target="_blank" rel="external">Linux下用find查找并复制指定文件到指定目录下</a></p>
+<h2 id="find-xargs"><a href="#find-xargs" class="headerlink" title="find+xargs"></a>find+xargs</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">'*.ppt'</span> | xargs -i cp &#123;&#125;  /path/to</div></pre></td></tr></table></figure>
+<p>加-i 参数直接用 {}就能代替管道之前的标准输出的内容；</p>
+<p>加 -I 参数 需要事先指定替换字符</p>
+<p><a href="http://blog.csdn.net/xiaoxiaozhu2010/article/details/18093323" target="_blank" rel="external">find 后cp或拷贝目录结构</a></p>
+<h1 id="find"><a href="#find" class="headerlink" title="find"></a>find</h1><p><a href="http://man.linuxde.net/find" target="_blank" rel="external">find命令</a><br>#<br><a href="http://man.linuxde.net/xargs" target="_blank" rel="external">xargs</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/批量拷贝文件到特定目录/" data-id="cj9muktm0005djclx3bhkbi8w" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/find/">find</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xargs/">xargs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-datanode启动失败" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/datanode启动失败/" class="article-date">
+  <time datetime="2016-10-15T22:16:03.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bigdata/">bigdata</a>►<a class="article-category-link" href="/categories/bigdata/hadoop/">hadoop</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/datanode启动失败/">datanode启动失败</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景：hadoop版本切换"><a href="#背景：hadoop版本切换" class="headerlink" title="背景：hadoop版本切换"></a>背景：hadoop版本切换</h1><p>hadoop 版本从2.6.5 切换到了2.7.4</p>
+<p>结果datanode 启动失败</p>
+<h1 id="日志分析"><a href="#日志分析" class="headerlink" title="日志分析"></a>日志分析</h1><p>错误提示namespaceIDs不一致。</p>
+<h1 id="解决办法1"><a href="#解决办法1" class="headerlink" title="解决办法1"></a>解决办法1</h1><p><strong>删掉hadoop tmp目录下所有数据后，重新格式化</strong></p>
+<ol>
+<li>停掉集群服务</li>
+<li>在出问题的datanode节点上删除data目录，data目录即是在hdfs-site.xml文件中配置的dfs.data.dir目录，本机器上那个是/var/lib/hadoop-0.20/cache/hdfs/dfs/data/ (注：我们当时在所有的datanode和namenode节点上均执行了该步骤。以防删掉后不成功，可以先把data目录保存一个副本).</li>
+<li>格式化namenode.</li>
+<li>重新启动集群。<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2>每次namenode format会重新创建一个namenodeId,而tmp/dfs/data下包含了上次format下的id,namenode format清空了namenode下的数据,但是没有晴空datanode下的数据,导致启动时失败,所要做的就是每次fotmat前,清空tmp一下 的所有目录.　</li>
+</ol>
+<p>这种方法带来的一个副作用即是，hdfs上的所有数据丢失。如果hdfs上存放有重要数据的时候，不建议采用该方法，可以尝试提供的网址中的第二种方法。</p>
+<h1 id="解决办法2"><a href="#解决办法2" class="headerlink" title="解决办法2"></a>解决办法2</h1><p><strong>更新有问题的datanode 的namespaceID</strong></p>
+<ol>
+<li>停止datanode</li>
+<li>编辑datanode namespaceID in <dfs.data.dir>/current/VERSIO to match the value of the current namenode</dfs.data.dir></li>
+<li>重启datanode</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#contents of <span class="tag">&lt;<span class="name">dfs.data.dir</span>&gt;</span>/current/VERSION</div><div class="line">namespaceID=393514426</div><div class="line">storageID=DS-1706792599-10.10.10.1-50010-1204306713481</div><div class="line">cTime=1215607609074</div><div class="line">storageType=DATA_NODE</div><div class="line">layoutVersion=-13</div></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<li><a href="http://blog.csdn.net/wanghai__/article/details/5752199" target="_blank" rel="external">HADOOP报错Incompatible namespaceIDs</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/datanode启动失败/" data-id="cj9muktkn0018jclxg5qcxa5t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datanode/">datanode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hdfs/">hdfs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-centos6-安装oracle11g" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/centos6-安装oracle11g/" class="article-date">
+  <time datetime="2016-10-15T21:42:33.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>►<a class="article-category-link" href="/categories/linux/centos/">centos</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/centos6-安装oracle11g/">centos6 安装oracle11g</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="从centos-min-安装基本组件"><a href="#从centos-min-安装基本组件" class="headerlink" title="从centos.min 安装基本组件"></a>从centos.min 安装基本组件</h1><h2 id="配置国内源"><a href="#配置国内源" class="headerlink" title="配置国内源"></a>配置国内源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</div><div class="line"><span class="built_in">cd</span> /etc/yum.repos.d/</div><div class="line">curl -o CentOS6-Base-163.repo mirrors.163.com/.<span class="built_in">help</span>/CentOS6-Base-163.repo</div><div class="line">yum clean all</div><div class="line">yum makecache</div><div class="line">yum install git zsh wget vim openssh-server gcc unzip</div><div class="line">yum groupinstall <span class="string">"Desktop"</span> <span class="comment"># gnome</span></div><div class="line">yum groupinstall <span class="string">"X Window System"</span></div></pre></td></tr></table></figure>
+<h2 id="配置oracle-源-root"><a href="#配置oracle-源-root" class="headerlink" title="配置oracle 源 (root)"></a>配置oracle 源 (root)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /etc/yum.repos.d</div><div class="line">wget --no-check-certificate https://public-yum.oracle.com/public-yum-ol6.repo</div><div class="line">wget --no-check-certificate  https://public-yum.oracle.com/RPM-GPG-KEY-oracle-ol6 -O /etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</div><div class="line">yum makecache <span class="comment"># 这一步不要执行public-yum-ol6.repo 网速慢</span></div></pre></td></tr></table></figure>
+<h1 id="安装oracle"><a href="#安装oracle" class="headerlink" title="安装oracle"></a>安装oracle</h1><h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install oracle-rdbms-server-11gR2-preinstall</div><div class="line">id oracle <span class="comment">#检查oracle用户是否属于oinstall，dba</span></div></pre></td></tr></table></figure>
+<p>安装完依赖后，oracle用户，oinstall，dba 用户组已经建好<br>相关的系统配置文件也已经生成</p>
+<h2 id="建文件夹并赋予权限"><a href="#建文件夹并赋予权限" class="headerlink" title="建文件夹并赋予权限"></a>建文件夹并赋予权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p /u01/app/oracle/product/11.2.0/dbhome_1</div><div class="line">chown -R oracle:oinstall /u01</div><div class="line">chmod -R 775 /u01</div></pre></td></tr></table></figure>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>先建bash文件里面的环境变量，不然无法安装数据库 $ORACLE_BASE是必须的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> ORACLE_BASE=/u01/app/oracle</div><div class="line"><span class="built_in">export</span> ORACLE_HOME=<span class="variable">$ORACLE_BASE</span>/product/11.2.0/dbhome_1</div><div class="line"><span class="built_in">export</span> ORACLE_SID=ORCL</div><div class="line"><span class="built_in">export</span> NLS_LANG=AMERICAN_AMERICA.ZHS16GBK</div><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$ORACLE_HOME</span>/lib:<span class="variable">$ORACLE_HOME</span>/network/lib:/lib:/usr/lib:/usr/<span class="built_in">local</span>/lib</div><div class="line"><span class="built_in">export</span> CLASSPATH=<span class="variable">$ORACLE_HOME</span>/jlib:<span class="variable">$ORACLE_HOME</span>/rdbms/jlib</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ORACLE_HOME</span>/bin</div></pre></td></tr></table></figure></p>
+<h2 id="其他项"><a href="#其他项" class="headerlink" title="其他项"></a>其他项</h2><h3 id="检查-etc-host及-etc-hosts文件"><a href="#检查-etc-host及-etc-hosts文件" class="headerlink" title="检查/etc/host及/etc/hosts文件"></a>检查/etc/host及/etc/hosts文件</h3><p>要符合域名格式 <em>eg:oracle.centos6.com</em></p>
+<p>在<em>/etc/hosts</em> 文件中添加相应的记录</p>
+<h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service iptables stop</div></pre></td></tr></table></figure>
+<h2 id="中文支持"><a href="#中文支持" class="headerlink" title="中文支持"></a>中文支持</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum groupinstall <span class="string">"Chinese Support"</span></div></pre></td></tr></table></figure>
+<h2 id="修改-etc-sysconfig-i18n"><a href="#修改-etc-sysconfig-i18n" class="headerlink" title="修改/etc/sysconfig/i18n"></a>修改/etc/sysconfig/i18n</h2><pre><code>LANG=&quot;en_US.UTF-8&quot; 改为LANG=&quot;zh_CN.UTF-8&quot;
+</code></pre><p>这个可以不改</p>
+<h2 id="安装oracle程序包"><a href="#安装oracle程序包" class="headerlink" title="安装oracle程序包"></a>安装oracle程序包</h2><p>若中文乱码,执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> LANG=<span class="string">"en_US.UTF-8"</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/centos6-安装oracle11g/" data-id="cj9muktkk0011jclx7aja9wav" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle11g/">oracle11g</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-docker设置静态ip" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/docker设置静态ip/" class="article-date">
+  <time datetime="2016-10-15T21:29:27.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cloud-computing/">cloud-computing</a>►<a class="article-category-link" href="/categories/cloud-computing/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/docker设置静态ip/">docker设置静态ip</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="docker设置静态ip脚本"><a href="#docker设置静态ip脚本" class="headerlink" title="docker设置静态ip脚本"></a>docker设置静态ip脚本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#/bin/bash</span></div><div class="line"><span class="keyword">if</span> [ -z <span class="variable">$1</span> ] || [ -z <span class="variable">$2</span> ] || [ -z <span class="variable">$3</span> ] || [ -z <span class="variable">$4</span> ];</div><div class="line"><span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"*****Input the necessary parameters: CONTAINERID IP MASK GATEWAY"</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"*****Call the script like: sh manual_con_static_ip.sh  b0e18b6a4432 192.168.5.123 24 192.168.5.1"</span></div><div class="line">        <span class="built_in">exit</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line">CONTAINERID=<span class="variable">$1</span></div><div class="line">SETIP=<span class="variable">$2</span></div><div class="line">SETMASK=<span class="variable">$3</span></div><div class="line">GATEWAY=<span class="variable">$4</span></div><div class="line"></div><div class="line">pid=`docker inspect -f <span class="string">'&#123;&#123;.State.Pid&#125;&#125;'</span> <span class="variable">$CONTAINERID</span>`</div><div class="line">mkdir -p /var/run/netns</div><div class="line">find -L /var/run/netns -<span class="built_in">type</span> l -delete</div><div class="line">ln -s /proc/<span class="variable">$pid</span>/ns/net /var/run/netns/<span class="variable">$pid</span></div><div class="line">ip link add A <span class="built_in">type</span> veth peer name B</div><div class="line">brctl addif br0 A</div><div class="line">ip link <span class="built_in">set</span> A up</div><div class="line">ip link <span class="built_in">set</span> B netns <span class="variable">$pid</span></div><div class="line">ip netns <span class="built_in">exec</span> <span class="variable">$pid</span> ip link <span class="built_in">set</span> dev B name eth0</div><div class="line">ip netns <span class="built_in">exec</span> <span class="variable">$pid</span> ip link <span class="built_in">set</span> eth0 up</div><div class="line">ip netns <span class="built_in">exec</span> <span class="variable">$pid</span> ip addr add <span class="variable">$SETIP</span>/<span class="variable">$SETMASK</span> dev eth0</div><div class="line">ip netns <span class="built_in">exec</span> <span class="variable">$pid</span> ip route add default via <span class="variable">$GATEWAY</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/docker设置静态ip/" data-id="cj9muktkq001ejclxkp25gmqk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/static-ip/">static ip</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ubuntu-17.04-install-redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/ubuntu-17.04-install-redis/" class="article-date">
+  <time datetime="2016-10-15T21:12:50.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/database/">database</a>►<a class="article-category-link" href="/categories/database/redis/">redis</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/ubuntu-17.04-install-redis/">ubuntu 17.04 install redis</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ wget http://download.redis.io/releases/redis-4.0.1.tar.gz</div><div class="line">$ tar xzf redis-4.0.1.tar.gz</div><div class="line">$ <span class="built_in">cd</span> redis-4.0.1</div><div class="line">$ make</div><div class="line">$ sudo make PREFIX=/usr/<span class="built_in">local</span>/redis install <span class="comment"># /usr/local/ is better ,edit /etc/envirenment change $PATH</span></div></pre></td></tr></table></figure>
+<h1 id="启动server"><a href="#启动server" class="headerlink" title="启动server"></a>启动server</h1><h2 id="后台启动"><a href="#后台启动" class="headerlink" title="后台启动"></a>后台启动</h2><pre><code>$ redis-server &amp; # run redis-server in backgroud # second method change redis.conf
+</code></pre><h2 id="加载配置文件启动"><a href="#加载配置文件启动" class="headerlink" title="加载配置文件启动"></a>加载配置文件启动</h2><pre><code>redis-server /path/to/redis.conf
+</code></pre><h2 id="常见错误-shutdown-failed"><a href="#常见错误-shutdown-failed" class="headerlink" title="常见错误 shutdown failed"></a>常见错误 shutdown failed</h2><pre><code>(error) ERR Errors trying to SHUTDOWN. Check logs.
+Exception in thread &quot;main&quot; redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled, no bind address was specified, no authentication password is requested to clients. In this mode connections are only accepted from the loopback interface. If you want to connect from external computers to Redis you may adopt one of the following solutions: 1) Just disable protected mode sending the command &apos;CONFIG SET protected-mode no&apos; from the loopback interface by connecting to Redis from the same host the server is running, however MAKE SURE Redis is not publicly accessible from internet if you do so. Use CONFIG REWRITE to make this change permanent. 2) Alternatively you can just disable the protected mode by editing the Redis configuration file, and setting the protected mode option to &apos;no&apos;, and then restarting the server. 3) If you started the server manually just for testing, restart it with the &apos;--protected-mode no&apos; option. 4) Setup a bind address or an authentication password. NOTE: You only need to do one of the above things in order for the server to start accepting connections from the outside.
+</code></pre><pre><code class="bash">chmod -R 775 /usr/<span class="built_in">local</span>/redis
+</code></pre>
+<h1 id="常见设置更改"><a href="#常见设置更改" class="headerlink" title="常见设置更改"></a>常见设置更改</h1><h2 id="protected-mode"><a href="#protected-mode" class="headerlink" title="protected-mode"></a>protected-mode</h2><pre><code>protected-mode  no#redis config file
+</code></pre><h2 id="bind-address"><a href="#bind-address" class="headerlink" title="bind address"></a>bind address</h2><pre><code># bind address 127.0.0.1  #redis config file
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/ubuntu-17.04-install-redis/" data-id="cj9muktlx0055jclx3dyocjsg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu-17-04/">ubuntu 17.04</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hadoop基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/hadoop基本操作/" class="article-date">
+  <time datetime="2016-10-15T20:59:57.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bigdata/">bigdata</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/hadoop基本操作/">hadoop基本操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hadoop-shell-基本操作"><a href="#hadoop-shell-基本操作" class="headerlink" title="hadoop-shell 基本操作"></a>hadoop-shell 基本操作</h1><p><a href="http://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html" target="_blank" rel="external">hadoop-shell基本操作</a></p>
+<h1 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h1><pre><code>hadoop dfs -option 
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hadoop dfs -put /path/to/<span class="built_in">local</span>/file /path/to/hdfs/file</div><div class="line">hadoop dfs -get /path/to/hdfs/file  /path/to/<span class="built_in">local</span>/file</div></pre></td></tr></table></figure>
+<h1 id="初始化-namenode"><a href="#初始化-namenode" class="headerlink" title="初始化 namenode"></a>初始化 namenode</h1><pre><code>hdfs  namenode -format
+</code></pre><h1 id="启动hadoop"><a href="#启动hadoop" class="headerlink" title="启动hadoop"></a>启动hadoop</h1><pre><code>/path/t/hadoop/sbin 
+start-dfs.sh    #50070
+start-yarn.sh   #8088
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/hadoop基本操作/" data-id="cj9muktkz001xjclxtrfhq1ae" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dfs/">dfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hadoop核心角色" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/hadoop核心角色/" class="article-date">
+  <time datetime="2016-10-15T20:45:08.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bigdata/">bigdata</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/hadoop核心角色/">hadoop核心角色</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="hadoop-2-背景"><a href="#hadoop-2-背景" class="headerlink" title="hadoop 2 背景"></a>hadoop 2 背景</h2><p>在Hadoop 2.0.0之前，NameNode是HDFS集群中的单点故障（SPOF）。每个集群都有一个NameNode，如果该机器或进程变得不可用，则整个集群将不可用，直到NameNode重新启动或在单独的计算机上启动。<br>这<strong>两个方面</strong>影响了HDFS集群的总体可用性：</p>
+<p>在计算机事件（如机器崩溃）的情况下，集群将不可用，直到操作员重新启动NameNode。</p>
+<p>NameNode机器上的计划维护事件（如软件或硬件升级）将导致集群停机的窗口。</p>
+<p>HDFS高可用性功能通过提供在具有热备用的主动/被动配置中的同一集群中运行两个冗余名称节点的选项来解决上述问题。这允许在机器崩溃的情况下快速故障切换到新的NameNode，或者为了计划维护而对管理员启动的优化转换进行了优雅。</p>
+<h1 id="hadoop1-vs-hadoop2"><a href="#hadoop1-vs-hadoop2" class="headerlink" title="hadoop1 vs hadoop2"></a>hadoop1 vs hadoop2</h1><h2 id="从Hadoop整体框架来说"><a href="#从Hadoop整体框架来说" class="headerlink" title="从Hadoop整体框架来说"></a>从Hadoop整体框架来说</h2><pre><code>Hadoop1.0即第一代Hadoop，由分布式存储系统HDFS和分布式计算框架MapReduce组成，
+其中HDFS由一个NameNode和多个DateNode组成，MapReduce由一个JobTracker和多个TaskTracker组成。
+
+Hadoop2.0即第二代Hadoop为克服Hadoop1.0中的不足：
+针对Hadoop1.0单NameNode制约HDFS的扩展性问题，提出HDFS Federation，
+它让多个NameNode分管不同的目录进而实现访问隔离和横向扩展，同时彻底解决了NameNode单点故障问题；
+针对Hadoop1.0中的MapReduce在扩展性和多框架支持等方面的不足，它将JobTracker中的资源管理和作业控制分开，
+分别由ResourceManager（负责所有应用程序的资源分配）和ApplicationMaster（负责管理一个应用程序）实现，
+即引入了资源管理框架Yarn。
+同时Yarn作为Hadoop2.0中的资源管理系统，
+它是一个通用的资源管理模块，
+可为各类应用程序进行资源管理和调度，
+不仅限于MapReduce一种框架，也可以为其他框架使用，如Tez、Spark、Storm等
+</code></pre><h2 id="从MapReduce计算框架来讲"><a href="#从MapReduce计算框架来讲" class="headerlink" title="从MapReduce计算框架来讲"></a>从MapReduce计算框架来讲</h2><pre><code>MapReduce1.0计算框架主要由三部分组成：编程模型、数据处理引擎和运行时环境。
+它的基本编程模型是将问题抽象成Map和Reduce两个阶段，其中Map阶段将输入的数据解析成key/value，
+迭代调用map()函数处理后，再以key/value的形式输出到本地目录，
+Reduce阶段将key相同的value进行规约处理，并将最终结果写到HDFS上；
+
+它的数据处理引擎由MapTask和ReduceTask组成，分别负责Map阶段逻辑和Reduce阶段的逻辑处理；
+它的运行时环境由一个JobTracker和若干个TaskTracker两类服务组成，
+其中JobTracker负责资源管理和所有作业的控制，
+TaskTracker负责接收来自JobTracker的命令并执行它。
+
+MapReducer2.0具有与MRv1相同的编程模型和数据处理引擎，唯一不同的是运行时环境。
+MRv2是在MRv1基础上经加工之后，运行于资源管理框架Yarn之上的计算框架MapReduce。
+它的运行时环境不再由JobTracker和TaskTracker等服务组成，
+而是变为通用资源管理系统Yarn和作业控制进程ApplicationMaster，
+其中Yarn负责资源管理的调度而ApplicationMaster负责作业的管理。
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/hadoop核心角色/" data-id="cj9muktl10025jclxdf9qzvic" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hadoop常见错误" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/hadoop常见错误/" class="article-date">
+  <time datetime="2016-10-15T20:43:13.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bigdata/">bigdata</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/hadoop常见错误/">hadoop常见错误</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hadoop-常见错误"><a href="#hadoop-常见错误" class="headerlink" title="hadoop 常见错误"></a>hadoop 常见错误</h1><pre><code>WARN conf.Configuration: bad conf file: element not &lt;property&gt;
+</code></pre><p>一般xml文件配置有问题</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/hadoop常见错误/" data-id="cj9muktl00021jclxyufjus59" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-debian软件源配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/debian软件源配置/" class="article-date">
+  <time datetime="2016-10-15T20:07:16.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/debian软件源配置/">debian软件源配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="debian软件源配置"><a href="#debian软件源配置" class="headerlink" title="debian软件源配置"></a>debian软件源配置</h1><p>刚安装好的Debian默认还没有sudo功能。</p>
+<p>1、安装sudo</p>
+<pre><code># apt-get install sudo
+</code></pre><p>2、修改 /etc/sudoers 文件属性为可写</p>
+<pre><code># chmod +w /etc/sudoers
+</code></pre><p>3、编辑 /etc/sudoers ,添加如下行</p>
+<pre><code># vim /etc/sudoers
+root ALL=(ALL) ALL
+shuai ALL=(ALL) ALL
+</code></pre><p>4、修改/etc/sudoers 文件属性为只读</p>
+<pre><code># chmod -w /etc/sudoers
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/debian软件源配置/" data-id="cj9muktku001jjclxfx0cpj9v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/source/">source</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-flume学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/flume学习笔记/" class="article-date">
+  <time datetime="2016-10-15T19:54:40.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bigdata/">bigdata</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/flume学习笔记/">flume学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>自动监控日志变化，采集日志</p>
+<h1 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h1><p><strong>Source</strong> : 完成对日志数据的收集，分成transtion 和 event 打入到channel之中。<br><strong>Channel</strong> : 主要提供一个队列的功能，对source提供中的数据进行简单的缓存。<br><strong>Sink</strong> : 取出Channel中的数据，进行相应的存储文件系统，数据库，或者提交到远程服务器<br><img src="http://flume.apache.org/_images/DevGuide_image00.png" alt="架构图"></p>
+<h1 id="学习核心：配置个性化-组件的类型"><a href="#学习核心：配置个性化-组件的类型" class="headerlink" title="学习核心：配置个性化-组件的类型"></a>学习核心：配置个性化-组件的类型</h1><p><a href="http://www.cnblogs.com/tq03/p/5151954.html" target="_blank" rel="external">Flume（2）组件概述与列表</a></p>
+<p><a href="http://www.cnblogs.com/itdyb/p/6266789.html" target="_blank" rel="external">Flume 入门–几种不同的Sources</a> </p>
+<h1 id="错误-找不到或无法加载主类-org-apache-flume-tools-GetJavaProperty"><a href="#错误-找不到或无法加载主类-org-apache-flume-tools-GetJavaProperty" class="headerlink" title="错误:找不到或无法加载主类 org.apache.flume.tools.GetJavaProperty"></a>错误:找不到或无法加载主类 org.apache.flume.tools.GetJavaProperty</h1><p>原因：hbase的配置</p>
+<p><a href="http://blog.csdn.net/senvil/article/details/48894435" target="_blank" rel="external">org/apache/flume/tools/GetJavaProperty</a></p>
+<h1 id="配置文件示例1-spooldir"><a href="#配置文件示例1-spooldir" class="headerlink" title="配置文件示例1-spooldir"></a>配置文件示例1-spooldir</h1><pre><code># Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# &quot;License&quot;); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called &apos;agent&apos;
+agent1.sources = avro-source1
+agent1.channels = ch1
+agent1.sinks = logger-sink1
+# sources
+agent1.sources.avro-source1.type = spooldir
+agent1.sources.avro-source1.channels = ch1
+agent1.sources.avro-source1.spoolDir = /home/shuai/logs/
+agent1.sources.avro-source1.fileHeader = true
+agent1.sources.avro-source1.bind = 0.0.0.0
+agent1.sources.avro-source1.port = 4141
+# sink
+agent1.sinks.logger-sink1.type = logger
+agent1.sinks.logger-sink1.channel = ch1
+# channel
+agent1.channels.ch1.type = memory
+agent1.channels.ch1.capacity = 1000
+agent1.channels.ch1.transactionCapacity = 100
+</code></pre><h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>参考教程启动flume</p>
+<p><a href="http://blog.csdn.net/sunnyyoona/article/details/52585478" target="_blank" rel="external">Flume安装，部署与应用案例</a></p>
+<p>./flume-ng agent –conf ../conf –conf-file ../conf/flume-spool.conf –name agent -Dflume.root.logger=INFO,console</p>
+<p>没有提示报错，但是没什么功能</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th>列表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–conf 或 -c</td>
+<td>指定配置文件夹，包含flume-env.sh和log4j的配置文件</td>
+<td>–conf ../conf</td>
+</tr>
+<tr>
+<td>–conf-file 或 -f</td>
+<td>配置文件地址</td>
+<td>–conf-file ../conf/flume.conf</td>
+</tr>
+<tr>
+<td>–name 或 -n</td>
+<td>agent名称</td>
+<td>–name a1</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>zookeeper连接字符串</td>
+<td>-z zkhost:2181,zkhost1:2181</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>zookeeper中的存储路径前缀</td>
+<td>-p /flume</td>
+</tr>
+</tbody>
+</table>
+<p>分析日志 </p>
+<pre><code>SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/data/hadoop/apache-flume-1.8.0-bin/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/data/hadoop/hadoop-2.7.4/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/data/hadoop/hbase-1.2.6/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+2017-10-15 21:44:02,380 (lifecycleSupervisor-1-0) [INFO - org.apache.flume.node.PollingPropertiesFileConfigurationProvider.start(PollingPropertiesFileConfigurationProvider.java:62)] Configuration provider starting
+2017-10-15 21:44:02,382 (conf-file-poller-0) [INFO - org.apache.flume.node.PollingPropertiesFileConfigurationProvider$FileWatcherRunnable.run(PollingPropertiesFileConfigurationProvider.java:134)] Reloading configuration file:../conf/flume-spool.conf
+2017-10-15 21:44:02,385 (conf-file-poller-0) [INFO - org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty(FlumeConfiguration.java:1016)] Processing:logger-sink1
+2017-10-15 21:44:02,386 (conf-file-poller-0) [INFO - org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty(FlumeConfiguration.java:930)] Added sinks: logger-sink1 Agent: agent1
+2017-10-15 21:44:02,386 (conf-file-poller-0) [INFO - org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty(FlumeConfiguration.java:1016)] Processing:logger-sink1
+2017-10-15 21:44:02,392 (conf-file-poller-0) [INFO - org.apache.flume.conf.FlumeConfiguration.validateConfiguration(FlumeConfiguration.java:140)] Post-validation flume configuration contains configuration for agents: [agent1]
+2017-10-15 21:44:02,392 (conf-file-poller-0) [WARN - org.apache.flume.node.AbstractConfigurationProvider.getConfiguration(AbstractConfigurationProvider.java:135)] No configuration found for this host:agent
+2017-10-15 21:44:02,396 (conf-file-poller-0) [INFO - org.apache.flume.node.Application.startAllComponents(Application.java:137)] Starting new configuration:{ sourceRunners:{} sinkRunners:{} channels:{} }
+</code></pre><p>agent的名字是agent1,改成agent1成功</p>
+<pre><code>./flume-ng agent --conf ../conf --conf-file ../conf/flume-spool.conf --name agent1 -Dflume.root.logger=INFO,console
+</code></pre><h1 id="配置文件示例2-spooldir"><a href="#配置文件示例2-spooldir" class="headerlink" title="配置文件示例2-spooldir"></a>配置文件示例2-spooldir</h1><pre><code># Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# &quot;License&quot;); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called &apos;agent&apos;
+
+agent.sources = seqGenSrc
+agent.channels = memoryChannel
+agent.sinks = loggerSink
+
+# For each one of the sources, the type is defined
+agent.sources.seqGenSrc.type = spooldir
+agent.sources.seqGenSrc.spoolDir = /data/nginx/logs
+# The channel can be defined as follows.
+agent.sources.seqGenSrc.channels = memoryChannel
+
+# Each sink&apos;s type must be defined
+agent.sinks.loggerSink.type = logger
+
+#Specify the channel the sink should use
+agent.sinks.loggerSink.channel = memoryChannel
+
+# Each channel&apos;s type is defined.
+agent.channels.memoryChannel.type = memory
+
+# Other config values specific to each type of channel(sink or source)
+# can be defined as well
+# In this case, it specifies the capacity of the memory channel
+agent.channels.memoryChannel.capacity = 1000
+agent.channels.memoryChannel.transactionCapacity = 100
+</code></pre><p>采用flume提供的默认模板，需要将source 的类型改成spooldir并添加监控的文件夹，此时的名称必须为agent才行<br>➜  bin ./flume-ng agent –conf ../conf –conf-file ../conf/flume-conf.properties –name agent -Dflume.root.logger=INFO,console</p>
+<h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><ol>
+<li><a href="http://www.cnblogs.com/tq03/p/5151954.html" target="_blank" rel="external">Flume（2）组件概述与列表</a></li>
+<li><a href="http://www.cnblogs.com/itdyb/p/6266789.html" target="_blank" rel="external">Flume 入门–几种不同的Sources</a> </li>
+<li><a href="http://blog.csdn.net/sunnyyoona/article/details/52585478" target="_blank" rel="external">Flume安装，部署与应用案例</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/flume学习笔记/" data-id="cj9muktl20029jclx8aqbzf0o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flume/">flume</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/面试准备-java基础/">面试准备-java基础</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/面试准备-java设计模式/">面试准备-java设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/sbt实用操作/">sbt实用操作</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/not-use/面试准备-sparkSql/">面试准备-sparkSql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hadoop/">hadoop</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hbase/">hbase</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/spark/">spark</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/">cloud-computing</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/docker/">docker</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/redis/">redis</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/centos/">centos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 11.25px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 11.25px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 13.75px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 11.25px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 12.5px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 13.75px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 12.5px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 11.25px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 13.75px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 11.25px;">sparkSql</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 11.25px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 11.25px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 11.25px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 11.25px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 11.25px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 11.25px;">难点</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/项目/" style="font-size: 11.25px;">项目</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Si Yongshuai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

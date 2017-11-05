@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>EasyUI学习笔记第一天 | hello yongshuai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="学习背景前两个星期用springMVC和mybatis写运维配置管理系统的后台, 增删改查全部使用json作为数据交换的标准 现在需要用easyUI来实现前后台的对接 easyui背景知识： 同事用easyui实现了简单的样式和静态页面，我需要用datagrid来渲染后台返回的数据， 后台返回的是具有内嵌对象的json数组 比如：[{“ptId”:2,”qxyId”:2,”ptmc”:”期货资管云">
+<meta name="keywords" content="easyui,datagrid,内嵌json,数据渲染">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EasyUI学习笔记第一天">
+<meta property="og:url" content="http://yoursite.com/2015/10/20/EasyUI学习笔记第一天/index.html">
+<meta property="og:site_name" content="hello yongshuai">
+<meta property="og:description" content="学习背景前两个星期用springMVC和mybatis写运维配置管理系统的后台, 增删改查全部使用json作为数据交换的标准 现在需要用easyUI来实现前后台的对接 easyui背景知识： 同事用easyui实现了简单的样式和静态页面，我需要用datagrid来渲染后台返回的数据， 后台返回的是具有内嵌对象的json数组 比如：[{“ptId”:2,”qxyId”:2,”ptmc”:”期货资管云">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-31T00:40:53.906Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EasyUI学习笔记第一天">
+<meta name="twitter:description" content="学习背景前两个星期用springMVC和mybatis写运维配置管理系统的后台, 增删改查全部使用json作为数据交换的标准 现在需要用easyUI来实现前后台的对接 easyui背景知识： 同事用easyui实现了简单的样式和静态页面，我需要用datagrid来渲染后台返回的数据， 后台返回的是具有内嵌对象的json数组 比如：[{“ptId”:2,”qxyId”:2,”ptmc”:”期货资管云">
+  
+    <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hello yongshuai</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">司永帅个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-EasyUI学习笔记第一天" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/20/EasyUI学习笔记第一天/" class="article-date">
+  <time datetime="2015-10-20T09:35:48.000Z" itemprop="datePublished">2015-10-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      EasyUI学习笔记第一天
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="学习背景"><a href="#学习背景" class="headerlink" title="学习背景"></a>学习背景</h1><p>前两个星期用springMVC和mybatis写运维配置管理系统的后台,</p>
+<p>增删改查全部使用json作为数据交换的标准</p>
+<p>现在需要用easyUI来实现前后台的对接</p>
+<p>easyui背景知识：</p>
+<p>同事用easyui实现了简单的样式和静态页面，我需要用datagrid来渲染后台返回的数据，</p>
+<p>后台返回的是具有内嵌对象的json数组</p>
+<p>比如：<br><code>[{“ptId”:2,”qxyId”:2,”ptmc”:”期货资管云４”,”ywzfzrId”:3,”ywbgId”:4,”qysj”:”2016-03-16”,”zt”:”已启用”,”jcpt”:”阿里云”,”ptdz”:”杭州”,”ptyt”:null,”pttp”:null,”bz”:”备注２”,”qxy”:{“qxyId”:2,”mc”:”经济云”},”zg”:{“ryId”:null,”xm”:”陈磊”,”gw”:null},”bg”:{“ryId”:null,”xm”:”谭俊”,”gw”:null},”ywList”:[{“ywId”:null,”ywmc”:”恒生估值2.0”,”ptId”:2,”bbh”:null,”bz”:null}]}]</code></p>
+<h1 id="需要解决的问题"><a href="#需要解决的问题" class="headerlink" title="需要解决的问题"></a>需要解决的问题</h1><ul>
+<li>datagrid加载远程数据</li>
+</ul>
+<ul>
+<li>datagrid 显示内嵌的json数据</li>
+</ul>
+<h1 id="解决思路和方法"><a href="#解决思路和方法" class="headerlink" title="解决思路和方法"></a>解决思路和方法</h1><h2 id="datagrid-关于数据的属性"><a href="#datagrid-关于数据的属性" class="headerlink" title="datagrid 关于数据的属性"></a>datagrid 关于数据的属性</h2><table class="table table-striped table-bordered"><br>    <tr><br>        <th align="left">名称</th><br>        <th align="left">类型</th><br>        <th align="left">描述</th><br>        <th align="left">默认值</th><br>    </tr><br>    <tr><br>        <td>method</td><br>        <td>string</td><br>        <td>请求远程数据的方法（method）类型。</td><br>        <td>post</td><br>    </tr><br>    <tr><br>        <td>url</td><br>        <td>string</td><br>        <td>从远程站点请求数据的 URL。</td><br>        <td>null</td><br>    </tr><br>    <tr><br>        <td>queryParams</td><br>        <td>object</td><br>        <td>当请求远程数据时，发送的额外参数。<br>            <br> 代码实例： <pre class="prettyprint linenums"><br>$(‘#dg’).datagrid({<br>    queryParams: {<br>        name: ‘easyui’,<br>        subject: ‘datagrid’<br>    }<br>});<br></pre> </td><br>        <td>{}</td><br>    </tr><br>    <tr><br>        <td>data</td><br>        <td>array,object</td><br>        <td>要加载的数据。该属性自版本 1.3.2 起可用。<br>            <br> 代码实例： <pre class="prettyprint linenums"><br>$(‘#dg’).datagrid({<br>    data: [<br>        {f1:’value11’, f2:’value12’},<br>        {f1:’value21’, f2:’value22’}<br>    ]<br>});<br></pre> </td><br>        <td>null</td><br>    </tr><br>    <tr><br><br>        <td>loader</td><br>        <td>function</td><br>        <td>定义如何从远程服务器加载数据。返回 false 则取消该动作。该函数有下列参数：<br>            <br> param：要传递到远程服务器的参数对象。<br>            <br> success(data)：当检索数据成功时调用的回调函数。<br>            <br> error()：当检索数据失败时调用的回调函数。<br>            <br> </td><br>        <td>json loader</td><br>    </tr><br></table>
+
+<p>后台接收的类型必须是序列化后的json,而且请求方式必须是post，但是datagrid的<code>queryParams</code>的形式是一个对象，json对象，而不是字符串</p>
+<p>不管datagrid选项中有没有<code>queryParams</code>,后面跟<code>{}</code>或者<code>JSON.stringify({})</code></p>
+<p>都是报415错误</p>
+<p><a href="http://7xs1xb.com1.z0.glb.clouddn.com/2016-04-02-JSON.stringify%28%7B%7D%29.png" target="_blank" rel="external">queryParams后面跟JSON.stringify({})</a></p>
+<p><a href="http://7xs1xb.com1.z0.glb.clouddn.com/2016-04-02-%7B%7D.png" target="_blank" rel="external">queryParams后面跟{}或者无queryParams</a></p>
+<p>解决方法：用ajax请求数据，将请求后的数据作为datagrid的本地数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">        type:<span class="string">"post"</span>, </div><div class="line">        url:urlPrefix + <span class="string">'/pt/query.do'</span>, </div><div class="line">        dataType:<span class="string">"json"</span>,      </div><div class="line">        contentType:<span class="string">"application/json;charset=UTF-8"</span>,               </div><div class="line">        data:<span class="built_in">JSON</span>.stringify(queryCondition), </div><div class="line">        success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">        <span class="comment">//  执行datagrid</span></div><div class="line">        <span class="comment">// 其中数据配置为data:data</span></div><div class="line">        *****</div><div class="line">        &#125;</div><div class="line">        error:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<p>@RequestBody要求必须有参数<br><a href="http://www.jeasyui.net/plugins/183.html" target="_blank" rel="external">EasyUI中文官网文档</a></p>
+<h2 id="js-是如何访问嵌套的json的？下面是在node中实现的"><a href="#js-是如何访问嵌套的json的？下面是在node中实现的" class="headerlink" title="js 是如何访问嵌套的json的？下面是在node中实现的"></a>js 是如何访问嵌套的json的？下面是在node中实现的</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">shuai@localhost ~ % node  </div><div class="line">    &gt; <span class="keyword">var</span> a = &#123;&#125;</div><div class="line">    <span class="literal">undefined</span></div><div class="line">    &gt; a.name = <span class="string">'siyongshuai'</span></div><div class="line">    <span class="string">'siyongshuai'</span></div><div class="line">    &gt; <span class="keyword">var</span> b = &#123;&#125;</div><div class="line">    <span class="literal">undefined</span></div><div class="line">    &gt; b.a = a</div><div class="line">    &#123; <span class="attr">name</span>: <span class="string">'siyongshuai'</span> &#125;</div><div class="line">    &gt; b.a.name</div><div class="line">    <span class="string">'siyongshuai'</span></div><div class="line">    <span class="comment">// 后台返回的数据是复杂的数组</span></div><div class="line">    <span class="keyword">var</span> d= [&#123;<span class="string">"ptId"</span>:<span class="number">2</span>,<span class="string">"qxyId"</span>:<span class="number">2</span>,<span class="string">"ptmc"</span>:<span class="string">"期货资管云４"</span>,<span class="string">"ywzfzrId"</span>:<span class="number">3</span>,<span class="string">"ywbgId"</span>:<span class="number">4</span>,<span class="string">"qysj"</span>:<span class="string">"2016-03-16"</span>,<span class="string">"zt"</span>:<span class="string">"已启用"</span>,<span class="string">"jcpt"</span>:<span class="string">"阿里云"</span>,<span class="string">"ptdz"</span>:<span class="string">"杭州"</span>,<span class="string">"ptyt"</span>:<span class="literal">null</span>,<span class="string">"pttp"</span>:<span class="literal">null</span>,<span class="string">"bz"</span>:<span class="string">"备注２"</span>,<span class="string">"qxy"</span>:&#123;<span class="string">"qxyId"</span>:<span class="number">2</span>,<span class="string">"mc"</span>:<span class="string">"经济云"</span>&#125;,<span class="string">"zg"</span>:&#123;<span class="string">"ryId"</span>:<span class="literal">null</span>,<span class="string">"xm"</span>:<span class="string">"陈磊"</span>,<span class="string">"gw"</span>:<span class="literal">null</span>&#125;,<span class="string">"bg"</span>:&#123;<span class="string">"ryId"</span>:<span class="literal">null</span>,<span class="string">"xm"</span>:<span class="string">"谭俊"</span>,<span class="string">"gw"</span>:<span class="literal">null</span>&#125;,<span class="string">"ywList"</span>:[&#123;<span class="string">"ywId"</span>:<span class="literal">null</span>,<span class="string">"ywmc"</span>:<span class="string">"恒生估值2.0"</span>,<span class="string">"ptId"</span>:<span class="number">2</span>,<span class="string">"bbh"</span>:<span class="literal">null</span>,<span class="string">"bz"</span>:<span class="literal">null</span>&#125;]&#125;]</div><div class="line">    <span class="literal">undefined</span></div><div class="line"> </div><div class="line"></div><div class="line">    &gt; d.zg.xm</div><div class="line">    <span class="comment">// TypeError: Cannot read property 'xm' of undefined</span></div><div class="line">    <span class="comment">// at repl:1:5</span></div><div class="line">    <span class="comment">// at REPLServer.defaultEval (repl.js:260:27)</span></div><div class="line">    <span class="comment">// at bound (domain.js:287:14)</span></div><div class="line">    <span class="comment">// at REPLServer.runBound [as eval] (domain.js:300:12)</span></div><div class="line">    <span class="comment">// at REPLServer.&lt;anonymous&gt; (repl.js:429:12)</span></div><div class="line">    <span class="comment">// at emitOne (events.js:95:20)</span></div><div class="line">    <span class="comment">// at REPLServer.emit (events.js:182:7)</span></div><div class="line">    <span class="comment">// at REPLServer.Interface._onLine (readline.js:211:10)</span></div><div class="line">    <span class="comment">// at REPLServer.Interface._line (readline.js:550:8)</span></div><div class="line">    <span class="comment">// at REPLServer.Interface._ttyWrite (readline.js:827:14)</span></div><div class="line">    </div><div class="line">    <span class="comment">// 按照数组的方式访问是可以的</span></div><div class="line">    &gt; d[<span class="number">0</span>].zg.xm</div><div class="line">    <span class="string">'陈磊'</span></div><div class="line">    　　　　　　　　　　　　　　</div><div class="line">    </div><div class="line">    &gt; <span class="keyword">var</span> e =&#123;<span class="string">"ptId"</span>:<span class="number">2</span>,<span class="string">"qxyId"</span>:<span class="number">2</span>,<span class="string">"ptmc"</span>:<span class="string">"期货资管云４"</span>,<span class="string">"ywzfzrId"</span>:<span class="number">3</span>,<span class="string">"ywbgId"</span>:<span class="number">4</span>,<span class="string">"qysj"</span>:<span class="string">"2016-03-16"</span>,<span class="string">"zt"</span>:<span class="string">"已启用"</span>,<span class="string">"jcpt"</span>:<span class="string">"阿里云"</span>,<span class="string">"ptdz"</span>:<span class="string">"杭州"</span>,<span class="string">"ptyt"</span>:<span class="literal">null</span>,<span class="string">"pttp"</span>:<span class="literal">null</span>,<span class="string">"bz"</span>:<span class="string">"备注２"</span>,<span class="string">"qxy"</span>:&#123;<span class="string">"qxyId"</span>:<span class="number">2</span>,<span class="string">"mc"</span>:<span class="string">"经济云"</span>&#125;,<span class="string">"zg"</span>:&#123;<span class="string">"ryId"</span>:<span class="literal">null</span>,<span class="string">"xm"</span>:<span class="string">"陈磊"</span>,<span class="string">"gw"</span>:<span class="literal">null</span>&#125;,<span class="string">"bg"</span>:&#123;<span class="string">"ryId"</span>:<span class="literal">null</span>,<span class="string">"xm"</span>:<span class="string">"谭俊"</span>,<span class="string">"gw"</span>:<span class="literal">null</span>&#125;,<span class="string">"ywList"</span>:[&#123;<span class="string">"ywId"</span>:<span class="literal">null</span>,<span class="string">"ywmc"</span>:<span class="string">"恒生估值2.0"</span>,<span class="string">"ptId"</span>:<span class="number">2</span>,<span class="string">"bbh"</span>:<span class="literal">null</span>,<span class="string">"bz"</span>:<span class="literal">null</span>&#125;]&#125;</div><div class="line">    <span class="literal">undefined</span></div><div class="line">    &gt; e.ptmc</div><div class="line">    <span class="string">'期货资管云４'</span></div><div class="line">    &gt; e.zg.xm</div><div class="line">    <span class="string">'陈磊'</span></div><div class="line">    &gt;</div></pre></td></tr></table></figure>
+<p>datagrid 操作json的方式，一级属性可通过下面的配置直接访问<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">        field : <span class="string">'ywbgId'</span>,</div><div class="line">        title : <span class="string">'运维备岗'</span>,</div><div class="line">        width : <span class="number">200</span>,</div><div class="line">        align : <span class="string">'center'</span>,</div><div class="line">        editor : &#123;</div><div class="line">            type : <span class="string">'validatebox'</span>,</div><div class="line">            options : &#123;</div><div class="line">                required : <span class="literal">false</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>若把<code>filed</code>filed换成<code>bg.xm</code><br>仍然什么都不显示<br>正确的解决方案是利用EasyUI,datagrid的formatter属性，根据formatter的参数可以看出它内部仍然是通过数组直接访问的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&#123;      </div><div class="line">    </div><div class="line">       field : <span class="string">'ywbgId'</span>,</div><div class="line">       title : <span class="string">'运维备岗'</span>,</div><div class="line">       width : <span class="number">200</span>,</div><div class="line">       align : <span class="string">'center'</span>,</div><div class="line">       editor : &#123;</div><div class="line">           type : <span class="string">'validatebox'</span>,</div><div class="line">           options : &#123;</div><div class="line">               required : <span class="literal">false</span></div><div class="line">           &#125;</div><div class="line">       &#125;,</div><div class="line"></div><div class="line">      formatter : <span class="function"><span class="keyword">function</span>(<span class="params">value, row, index</span>) </span>&#123;</div><div class="line">       					<span class="keyword">if</span> (row.zg) &#123;</div><div class="line">       						<span class="keyword">return</span> row.zg.xm;</div><div class="line">       					&#125; <span class="keyword">else</span> &#123;</div><div class="line">       						<span class="keyword">return</span> value;</div><div class="line">       					&#125;</div><div class="line"></div><div class="line">       				&#125;</div><div class="line">     &#125;</div></pre></td></tr></table></figure></p>
+<p>贴一下平台管理模块控制层（controller）代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.hundsun.acm.controller;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestBody;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.hundsun.acm.model.Pt;</div><div class="line"><span class="keyword">import</span> com.hundsun.acm.service.impl.PtServiceImpl;</div><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="meta">@RequestMapping</span>(<span class="string">"manage_page"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PtController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> PtServiceImpl ptService;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/get.do"</span>)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">List&lt;Pt&gt; <span class="title">get</span><span class="params">()</span> </span>&#123;</div><div class="line">        Pt pt = <span class="keyword">new</span> Pt();</div><div class="line">        <span class="keyword">return</span> ptService.getPtByCondition(pt);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/query.do"</span>)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">List&lt;Pt&gt; <span class="title">getPtByName</span><span class="params">(@RequestBody Pt condition)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> ptService.getPtByCondition(condition);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.println(<span class="string">"查询××××××××××平台信息×××××××××发生异常"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/update"</span>, method = RequestMethod.POST)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">String <span class="title">updatePt</span><span class="params">(@RequestBody Pt record)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">int</span> flag = ptService.updateById(record);</div><div class="line">            <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"error"</span>;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.println(<span class="string">"更新××××××××××平台信息×××××××××发生异常"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/add.do"</span>)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">String <span class="title">addPt</span><span class="params">(@RequestBody Pt record)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">int</span> flag = <span class="keyword">this</span>.ptService.add(record);</div><div class="line">            <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"error"</span>;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.println(<span class="string">"增加××××××××××平台信息×××××××××发生异常"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/delete.do"</span>, method = RequestMethod.POST)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">String <span class="title">deletePtByConditon</span><span class="params">(@RequestBody Pt record)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">int</span> flag = <span class="keyword">this</span>.ptService.deleteById(record);</div><div class="line">            <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"error"</span>;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.println(<span class="string">"删除××××××××××平台信息×××××××××发生异常"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/20/EasyUI学习笔记第一天/" data-id="cj9muktk60006jclxbk22mazy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datagrid/">datagrid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easyui/">easyui</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内嵌json/">内嵌json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据渲染/">数据渲染</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/10/21/EasyUI学习笔记第二天/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          EasyUI学习笔记第二天
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/22/The-listener-supports-no-services/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">The-listener-supports-no-services</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/面试准备-java基础/">面试准备-java基础</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/面试准备-java设计模式/">面试准备-java设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/sbt实用操作/">sbt实用操作</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/not-use/面试准备-sparkSql/">面试准备-sparkSql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hadoop/">hadoop</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hbase/">hbase</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/spark/">spark</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/">cloud-computing</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/docker/">docker</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/redis/">redis</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/centos/">centos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 11.25px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 11.25px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 13.75px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 11.25px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 12.5px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 13.75px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 12.5px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 11.25px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 13.75px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 11.25px;">sparkSql</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 11.25px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 11.25px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 11.25px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 11.25px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 11.25px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 11.25px;">难点</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/项目/" style="font-size: 11.25px;">项目</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Si Yongshuai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

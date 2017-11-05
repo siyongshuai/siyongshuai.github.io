@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hadoop核心角色 | hello yongshuai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="hadoop 2 背景在Hadoop 2.0.0之前，NameNode是HDFS集群中的单点故障（SPOF）。每个集群都有一个NameNode，如果该机器或进程变得不可用，则整个集群将不可用，直到NameNode重新启动或在单独的计算机上启动。这两个方面影响了HDFS集群的总体可用性： 在计算机事件（如机器崩溃）的情况下，集群将不可用，直到操作员重新启动NameNode。 NameNode机器上的">
+<meta name="keywords" content="bigdata,hadoop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hadoop核心角色">
+<meta property="og:url" content="http://yoursite.com/2016/10/16/hadoop核心角色/index.html">
+<meta property="og:site_name" content="hello yongshuai">
+<meta property="og:description" content="hadoop 2 背景在Hadoop 2.0.0之前，NameNode是HDFS集群中的单点故障（SPOF）。每个集群都有一个NameNode，如果该机器或进程变得不可用，则整个集群将不可用，直到NameNode重新启动或在单独的计算机上启动。这两个方面影响了HDFS集群的总体可用性： 在计算机事件（如机器崩溃）的情况下，集群将不可用，直到操作员重新启动NameNode。 NameNode机器上的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-01T13:10:39.540Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hadoop核心角色">
+<meta name="twitter:description" content="hadoop 2 背景在Hadoop 2.0.0之前，NameNode是HDFS集群中的单点故障（SPOF）。每个集群都有一个NameNode，如果该机器或进程变得不可用，则整个集群将不可用，直到NameNode重新启动或在单独的计算机上启动。这两个方面影响了HDFS集群的总体可用性： 在计算机事件（如机器崩溃）的情况下，集群将不可用，直到操作员重新启动NameNode。 NameNode机器上的">
+  
+    <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hello yongshuai</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">司永帅个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hadoop核心角色" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/16/hadoop核心角色/" class="article-date">
+  <time datetime="2016-10-15T20:45:08.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bigdata/">bigdata</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hadoop核心角色
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="hadoop-2-背景"><a href="#hadoop-2-背景" class="headerlink" title="hadoop 2 背景"></a>hadoop 2 背景</h2><p>在Hadoop 2.0.0之前，NameNode是HDFS集群中的单点故障（SPOF）。每个集群都有一个NameNode，如果该机器或进程变得不可用，则整个集群将不可用，直到NameNode重新启动或在单独的计算机上启动。<br>这<strong>两个方面</strong>影响了HDFS集群的总体可用性：</p>
+<p>在计算机事件（如机器崩溃）的情况下，集群将不可用，直到操作员重新启动NameNode。</p>
+<p>NameNode机器上的计划维护事件（如软件或硬件升级）将导致集群停机的窗口。</p>
+<p>HDFS高可用性功能通过提供在具有热备用的主动/被动配置中的同一集群中运行两个冗余名称节点的选项来解决上述问题。这允许在机器崩溃的情况下快速故障切换到新的NameNode，或者为了计划维护而对管理员启动的优化转换进行了优雅。</p>
+<h1 id="hadoop1-vs-hadoop2"><a href="#hadoop1-vs-hadoop2" class="headerlink" title="hadoop1 vs hadoop2"></a>hadoop1 vs hadoop2</h1><h2 id="从Hadoop整体框架来说"><a href="#从Hadoop整体框架来说" class="headerlink" title="从Hadoop整体框架来说"></a>从Hadoop整体框架来说</h2><pre><code>Hadoop1.0即第一代Hadoop，由分布式存储系统HDFS和分布式计算框架MapReduce组成，
+其中HDFS由一个NameNode和多个DateNode组成，MapReduce由一个JobTracker和多个TaskTracker组成。
+
+Hadoop2.0即第二代Hadoop为克服Hadoop1.0中的不足：
+针对Hadoop1.0单NameNode制约HDFS的扩展性问题，提出HDFS Federation，
+它让多个NameNode分管不同的目录进而实现访问隔离和横向扩展，同时彻底解决了NameNode单点故障问题；
+针对Hadoop1.0中的MapReduce在扩展性和多框架支持等方面的不足，它将JobTracker中的资源管理和作业控制分开，
+分别由ResourceManager（负责所有应用程序的资源分配）和ApplicationMaster（负责管理一个应用程序）实现，
+即引入了资源管理框架Yarn。
+同时Yarn作为Hadoop2.0中的资源管理系统，
+它是一个通用的资源管理模块，
+可为各类应用程序进行资源管理和调度，
+不仅限于MapReduce一种框架，也可以为其他框架使用，如Tez、Spark、Storm等
+</code></pre><h2 id="从MapReduce计算框架来讲"><a href="#从MapReduce计算框架来讲" class="headerlink" title="从MapReduce计算框架来讲"></a>从MapReduce计算框架来讲</h2><pre><code>MapReduce1.0计算框架主要由三部分组成：编程模型、数据处理引擎和运行时环境。
+它的基本编程模型是将问题抽象成Map和Reduce两个阶段，其中Map阶段将输入的数据解析成key/value，
+迭代调用map()函数处理后，再以key/value的形式输出到本地目录，
+Reduce阶段将key相同的value进行规约处理，并将最终结果写到HDFS上；
+
+它的数据处理引擎由MapTask和ReduceTask组成，分别负责Map阶段逻辑和Reduce阶段的逻辑处理；
+它的运行时环境由一个JobTracker和若干个TaskTracker两类服务组成，
+其中JobTracker负责资源管理和所有作业的控制，
+TaskTracker负责接收来自JobTracker的命令并执行它。
+
+MapReducer2.0具有与MRv1相同的编程模型和数据处理引擎，唯一不同的是运行时环境。
+MRv2是在MRv1基础上经加工之后，运行于资源管理框架Yarn之上的计算框架MapReduce。
+它的运行时环境不再由JobTracker和TaskTracker等服务组成，
+而是变为通用资源管理系统Yarn和作业控制进程ApplicationMaster，
+其中Yarn负责资源管理的调度而ApplicationMaster负责作业的管理。
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/16/hadoop核心角色/" data-id="cj9muktl10025jclxdf9qzvic" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/16/hadoop基本操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          hadoop基本操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/16/hadoop常见错误/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hadoop常见错误</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/面试准备-java基础/">面试准备-java基础</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/面试准备-java设计模式/">面试准备-java设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/sbt实用操作/">sbt实用操作</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/not-use/面试准备-sparkSql/">面试准备-sparkSql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hadoop/">hadoop</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hbase/">hbase</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/spark/">spark</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/">cloud-computing</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/docker/">docker</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/redis/">redis</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/centos/">centos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 11.25px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 11.25px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 13.75px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 11.25px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 12.5px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 13.75px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 12.5px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 11.25px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 13.75px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 11.25px;">sparkSql</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 11.25px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 11.25px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 11.25px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 11.25px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 11.25px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 11.25px;">难点</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/项目/" style="font-size: 11.25px;">项目</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Si Yongshuai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

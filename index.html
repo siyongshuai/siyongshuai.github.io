@@ -66,16 +66,12 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Mybatis常用标签" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-面试准备-flume篇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/16/Mybatis常用标签/" class="article-date">
-  <time datetime="2017-10-16T07:42:53.093Z" itemprop="datePublished">2017-10-16</time>
+    <a href="/2016/11/05/面试准备-flume篇/" class="article-date">
+  <time datetime="2016-11-05T13:40:56.000Z" itemprop="datePublished">2016-11-05</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -84,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/Mybatis常用标签/">Mybatis 常用标签</a>
+      <a class="article-title" href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
     </h1>
   
 
@@ -92,16 +88,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;selelct id=&quot;&quot; resultMap=&quot;&quot; parameterType=&quot;&quot;&gt;</div><div class="line">selelct * from MESSAGE</div><div class="line">    &lt;where&gt;</div><div class="line">        &lt;if test=&quot;&quot;&gt;</div><div class="line">        and COMMAND =#&#123;commonad&#125;</div><div class="line">        &lt;/if&gt;</div><div class="line">        &lt;if test=&quot;&quot;&gt;</div><div class="line">        and DESCRIPTION</div><div class="line">        &lt;/if&gt;</div><div class="line">    &lt;/where&gt;</div><div class="line">&lt;/selelct&gt;</div></pre></td></tr></table></figure>
-<p>where 标签的作用：<br>如果条件都不满足的话可执行空条件查询<br><img src="http://7xs1xb.com1.z0.glb.clouddn.com/20160316-Mybatis-tags.png" alt="Mybatis-tags"></p>
-
+        <h1 id="数据怎么采集到Kafka，实现方式"><a href="#数据怎么采集到Kafka，实现方式" class="headerlink" title="数据怎么采集到Kafka，实现方式"></a>数据怎么采集到Kafka，实现方式</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/Mybatis常用标签/" data-id="cj8tpe4cw000hdmlxxlkvs8ft" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/面试准备-flume篇/" data-id="cj9muktma006bjclx6pd2k4fy" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flume/">flume</a></li></ul>
 
     </footer>
   </div>
@@ -110,16 +104,12 @@
 
 
   
-    <article id="post-mybatis generator的用法" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-面试准备-java基础" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/16/mybatis generator的用法/" class="article-date">
-  <time datetime="2017-10-16T07:42:32.522Z" itemprop="datePublished">2017-10-16</time>
+    <a href="/2016/11/03/面试准备-java基础/" class="article-date">
+  <time datetime="2016-11-03T03:08:42.000Z" itemprop="datePublished">2016-11-03</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -128,7 +118,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/mybatis generator的用法/">mybatis generator 的使用和问题</a>
+      <a class="article-title" href="/2016/11/03/面试准备-java基础/">面试准备-java基础</a>
     </h1>
   
 
@@ -136,21 +126,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="mybatis-generator-自动生成代码"><a href="#mybatis-generator-自动生成代码" class="headerlink" title="mybatis generator 自动生成代码"></a>mybatis generator 自动生成代码</h1><p>需要准备的jar包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">├── generatorConfig.xml</div><div class="line">├── mybatis-3.2.7.jar</div><div class="line">├── mybatis-generator-core-1.3.2.jar</div><div class="line">├── mysql-connector-java-5.1.30.jar</div><div class="line">└── src</div></pre></td></tr></table></figure></p>
-<p>配置文件如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;  </div><div class="line"><span class="meta">&lt;!DOCTYPE generatorConfiguration  </span></div><div class="line"><span class="meta">PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  </span></div><div class="line"><span class="meta">"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span>  </div><div class="line"><span class="comment">&lt;!-- 数据库驱动--&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">classPathEntry</span>  <span class="attr">location</span>=<span class="string">"mysql-connector-java-5.1.30.jar"</span>/&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"DB2Tables"</span>  <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">commentGenerator</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressDate"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">            <span class="comment">&lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressAllComments"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">commentGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!--数据库链接URL，用户名、密码 --&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"com.mysql.jdbc.Driver"</span> <span class="attr">connectionURL</span>=<span class="string">"jdbc:mysql://127.0.0.1/db_icp"</span> <span class="attr">userId</span>=<span class="string">"root"</span> <span class="attr">password</span>=<span class="string">"xxxx"</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">javaTypeResolver</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"forceBigDecimals"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 生成模型的包名和位置--&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.hundsun.acm.model"</span> <span class="attr">targetProject</span>=<span class="string">"src"</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 生成映射文件的包名和位置--&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"main.resources.mapping"</span> <span class="attr">targetProject</span>=<span class="string">"src"</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 生成DAO的包名和位置--&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"com.hundsun.acm.dao"</span> <span class="attr">targetProject</span>=<span class="string">"src"</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名--&gt;</span> </div><div class="line">        <span class="comment">&lt;!--想要生成几个表，就写几个table标签--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"zxxxb"</span> <span class="attr">domainObjectName</span>=<span class="string">"Zxxx"</span> <span class="attr">enableCountByExample</span>=<span class="string">"false"</span> <span class="attr">enableUpdateByExample</span>=<span class="string">"false"</span> <span class="attr">enableDeleteByExample</span>=<span class="string">"false"</span> <span class="attr">enableSelectByExample</span>=<span class="string">"false"</span> <span class="attr">selectByExampleQueryId</span>=<span class="string">"false"</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">context</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#＃ -overwrite 是覆盖选项，如果第一次生成没必要加</span></div><div class="line"><span class="variable">$java</span> -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite</div></pre></td></tr></table></figure>
-<p>生成之后的目录结构<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">├── generatorConfig.xml</div><div class="line">├── mybatis-3.2.7.jar</div><div class="line">├── mybatis-generator-core-1.3.2.jar</div><div class="line">├── mysql-connector-java-5.1.30.jar</div><div class="line">└── src</div><div class="line">    ├── com</div><div class="line">    │   └── hundsun</div><div class="line">    │       └── acm</div><div class="line">    │           ├── dao</div><div class="line">    │           │   └── ZxxxMapper.java</div><div class="line">    │           └── model</div><div class="line">    │               ├── Zxxx.java</div><div class="line">    │               └── ZxxxWithBLOBs.java</div><div class="line">    └── main</div><div class="line">        └── resources</div><div class="line">            └── mapping</div><div class="line">                └── ZxxxMapper.xml</div></pre></td></tr></table></figure></p>
-<h1 id="date类型映射错误"><a href="#date类型映射错误" class="headerlink" title="date类型映射错误"></a>date类型映射错误</h1><p>应该映射成　java.sql.Date<br>但是却映射成　java.util.Date</p>
-<h1 id="jdbc-type-和-javaType的映射关系"><a href="#jdbc-type-和-javaType的映射关系" class="headerlink" title="jdbc type 和 javaType的映射关系"></a>jdbc type 和 javaType的映射关系</h1><p><a href="https://db.apache.org/ojb/docu/guides/jdbc-types.html" target="_blank" rel="external">apache官方链接</a></p>
-<p>JDBC是直接和数据库打交道的，因此类型基本与数据库类型一致</p>
+        <h1 id="String-是最基本的数据类型吗？"><a href="#String-是最基本的数据类型吗？" class="headerlink" title="String 是最基本的数据类型吗？"></a>String 是最基本的数据类型吗？</h1><p>不是。Java中的基本数据类型只有8个：byte、short、int、long、float、double、char、boolean；除了基本类型（primitive type）和枚举类型（enumeration type），剩下的都是引用类型（reference type）。</p>
+<h1 id="int和Integer有什么区别？"><a href="#int和Integer有什么区别？" class="headerlink" title="int和Integer有什么区别？"></a>int和Integer有什么区别？</h1><p>自动装箱/拆箱机制</p>
+<h1 id="用最有效率的方法计算2乘以8？"><a href="#用最有效率的方法计算2乘以8？" class="headerlink" title="用最有效率的方法计算2乘以8？"></a>用最有效率的方法计算2乘以8？</h1><p> 2 &lt;&lt; 3</p>
+<h1 id="数组有没有length-方法？String有没有length-方法？"><a href="#数组有没有length-方法？String有没有length-方法？" class="headerlink" title="数组有没有length()方法？String有没有length()方法？"></a>数组有没有length()方法？String有没有length()方法？</h1><p>答：数组没有length()方法，有length 的属性。String 有length()方法。JavaScript中，获得字符串的长度是通过length属性得到的，这一点容易和Java混淆。</p>
+<h1 id="在Java中，如何跳出当前的多重嵌套循环？"><a href="#在Java中，如何跳出当前的多重嵌套循环？" class="headerlink" title="在Java中，如何跳出当前的多重嵌套循环？"></a>在Java中，如何跳出当前的多重嵌套循环？</h1><p>java中支持带标签的break和continue语句，作用有点类似于C和C++中的goto语句,应尽量避免使用</p>
+<h1 id="两个对象值相同-x-equals-y-true-，但却可有不同的hash-code，这句话对不对？"><a href="#两个对象值相同-x-equals-y-true-，但却可有不同的hash-code，这句话对不对？" class="headerlink" title="两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对？"></a>两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对？</h1><p>(1)如果两个对象相同（equals方法返回true），那么它们的hashCode值一定要相同；(2)如果两个对象的hashCode相同，它们并不一定相同。<br>hash code的基本思想</p>
+<h1 id="是否可以继承String类？"><a href="#是否可以继承String类？" class="headerlink" title="是否可以继承String类？"></a>是否可以继承String类？</h1><p>String 类是final类，不可以被继承<br>这个没继承过，不过看下源码有没有final关键字修饰，就知道了<br>补充：继承String本身就是一个错误的行为，对String类型最好的重用方式是关联关系（Has-A）和依赖关系（Use-A）而不是继承关系（Is-A）。</p>
+<h1 id="解释内存中的栈-stack-、堆-heap-和静态区-static-area-的用法。"><a href="#解释内存中的栈-stack-、堆-heap-和静态区-static-area-的用法。" class="headerlink" title="解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。"></a>解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String str = <span class="keyword">new</span> String(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure>
+<p>上面的语句中变量str放在栈上，用new创建出来的字符串对象放在堆上，而”hello”这个字面量放在静态区。</p>
+<h1 id="Math-round-11-5-等于多少？Math-round-11-5-等于多少？"><a href="#Math-round-11-5-等于多少？Math-round-11-5-等于多少？" class="headerlink" title="Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？"></a>Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？</h1><p>答：Math.round(11.5)的返回值是12，Math.round(-11.5)的返回值是-11。四舍五入的原理是在参数上加0.5然后进行下取整。</p>
+<h1 id="类型转换问题"><a href="#类型转换问题" class="headerlink" title="类型转换问题"></a>类型转换问题</h1><p>short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？</p>
+<p>答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也是int 型，需要强制转换类型才能赋值给short型。而short s1 = 1; s1 += 1;可以正确编译，因为s1+= 1;相当于s1 = (short)(s1 + 1);其中有隐含的强制类型转换。</p>
+<p>float f=3.4;是否正确？<br>答:不正确。3.4是双精度数，将双精度型（double）赋值给浮点型（float）属于下转型（down-casting，也称为窄化）会造成精度损失，因此需要强制类型转换float f =(float)3.4; 或者写成float f =3.4F;。</p>
+<h1 id="谈谈你对反射机制的理解及其用途？"><a href="#谈谈你对反射机制的理解及其用途？" class="headerlink" title="谈谈你对反射机制的理解及其用途？"></a>谈谈你对反射机制的理解及其用途？</h1><p>运行时探测类的信息<br>CLASS.forName(xxx) xxx.class xxx.getClass<br>程序的灵活性，<br><strong>有类似API和相同行为</strong><br>的类，配置到xml文件中，比如JDBC加载oracle、mysql等<br>一般的框架只需要在配置文件中，把配置信息改一下就可以，这样在不改变源代码的情况下就可以实现数据源的切换类似的还有logger的选择</p>
+<h1 id="如果要重写一个对象的equals方法，还要考虑什么？"><a href="#如果要重写一个对象的equals方法，还要考虑什么？" class="headerlink" title="如果要重写一个对象的equals方法，还要考虑什么？"></a>如果要重写一个对象的equals方法，还要考虑什么？</h1><p>答案：hashCode。</p>
+<h1 id="sizeof是Java的关键字吗"><a href="#sizeof是Java的关键字吗" class="headerlink" title="sizeof是Java的关键字吗?"></a>sizeof是Java的关键字吗?</h1><p>不是。JAVA的基本数据类型大小是确定的，跟硬件及OS无关（平台无关性），没必要用sizeof</p>
+<h1 id="public-static-void写成static-public-void会怎样？"><a href="#public-static-void写成static-public-void会怎样？" class="headerlink" title="public static void写成static public void会怎样？"></a>public static void写成static public void会怎样？</h1><p>程序正常编译及运行。</p>
+<h1 id="Java支持哪种参数传递类型"><a href="#Java支持哪种参数传递类型" class="headerlink" title="Java支持哪种参数传递类型?"></a>Java支持哪种参数传递类型?</h1><p>Java参数都是进行传值。对于对象而言，传递的值是对象的引用，也就是说原始引用和参数引用的那个拷贝，都是指向同一个对象。</p>
+<h1 id="一个类能拥有多个main方法吗？"><a href="#一个类能拥有多个main方法吗？" class="headerlink" title="一个类能拥有多个main方法吗？"></a>一个类能拥有多个main方法吗？</h1><p>可以，但只能有一个main方法拥有以下签名：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="最常见到的runtime-exception"><a href="#最常见到的runtime-exception" class="headerlink" title="最常见到的runtime exception"></a>最常见到的runtime exception</h1><p>List，Set是<br>Map不是</p>
+<h1 id="启动一个线程是用run-还是start"><a href="#启动一个线程是用run-还是start" class="headerlink" title="启动一个线程是用run()还是start()?"></a>启动一个线程是用run()还是start()?</h1><p>启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</p>
+<h1 id="构造器Constructor是否可被override"><a href="#构造器Constructor是否可被override" class="headerlink" title="构造器Constructor是否可被override?"></a>构造器Constructor是否可被override?</h1><p>构造器Constructor不能被继承，因此不能重写Overriding，但可以被重载Overloading。</p>
+<h1 id="当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法"><a href="#当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法" class="headerlink" title="当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法?"></a>当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法?</h1><p>不能，一个对象的一个synchronized方法只能由一个线程访问。</p>
+<h1 id="try-里有一个return语句，那么紧跟在这个try后的finally-里的code会不会被执行，什么时候被执行，在return前还是后"><a href="#try-里有一个return语句，那么紧跟在这个try后的finally-里的code会不会被执行，什么时候被执行，在return前还是后" class="headerlink" title="try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?"></a>try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?</h1><p>  会执行，在return前执行</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/mybatis generator的用法/" data-id="cj8tpe4d9001odmlxioalgv5z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/03/面试准备-java基础/" data-id="cj9muktmf006wjclxwwa4pi4e" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/generator/">generator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/">mybatis</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
 
     </footer>
   </div>
@@ -159,16 +166,12 @@
 
 
   
-    <article id="post-Windows下eclipse的配置" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-面试准备-java设计模式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/16/Windows下eclipse的配置/" class="article-date">
-  <time datetime="2017-10-16T05:03:11.835Z" itemprop="datePublished">2017-10-16</time>
+    <a href="/2016/11/03/面试准备-java设计模式/" class="article-date">
+  <time datetime="2016-11-03T03:08:09.000Z" itemprop="datePublished">2016-11-03</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/dev-tools/">dev tools</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -177,7 +180,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/Windows下eclipse的配置/">windows 下eclipse的配置</a>
+      <a class="article-title" href="/2016/11/03/面试准备-java设计模式/">面试准备-java设计模式</a>
     </h1>
   
 
@@ -185,21 +188,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="更改文件编码为UTF-8（java，jsp-其他文件）"><a href="#更改文件编码为UTF-8（java，jsp-其他文件）" class="headerlink" title="更改文件编码为UTF-8（java，jsp,其他文件）"></a>更改文件编码为UTF-8（java，jsp,其他文件）</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">window --&gt; preference --&gt; general--&gt;workspace (other file)</div><div class="line">window --&gt; preference --&gt; general--&gt;content types(java)</div><div class="line">window --&gt; preference --&gt; web --&gt; (html,css,jsp)</div></pre></td></tr></table></figure>
-<h1 id="配置自己安装的JDK-Maven-Tomcat"><a href="#配置自己安装的JDK-Maven-Tomcat" class="headerlink" title="配置自己安装的JDK Maven Tomcat"></a>配置自己安装的JDK Maven Tomcat</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">installed jre(jdk)</div><div class="line">maven --&gt; installations </div><div class="line">自定义配置 maven --&gt; user settings</div><div class="line"></div><div class="line"><span class="comment">##tomcat 和eclipse关联</span></div><div class="line">server -- &gt; runtime enviroments</div></pre></td></tr></table></figure>
-<h1 id="更改Eclipse下Tomcat的部署目录"><a href="#更改Eclipse下Tomcat的部署目录" class="headerlink" title="更改Eclipse下Tomcat的部署目录"></a>更改Eclipse下Tomcat的部署目录</h1><p>关联好tomcat后，打开servers视图，新建一个服务器，不要点击next直接点finish。</p>
-<p>如果点next会提示你直接发布项目，一旦发布项目，这个服务器的部署目录便无法更改。</p>
-<p>项目的默认目录会在  ….\workspace.metadata.plugins\org.eclipse.wst.server.core\</p>
-<p>选中服务器，右键open,这样便可以配置tomcat部署目录，一般选择第二个.</p>
-<p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/20160316-eclipse-tomcat.png" alt="eclipse-tomcat部署路径配置"></p>
+        <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><p>解释：<br>实现：</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/Windows下eclipse的配置/" data-id="cj8tpe4cx000ldmlx608wwpk6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/03/面试准备-java设计模式/" data-id="cj9muktmc006pjclxj01djefa" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tomcat/">tomcat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
 
     </footer>
   </div>
@@ -208,10 +205,10 @@
 
 
   
-    <article id="post-前后台数据交互" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sbt实用操作" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/16/前后台数据交互/" class="article-date">
-  <time datetime="2017-10-16T04:50:55.932Z" itemprop="datePublished">2017-10-16</time>
+    <a href="/2016/11/01/sbt实用操作/" class="article-date">
+  <time datetime="2016-11-01T08:40:59.000Z" itemprop="datePublished">2016-11-01</time>
 </a>
     
   </div>
@@ -222,7 +219,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/前后台数据交互/">前后台数据交互</a>
+      <a class="article-title" href="/2016/11/01/sbt实用操作/">sbt实用操作</a>
     </h1>
   
 
@@ -230,38 +227,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>最近在做前后台的整合，我负责开发后台，完全没有前台，怎么测试呢？</p>
-<h1 id="编码硬耦合"><a href="#编码硬耦合" class="headerlink" title="编码硬耦合"></a>编码硬耦合</h1><p>PHP，JSP,ASP那种脚本里面嵌套着HTML，有时又用到各种额外的标签库<br>各种代码代码属于编码硬耦合，涉及的东西比较杂，前后端分离效果很差，给调试维护<br>都会带来不小的麻烦。</p>
-<h1 id="RESTful和前后端更加彻底的分离"><a href="#RESTful和前后端更加彻底的分离" class="headerlink" title="RESTful和前后端更加彻底的分离"></a>RESTful和前后端更加彻底的分离</h1><p>今年2016年，人家2000年就提出来了。<br><a href="https://zh.wikipedia.org/zh-sg/REST" target="_blank" rel="external">维基百科REST</a></p>
-<p><a href="http://www.ruanyifeng.com/blog/2011/09/restful" target="_blank" rel="external">阮一峰 理解RESTful架构</a></p>
-<p>写SpringMVC控制器的时候，用的是RESTful风格<br>这两天一直痛URL来测试后台功能，试想如果前后台的基本方式只有URL该是多方便的事情。<br>URL传少量的参数还可以，测试添加和更改对象的时候遇到了问题，怎么传递一个对象或者对象列表呢？<br>RESTful 能够在当前这个环境下最大化的分离前后端。依赖少，只需要关注自己</p>
-<p>交互思路：</p>
-<p>前台向后台传递数据：如果只有少数参数，通过get请求附加一些参数就可以了。如果数据量比较大，先将json序列化，后台再反序列化，用post请求传递数据<br>后台向前台传递数据：json对象，由JavaScript来负责解析和填充数据。</p>
-<p>RESTful风格的盛行，我感觉跟ajax有莫大的关系，今天用ajax进行交互真是爽。jQuery封装的ajax更是只需要关注URL，数据部分。</p>
-<p>##前台是如何获取请求的执行状态呢？<br>换句话话说，URL弄好了，数据也准备好了，但是我怎么知道我的请求成功没成功呢？状态码<br>第一次认识到状态码的重要性。<br>ajax里面维护了对状态码的跟踪</p>
-<h1 id="关于URL编码"><a href="#关于URL编码" class="headerlink" title="关于URL编码"></a>关于URL编码</h1><p><a href="http://www.ruanyifeng.com/blog/2010/02/url_encoding.html" target="_blank" rel="external">阮一峰 关于URL编码</a></p>
-<h1 id="URL参数中文乱码"><a href="#URL参数中文乱码" class="headerlink" title="URL参数中文乱码"></a>URL参数中文乱码</h1><p><a href="http://localhost:8080/ACM/pt/query.do?id=1&amp;ptmc=估值" target="_blank" rel="external">http://localhost:8080/ACM/pt/query.do?id=1&amp;ptmc=估值</a><br>后台设置了Request编码为UTF-8仍然不行<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value= <span class="string">"pt/query.do"</span>,method=RequestMethod.GET)</div><div class="line"><span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">List&lt;Pt&gt; <span class="title">getPtbyName</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> UnsupportedEncodingException</span>&#123;</div><div class="line">    request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</div><div class="line">    String ptmc =request.getParameter(<span class="string">"ptmc"</span>).trim();</div><div class="line">    ptmc = <span class="keyword">new</span> String(ptmc.getBytes(<span class="string">"iso-8859-1"</span>),<span class="string">"utf-8"</span>);</div><div class="line">    </div><div class="line">    System.out.println(ptmc);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>不管是什么乱码，我先用一种确定的编码来读，然后再重新转码。</p>
-<p>所谓乱码不过是字符流解析错了，ISO-8859-1 换成GB18030还是乱码，这个字符集应该还是比较特殊的</p>
-<h1 id="ajax和SrpingMVC交互"><a href="#ajax和SrpingMVC交互" class="headerlink" title="ajax和SrpingMVC交互"></a>ajax和SrpingMVC交互</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"pt/add.do"</span>)</div><div class="line"><span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">String <span class="title">addPt</span><span class="params">(@RequestBody Pt record)</span></span>&#123;</div><div class="line"><span class="keyword">int</span> flag = <span class="keyword">this</span>.ptService.addPt(record);</div><div class="line">    <span class="keyword">if</span> (flag==<span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"error"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>@RequestBody 可以将接收的数据（不是json而是序列化的json）和模型进行关联，所以如果字段和model字段不匹配<br>是无法成功的。</p>
-<p>@ResponseBody 直接将返回的对象以json的形式发给前台。</p>
-<p>有的资料里面，要在@RequestMapping 里面加上相应的解析规则 content=”application/json”,实验的结果是加不加都可以</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"./jquery-1.11.3.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line"></div><div class="line">        $.ajax(&#123; </div><div class="line">            type:<span class="string">"POST"</span>, </div><div class="line">            url:<span class="string">"http://localhost:8080/ACM/manage_page/pt/add.do"</span>, </div><div class="line">            dataType:<span class="string">"json"</span>,      </div><div class="line">            contentType:<span class="string">"application/json;charset=UTF-8"</span>,               </div><div class="line">            data:<span class="built_in">JSON</span>.stringify(&#123;<span class="string">"qxyId"</span>:<span class="string">"1"</span>,<span class="string">"ptmc"</span>:<span class="string">"期货资管云688"</span>,<span class="string">"jcpt"</span>:<span class="string">"阿里云"</span>&#125;), </div><div class="line">            success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123; </div><div class="line">                alert(<span class="string">"添加成功"</span>)</div><div class="line">            &#125; ,</div><div class="line">            error:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123; </div><div class="line">                alert(<span class="string">"添加失败"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;); </div><div class="line">    &#125;);  </div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<p>注意： @RequestBody 接收的序列化的json，而不是直接json</p>
-<h1 id="跨域访问错误"><a href="#跨域访问错误" class="headerlink" title="跨域访问错误"></a>跨域访问错误</h1><p>本地上制作了静态页面，没有放到web服务器上面，请求时错的</p>
-<p>本地文件，浏览器URL   file:///C:/Users/siys16877/Desktop/front-end/index.html</p>
-<p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/20160318-http-status-code.png" alt="状态码正常"></p>
-<p>控制台报错</p>
-<p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/20160318-http-not-allowed.png" alt="控制台报错"></p>
+        <h1 id="build-sbt-添加了新的依赖但是eclipse未生效"><a href="#build-sbt-添加了新的依赖但是eclipse未生效" class="headerlink" title="build.sbt 添加了新的依赖但是eclipse未生效"></a>build.sbt 添加了新的依赖但是eclipse未生效</h1><p>进入项目根目录下打开sbt<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  ~ sbt -Dsbt.override.build.repos=<span class="literal">true</span></div><div class="line">update</div><div class="line"><span class="comment"># update 会下载新添加的依赖包，这一步好像不是必须的</span></div><div class="line">sbt&gt; update</div><div class="line"><span class="comment"># 重新执行eclipse</span></div><div class="line">sbt&gt; eclipse with-source=<span class="literal">true</span> execution-environment=JavaSE-1.8</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/前后台数据交互/" data-id="cj8tpe4dj002qdmlxk6zym0df" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/01/sbt实用操作/" data-id="cj9muktlg003jjclx4rwfaizx" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL/">URL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/request/">request</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/response/">response</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sbt/">sbt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scala/">scala</a></li></ul>
 
     </footer>
   </div>
@@ -270,16 +244,12 @@
 
 
   
-    <article id="post-每天练练markdown" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-not-use/面试准备-sparkSql" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/16/每天练练markdown/" class="article-date">
-  <time datetime="2017-10-16T04:50:55.932Z" itemprop="datePublished">2017-10-16</time>
+    <a href="/2016/11/01/not-use/面试准备-sparkSql/" class="article-date">
+  <time datetime="2016-11-01T06:52:37.000Z" itemprop="datePublished">2016-11-01</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/语法/">语法</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -288,7 +258,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/每天练练markdown/">每天练练markdown</a>
+      <a class="article-title" href="/2016/11/01/not-use/面试准备-sparkSql/">面试准备-sparkSql</a>
     </h1>
   
 
@@ -296,22 +266,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习链接"><a href="#学习链接" class="headerlink" title="学习链接"></a>学习链接</h1><p><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">markdown官网</a></p>
-<p><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">中文版markdown教程</a></p>
-<h2 id="已有基础知识"><a href="#已有基础知识" class="headerlink" title="已有基础知识"></a>已有基础知识</h2><p>“#”代表标题层级<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">##</span></div><div class="line"><span class="comment">###</span></div><div class="line"><span class="comment">####</span></div><div class="line">there is a blank between <span class="comment"># and title</span></div></pre></td></tr></table></figure></p>
-<h2 id="添加超链接"><a href="#添加超链接" class="headerlink" title="添加超链接"></a>添加超链接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[]()</div><div class="line">[baidu](http://www.baidu.com)</div><div class="line">there is no blank between []()</div></pre></td></tr></table></figure>
-<h2 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![]()</div><div class="line"> eg: ![this is a image](../iimages/20160316/test.png)</div></pre></td></tr></table></figure>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">选中代码，按tab键缩进，若行首四个空格，Markdown 解析器会把它考虑成代码块</div></pre></td></tr></table></figure>
-<h2 id="高亮显示代码"><a href="#高亮显示代码" class="headerlink" title="高亮显示代码"></a>高亮显示代码</h2><p><a href="http://7xs1xb.com1.z0.glb.clouddn.com/2016-03-24-Markdwon-Highlight.png" target="_blank" rel="external">Markdown高亮显示</a></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">无序列表使用星号、加号或是减号作为列表标记：</div><div class="line">*   Red</div><div class="line">*   Green</div><div class="line">*   Blue</div><div class="line">等同于：</div><div class="line"></div><div class="line">+   Red</div><div class="line">+   Green</div><div class="line">+   Blue</div><div class="line">也等同于：</div><div class="line"></div><div class="line">-   Red</div><div class="line">-   Green</div><div class="line">-   Blue</div><div class="line">有序列表则使用数字接着一个英文句点：</div><div class="line"></div><div class="line">1.  Bird</div><div class="line">2.  McHale</div><div class="line">3.  Parish</div><div class="line">很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果</div></pre></td></tr></table></figure>
+        <h1 id="Spark-RDD、DataFrame和DataSet的区别"><a href="#Spark-RDD、DataFrame和DataSet的区别" class="headerlink" title="Spark RDD、DataFrame和DataSet的区别"></a>Spark RDD、DataFrame和DataSet的区别</h1><p><a href="http://blog.csdn.net/wo334499/article/details/51689549" target="_blank" rel="external">Spark RDD、DataFrame和DataSet的区别</a></p>
+<p>DataFrame  = RDD + SCHEMA + （off-heap意味着JVM堆以外的内存, 这些内存直接受操作系统管理（而不是JVM）。Spark能够以二进制的形式序列化数据(不包括结构)到off-heap中, 当要操作数据时, 就直接操作off-heap内存. 由于Spark理解schema, 所以知道该如何操作）</p>
+<p>DataFrame = DataSet[Row]</p>
+<p>DataFrame 又是DataSet的一种</p>
+<p>创建dataframe ：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> dataframe  = sc.createDataFrame(<span class="type">RowRDD</span>,structType)</div></pre></td></tr></table></figure></p>
+<h1 id="join-操作一定会产生宽依赖吗"><a href="#join-操作一定会产生宽依赖吗" class="headerlink" title="join 操作一定会产生宽依赖吗"></a>join 操作一定会产生宽依赖吗</h1><p>如果RDD的每个分区最多只能被一个Child RDD的一个分区使用，则称之为narrow dependency；若多个Child RDD分区都可以依赖，则称之为wide dependency。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/每天练练markdown/" data-id="cj8tpe4dj002sdmlx7ixnemkj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/01/not-use/面试准备-sparkSql/" data-id="cj9muktol00fwjclxf7yaat7k" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/语法/">语法</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sparkSql/">sparkSql</a></li></ul>
 
     </footer>
   </div>
@@ -320,16 +288,12 @@
 
 
   
-    <article id="post-数据库执行sql脚本" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-面试准备-sparkSql" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/16/数据库执行sql脚本/" class="article-date">
-  <time datetime="2017-10-16T04:50:55.932Z" itemprop="datePublished">2017-10-16</time>
+    <a href="/2016/11/01/面试准备-sparkSql/" class="article-date">
+  <time datetime="2016-11-01T06:52:37.000Z" itemprop="datePublished">2016-11-01</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/数据库/">数据库</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -338,7 +302,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/数据库执行sql脚本/">数据库执行sql脚本</a>
+      <a class="article-title" href="/2016/11/01/面试准备-sparkSql/">面试准备-sparkSql</a>
     </h1>
   
 
@@ -346,16 +310,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="mysql终端执行sql脚本"><a href="#mysql终端执行sql脚本" class="headerlink" title="mysql终端执行sql脚本"></a>mysql终端执行sql脚本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p </div><div class="line">mysql&gt; use <span class="built_in">test</span>;</div><div class="line"><span class="built_in">source</span> d:\test.sql;</div></pre></td></tr></table></figure>
-<h1 id="oracle-终端执行sql脚本"><a href="#oracle-终端执行sql脚本" class="headerlink" title="oracle 终端执行sql脚本"></a>oracle 终端执行sql脚本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sqlplus test_username/test_password@orcl</div><div class="line">@d:\test.sql</div></pre></td></tr></table></figure>
+        <h1 id="Spark-RDD、DataFrame和DataSet的区别"><a href="#Spark-RDD、DataFrame和DataSet的区别" class="headerlink" title="Spark RDD、DataFrame和DataSet的区别"></a>Spark RDD、DataFrame和DataSet的区别</h1><p><a href="http://blog.csdn.net/wo334499/article/details/51689549" target="_blank" rel="external">Spark RDD、DataFrame和DataSet的区别</a></p>
+<p>DataFrame  = RDD + SCHEMA + （off-heap意味着JVM堆以外的内存, 这些内存直接受操作系统管理（而不是JVM）。Spark能够以二进制的形式序列化数据(不包括结构)到off-heap中, 当要操作数据时, 就直接操作off-heap内存. 由于Spark理解schema, 所以知道该如何操作）</p>
+<p>DataFrame = DataSet[Row]</p>
+<p>DataFrame 又是DataSet的一种</p>
+<p>创建dataframe ：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> dataframe  = sc.createDataFrame(<span class="type">RowRDD</span>,structType)</div></pre></td></tr></table></figure></p>
+<h1 id="join-操作一定会产生宽依赖吗"><a href="#join-操作一定会产生宽依赖吗" class="headerlink" title="join 操作一定会产生宽依赖吗"></a>join 操作一定会产生宽依赖吗</h1><p>如果RDD的每个分区最多只能被一个Child RDD的一个分区使用，则称之为narrow dependency；若多个Child RDD分区都可以依赖，则称之为wide dependency。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/数据库执行sql脚本/" data-id="cj8tpe4di002ldmlxaiclswqd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/01/面试准备-sparkSql/" data-id="cj9muktmj0074jclxiwg5eu31" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sparkSql/">sparkSql</a></li></ul>
 
     </footer>
   </div>
@@ -364,10 +332,10 @@
 
 
   
-    <article id="post-我的博客" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-elasticSearch学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/16/我的博客/" class="article-date">
-  <time datetime="2017-10-16T04:50:55.932Z" itemprop="datePublished">2017-10-16</time>
+    <a href="/2016/11/01/elasticSearch学习笔记/" class="article-date">
+  <time datetime="2016-11-01T03:22:41.000Z" itemprop="datePublished">2016-11-01</time>
 </a>
     
   </div>
@@ -378,7 +346,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/我的博客/">司永帅的博客</a>
+      <a class="article-title" href="/2016/11/01/elasticSearch学习笔记/">elasticSearch学习笔记</a>
     </h1>
   
 
@@ -386,112 +354,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>欢迎来到我的博客</p>
-<h1 id="siyongshuai-‘s-blog"><a href="#siyongshuai-‘s-blog" class="headerlink" title="siyongshuai ‘s blog"></a>siyongshuai ‘s blog</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$npm</span> install hexo</div></pre></td></tr></table></figure>
+        <h1 id="elasticSearch-安装与运行"><a href="#elasticSearch-安装与运行" class="headerlink" title="elasticSearch 安装与运行"></a>elasticSearch 安装与运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget  https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.3.tar.gz</div><div class="line"></div><div class="line">tar -xzvf elasticsearch-5.6.3.tar.gz</div><div class="line"><span class="built_in">cd</span> elasticsearch-5.6.3/bin</div><div class="line">./elasticsearch</div></pre></td></tr></table></figure>
+<h1 id="验证安装是否成功"><a href="#验证安装是否成功" class="headerlink" title="验证安装是否成功"></a>验证安装是否成功</h1><p>浏览器或者curl,wget  <a href="http://localhost:9200/" target="_blank" rel="external">http://localhost:9200/</a><br>正常即成功</p>
+<h1 id="kibana安装与运行"><a href="#kibana安装与运行" class="headerlink" title="kibana安装与运行"></a>kibana安装与运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget  https://artifacts.elastic.co/downloads/kibana/kibana-5.6.3-linux-x86_64.tar.gz</div><div class="line"></div><div class="line">tar -xzvf kibana-5.6.3-linux-x86_64</div><div class="line"><span class="built_in">cd</span> kibana-5.6.3-linux-x86_64/bin</div><div class="line">./kibana</div></pre></td></tr></table></figure>
+<p>kibana插件sense 主要解决curl 交互不方便<br>以前的安装方式 ./kibana-plugin install elastic/sense</p>
+<p>官网的安装方法已经过时了，在es 2.x是适用的，但是5.x后其实不再需要sense插件，因为kibana 界面有dev tools</p>
+<h1 id="kibana-使用"><a href="#kibana-使用" class="headerlink" title="kibana 使用"></a>kibana 使用</h1><p>访问端口 5601 <a href="http://localhost:5601/" target="_blank" rel="external">http://localhost:5601/</a><br>在dev tools 进行交互</p>
+<h1 id="elasticSearch-基本操作"><a href="#elasticSearch-基本操作" class="headerlink" title="elasticSearch 基本操作"></a>elasticSearch 基本操作</h1><p>{put|get|post|delete} + json</p>
+<h1 id="elasticSearch-基本查询"><a href="#elasticSearch-基本查询" class="headerlink" title="elasticSearch 基本查询"></a>elasticSearch 基本查询</h1><h2 id="查询全部记录"><a href="#查询全部记录" class="headerlink" title="查询全部记录"></a>查询全部记录</h2><p> 基本格式： GET /index/docment/id</p>
+<p> GET /log/test1/_search</p>
+<h2 id="根据某个字段进行查询-单个-match"><a href="#根据某个字段进行查询-单个-match" class="headerlink" title="根据某个字段进行查询(单个) match"></a>根据某个字段进行查询(单个) match</h2><p>GET /log/test1/_search?q=name:shuai</p>
+<p>Elasticsearch 提供了更加丰富灵活的查询语言,它被称作 Query<br>DSL,通过它你可以完成更加复杂、强大的搜索任务<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">GET /log/test1/_search</div><div class="line">&#123;</div><div class="line">  <span class="attr">"query"</span>: &#123;</div><div class="line">    <span class="attr">"match"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"shuai"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="根据某个字段范围查询（多个）"><a href="#根据某个字段范围查询（多个）" class="headerlink" title="根据某个字段范围查询（多个）"></a>根据某个字段范围查询（多个）</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">GET /log/weblog/_search</div><div class="line">&#123;</div><div class="line">  <span class="attr">"query"</span>: &#123;</div><div class="line">    <span class="attr">"range"</span>: &#123;</div><div class="line">      <span class="attr">"no"</span>: &#123;</div><div class="line">        <span class="attr">"gte"</span>: <span class="number">10</span>,</div><div class="line">        <span class="attr">"lte"</span>: <span class="number">20</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>gt :: 大于</li>
+<li>gte:: 大于等于</li>
+<li>lt :: 小于</li>
+<li>lte:: 小于等于<h1 id="elasticSearch-操作符及关键字"><a href="#elasticSearch-操作符及关键字" class="headerlink" title="elasticSearch 操作符及关键字"></a>elasticSearch 操作符及关键字</h1>可通过dev tools 的自动提示解决</li>
+</ol>
+<h1 id="and-查询"><a href="#and-查询" class="headerlink" title="and 查询"></a>and 查询</h1><h1 id="多字段查询"><a href="#多字段查询" class="headerlink" title="多字段查询"></a>多字段查询</h1><h1 id="elasticSearch性能"><a href="#elasticSearch性能" class="headerlink" title="elasticSearch性能"></a>elasticSearch性能</h1><table>
+<thead>
+<tr>
+<th>weblog表（102537575行）</th>
+<th>时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hive</td>
+<td>47.553 seconds</td>
+</tr>
+<tr>
+<td>es</td>
+<td>瞬间</td>
+</tr>
+</tbody>
+</table>
+<h1 id="es-hive-整合"><a href="#es-hive-整合" class="headerlink" title="es hive 整合"></a>es hive 整合</h1><h2 id="添加jar包"><a href="#添加jar包" class="headerlink" title="添加jar包"></a>添加jar包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hive&gt; add jar /opt/jars/elasticsearch-hadoop-hive-5.6.3.jar;</div><div class="line"><span class="comment"># Added [/opt/jars/elasticsearch-hadoop-hive-5.6.3.jar] to class path</span></div><div class="line"><span class="comment"># Added resources: [/opt/jars/elasticsearch-hadoop-hive-5.6.3.jar]</span></div></pre></td></tr></table></figure>
+<h2 id="创建外部表"><a href="#创建外部表" class="headerlink" title="创建外部表"></a>创建外部表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hive&gt;CREATE EXTERNAL TABLE es_weblog(no int,ip string, time string)</div><div class="line">STORED BY <span class="string">'org.elasticsearch.hadoop.hive.EsStorageHandler'</span></div><div class="line">TBLPROPERTIES(<span class="string">'es.resource'</span> = <span class="string">'log/weblog'</span>,<span class="string">'es.index.auto.create'</span> = <span class="string">'true'</span>,<span class="string">'es.mapping.names'</span> = <span class="string">'no:no,ip:ip,time:time'</span>);</div></pre></td></tr></table></figure>
+<p>es.mapping.names 是建立mapping ,前面为内部表的字段，后面为外部表的字段</p>
+<p>遇到的问题</p>
+<p>es.mapping.names  字段对照错误</p>
+<h2 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hive&gt; INSERT OVERWRITE TABLE es_weblog select no,ip,time from weblog;</div></pre></td></tr></table></figure>
+<p>这个过程是比较慢的</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/我的博客/" data-id="cj8tpe4dh002idmlx867il1hx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/01/elasticSearch学习笔记/" data-id="cj9muktkw001qjclx03jiv2oq" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-关于URL的一些问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/16/关于URL的一些问题/" class="article-date">
-  <time datetime="2017-10-16T04:50:55.932Z" itemprop="datePublished">2017-10-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/http/">http</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/关于URL的一些问题/">URL的一些问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="url-基本的表示方法"><a href="#url-基本的表示方法" class="headerlink" title="url 基本的表示方法"></a>url 基本的表示方法</h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/关于URL的一些问题/" data-id="cj8tpe4df002bdmlxqqzgk3eb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/request/">request</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/response/">response</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/url/">url</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-EasyUI学习笔记第五天" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/16/EasyUI学习笔记第五天/" class="article-date">
-  <time datetime="2017-10-16T04:50:55.928Z" itemprop="datePublished">2017-10-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/EasyUI学习笔记第五天/">EasyUI学习笔记第五天</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h1><ul>
-<li><p>easyUI分页</p>
-</li>
-<li><p>根据从表来模糊查询主表中的记录</p>
-</li>
-</ul>
-<h1 id="解决问题的思路"><a href="#解决问题的思路" class="headerlink" title="解决问题的思路"></a>解决问题的思路</h1><h2 id="easyUI分页"><a href="#easyUI分页" class="headerlink" title="easyUI分页"></a>easyUI分页</h2><p>easyUI 分页时需要的标准数据<br>[total:””,rows:{}]</p>
-<h2 id="根据从表来模糊查询主表中的记录"><a href="#根据从表来模糊查询主表中的记录" class="headerlink" title="根据从表来模糊查询主表中的记录"></a>根据从表来模糊查询主表中的记录</h2><p>mybatis　只能接收一个参数</p>
-<p>前台通过输入字表中的字段来模糊查询主表中的内容</p>
-<p> 平台客户表(ptkhb) 中存储了客户表(khb)的id</p>
-<p>根据客户的名称来模糊查询平台客户表中的内容</p>
-<p>把查询条件封装成一个复杂的json</p>
-<p><code>前台将查询条件封装成一个与实体模型关系匹配的json对象</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> khmc = $(<span class="string">'query_name'</span>)</div><div class="line"><span class="keyword">var</span> kh =&#123;&#125;</div><div class="line">kh.khmc = khmc</div><div class="line"><span class="keyword">var</span> queryCondition  = &#123;&#125;</div><div class="line">queryCondition.kh = kh</div><div class="line"><span class="comment">// 关联查询时模型中已经进行关联</span></div></pre></td></tr></table></figure></p>
-<p><code>Mybatis　ognl表达式体现出了强大的作用</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">if</span>　<span class="attr">test</span>=<span class="string">"kh.getKhmc()!=null"</span>&gt;</span></div><div class="line">and b.khmc like '%' #&#123;kh.khmc,jdbcType=VARCHAR&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="分页的实现"><a href="#分页的实现" class="headerlink" title="分页的实现"></a>分页的实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pagerFilter</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> data.length == <span class="string">'number'</span> &amp;&amp; <span class="keyword">typeof</span> data.splice == <span class="string">'function'</span>)&#123;    <span class="comment">// 判断数据是否是数组</span></div><div class="line">        data = &#123;</div><div class="line">            total: data.length,</div><div class="line">            rows: data</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> dg = $(<span class="keyword">this</span>);</div><div class="line">    <span class="keyword">var</span> opts = dg.datagrid(<span class="string">'options'</span>);</div><div class="line">    <span class="keyword">var</span> pager = dg.datagrid(<span class="string">'getPager'</span>);</div><div class="line">    pager.pagination(&#123;</div><div class="line"><span class="comment">//    	pageSize: 10,//每页显示的记录条数，默认为10 </span></div><div class="line">        pageList: [<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>,<span class="number">20</span>],<span class="comment">//可以设置每页记录条数的列表 </span></div><div class="line"><span class="comment">//        displayMsg: '当前显示 &#123;from&#125; - &#123;to&#125; 条记录   共 &#123;total&#125; 条记录', </span></div><div class="line">        beforePageText: <span class="string">'第'</span>,<span class="comment">//页数文本框前显示的汉字 </span></div><div class="line">        afterPageText: <span class="string">'页    共 &#123;pages&#125; 页'</span>, </div><div class="line">        displayMsg: <span class="string">'当前显示 &#123;from&#125; - &#123;to&#125; 条记录   共 &#123;total&#125; 条记录'</span>, </div><div class="line">        onSelectPage:<span class="function"><span class="keyword">function</span>(<span class="params">pageNum, pageSize</span>)</span>&#123;</div><div class="line">            </div><div class="line">        	opts.pageNumber = pageNum;</div><div class="line">            opts.pageSize = pageSize;</div><div class="line">            pager.pagination(<span class="string">'refresh'</span>,&#123;</div><div class="line">                pageNumber:pageNum,</div><div class="line">                pageSize:pageSize</div><div class="line">            &#125;);</div><div class="line">            dg.datagrid(<span class="string">'loadData'</span>,data);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">if</span> (!data.originalRows)&#123;</div><div class="line">        data.originalRows = (data.rows);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> start = (opts.pageNumber<span class="number">-1</span>)*<span class="built_in">parseInt</span>(opts.pageSize);</div><div class="line">    <span class="keyword">var</span> end = start + <span class="built_in">parseInt</span>(opts.pageSize);</div><div class="line">    data.rows = (data.originalRows.slice(start, end));</div><div class="line">    <span class="keyword">return</span> data;</div><div class="line">&#125;</div><div class="line">$.ajax(&#123;</div><div class="line">		 type:<span class="string">"post"</span>, </div><div class="line">         url:urlPrefix + <span class="string">'/pt/query.do'</span>, </div><div class="line">         dataType:<span class="string">"json"</span>,      </div><div class="line">         contentType:<span class="string">"application/json;charset=UTF-8"</span>,               </div><div class="line">         data:<span class="built_in">JSON</span>.stringify(queryCondition), </div><div class="line">         success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line"></div><div class="line">        	 $(<span class="string">'#dg'</span>).datagrid(&#123;<span class="attr">loadFilter</span>:pagerFilter&#125;).datagrid(<span class="string">'loadData'</span>, data);</div><div class="line">             $(<span class="string">'#dg'</span>).datagrid(options)</div><div class="line">         &#125;</div><div class="line">         error:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">         &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/EasyUI学习笔记第五天/" data-id="cj8tpe4co0005dmlxzwk1vies" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datagrid/">datagrid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/关联查询/">关联查询</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分页/">分页</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
 
     </footer>
   </div>
@@ -500,16 +413,12 @@
 
 
   
-    <article id="post-EasyUI学习笔记第二天" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-待办事项" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/16/EasyUI学习笔记第二天/" class="article-date">
-  <time datetime="2017-10-16T04:50:55.928Z" itemprop="datePublished">2017-10-16</time>
+    <a href="/2016/10/31/待办事项/" class="article-date">
+  <time datetime="2016-10-31T14:58:04.000Z" itemprop="datePublished">2016-10-31</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -518,7 +427,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/EasyUI学习笔记第二天/">EasyUI学习笔记第二天</a>
+      <a class="article-title" href="/2016/10/31/待办事项/">待办事项</a>
     </h1>
   
 
@@ -526,29 +435,99 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="待解决问题"><a href="#待解决问题" class="headerlink" title="待解决问题"></a>待解决问题</h1><ul>
-<li>datagrid缓存式增删改问题<h1 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h1>缓存式编辑是datagrid的一个核心特点</li>
-</ul>
-<p>允许用户有一个更改和撤销的机会，而不是频繁地与数据库交互</p>
-<p>缓存式编辑的行为核心是编辑状态</p>
-<p>正在编辑　editIndex !=undefined</p>
-<p>不在编辑状态　　editIndex == undefined</p>
-<p>增加和（删除，查询，更改）的区别</p>
-<p>新增加时，row会全部复制表单字段的值</p>
-<p>因为查询出来的数据是有id的，更改和删除时也是根据id来操作的，但是增加时有id一般会出错，</p>
-<p>一般的主键都是数据库里自增的，若手动设置id基本会插入失败</p>
-<p>所以增加之前必须获得的数据进行处理，删掉id属性</p>
-<p><code>delete obj[‘id’]</code></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p><a href="http://www.jeasyui.net/demo/340.html" target="_blank" rel="external">Row editing In datagrid 官网demo</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * </span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">var</span> editIndex;</div><div class="line"><span class="keyword">var</span> editLength;</div><div class="line"><span class="keyword">var</span> submitNum = <span class="number">0</span>;</div><div class="line"><span class="comment">//表单操作时，更改和保存表单共用一个保存函数，增加一个formMethod变量来区分</span></div><div class="line"><span class="keyword">var</span> urlPrefix = <span class="string">'http://localhost:8080/ACM/manage_page'</span>;</div><div class="line"></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//模块专属变量</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pagerFilter</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> data.length == <span class="string">'number'</span> &amp;&amp; <span class="keyword">typeof</span> data.splice == <span class="string">'function'</span>)&#123;    <span class="comment">// 判断数据是否是数组</span></div><div class="line">        data = &#123;</div><div class="line">            total: data.length,</div><div class="line">            rows: data</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> dg = $(<span class="keyword">this</span>);</div><div class="line">    <span class="keyword">var</span> opts = dg.datagrid(<span class="string">'options'</span>);</div><div class="line">    <span class="keyword">var</span> pager = dg.datagrid(<span class="string">'getPager'</span>);</div><div class="line">    pager.pagination(&#123;</div><div class="line"><span class="comment">//    	pageSize: 10,//每页显示的记录条数，默认为10 </span></div><div class="line">        pageList: [<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>,<span class="number">20</span>],<span class="comment">//可以设置每页记录条数的列表 </span></div><div class="line"><span class="comment">//        displayMsg: '当前显示 &#123;from&#125; - &#123;to&#125; 条记录   共 &#123;total&#125; 条记录', </span></div><div class="line">        beforePageText: <span class="string">'第'</span>,<span class="comment">//页数文本框前显示的汉字 </span></div><div class="line">        afterPageText: <span class="string">'页    共 &#123;pages&#125; 页'</span>, </div><div class="line">        displayMsg: <span class="string">'当前显示 &#123;from&#125; - &#123;to&#125; 条记录   共 &#123;total&#125; 条记录'</span>, </div><div class="line">        onSelectPage:<span class="function"><span class="keyword">function</span>(<span class="params">pageNum, pageSize</span>)</span>&#123;</div><div class="line">            </div><div class="line">        	opts.pageNumber = pageNum;</div><div class="line">            opts.pageSize = pageSize;</div><div class="line">            pager.pagination(<span class="string">'refresh'</span>,&#123;</div><div class="line">                pageNumber:pageNum,</div><div class="line">                pageSize:pageSize</div><div class="line">            &#125;);</div><div class="line">            dg.datagrid(<span class="string">'loadData'</span>,data);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">if</span> (!data.originalRows)&#123;</div><div class="line">        data.originalRows = (data.rows);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> start = (opts.pageNumber<span class="number">-1</span>)*<span class="built_in">parseInt</span>(opts.pageSize);</div><div class="line">    <span class="keyword">var</span> end = start + <span class="built_in">parseInt</span>(opts.pageSize);</div><div class="line">    data.rows = (data.originalRows.slice(start, end));</div><div class="line">    <span class="keyword">return</span> data;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">submitToDB</span>(<span class="params">moduleDatagrid,moduleName</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">if</span>(editIndex != <span class="literal">undefined</span>)&#123;alert(<span class="string">"请先保存更改的内容"</span>)</div><div class="line">		<span class="keyword">return</span> 	</div><div class="line">		&#125;</div><div class="line">	dg.datagrid(<span class="string">'loaded'</span>);</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="keyword">if</span> (submitNum &gt; <span class="number">0</span>) &#123;</div><div class="line">		<span class="keyword">var</span> submittedNum</div><div class="line">		<span class="keyword">var</span> updateRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'updated'</span>);</div><div class="line">		</div><div class="line">		</div><div class="line">		<span class="keyword">if</span> (updateRows.length &gt; <span class="number">0</span>) &#123;</div><div class="line"><span class="comment">//			submitNum += updateRows.length;</span></div><div class="line">			subSave(dg,moduleName,<span class="string">"update"</span>, updateRows);</div><div class="line">			alert(<span class="string">'成功更新了'</span> + updateRows.length + <span class="string">'行'</span>);</div><div class="line">			submitNum -= updateRows.length;</div><div class="line">			query(moduleDatagrid,moduleName);</div><div class="line">			</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">var</span> deleteRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'deleted'</span>);</div><div class="line">		<span class="keyword">if</span> (deleteRows.length &gt; <span class="number">0</span>) &#123;</div><div class="line"><span class="comment">//			submitNum += deleteRows.length;</span></div><div class="line">			subSave(dg,moduleName,<span class="string">"delete"</span>, deleteRows);</div><div class="line">			alert(<span class="string">'成功删除了'</span> + deleteRows.length + <span class="string">'行'</span>);</div><div class="line">			submitNum -= deleteRows.length;</div><div class="line">			query(moduleDatagrid,moduleName);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">var</span> insertRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'inserted'</span>);</div><div class="line"><span class="comment">//		增加时调用的数据是处理之后的数据，处理代码在各自模块的js文件中，统一用getAddRowsWithRightFormat()来处理数据</span></div><div class="line">		<span class="keyword">if</span> (insertRows.length &gt; <span class="number">0</span>)&#123;</div><div class="line">			<span class="keyword">var</span> rightFormatRows = getAddRowsWithRightFormat(moduleDatagrid)</div><div class="line">			subSave(moduleDatagrid,moduleName,<span class="string">"add"</span>, rightFormatRows);</div><div class="line">			alert(<span class="string">'成功增加了'</span> + insertRows.length + <span class="string">'行'</span>);</div><div class="line">			submitNum -= insertRows.length;</div><div class="line">			query(moduleDatagrid,moduleName);</div><div class="line">		&#125;</div><div class="line">	</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//删除和更改向后台提交</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">subSave</span>(<span class="params">moduleDatagrid,moduleName,method, rows</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">var</span> msg;</div><div class="line">	$.each(rows, <span class="function"><span class="keyword">function</span>(<span class="params">i, o</span>) </span>&#123; <span class="comment">// i：遍历的序号 o：当前遍历到的对象</span></div><div class="line">		o = rows[i]</div><div class="line">		<span class="keyword">var</span> url = urlPrefix + moduleName + method + <span class="string">'.do'</span>;</div><div class="line">		$.ajax(&#123;</div><div class="line">			url : url,</div><div class="line">			type : <span class="string">"POST"</span>,</div><div class="line">			data : <span class="built_in">JSON</span>.stringify(o),</div><div class="line">			success : <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">				<span class="keyword">if</span> (msg) &#123;</div><div class="line">					$.messager.alert(<span class="string">'错误'</span>, <span class="string">'操作失败:'</span> + msg, <span class="string">'error'</span>);</div><div class="line">					dg.datagrid(<span class="string">'loaded'</span>);</div><div class="line">				&#125;</div><div class="line">			&#125;,</div><div class="line">			error:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">				alert(<span class="string">"操作失败"</span>)</div><div class="line">			&#125;,</div><div class="line">			dataType : <span class="string">"json"</span>,</div><div class="line">			contentType : <span class="string">"application/json"</span></div><div class="line">		&#125;);</div><div class="line">		dg.datagrid(<span class="string">'acceptChanges'</span>);</div><div class="line">		dg.datagrid(<span class="string">'loaded'</span>);</div><div class="line">		dg.datagrid(<span class="string">'reload'</span>);</div><div class="line">	&#125;);</div><div class="line">&#125;</div><div class="line">$.fn.serializeObject = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">    <span class="keyword">var</span> a = <span class="keyword">this</span>.serializeArray();</div><div class="line">    $.each(a, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (o[<span class="keyword">this</span>.name] !== <span class="literal">undefined</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (!o[<span class="keyword">this</span>.name].push) &#123;</div><div class="line">                o[<span class="keyword">this</span>.name] = [o[<span class="keyword">this</span>.name]];</div><div class="line">            &#125;</div><div class="line">            o[<span class="keyword">this</span>.name].push(<span class="keyword">this</span>.value || <span class="string">''</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            o[<span class="keyword">this</span>.name] = <span class="keyword">this</span>.value || <span class="string">''</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//缓存操作添加一条记录</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertRow</span>(<span class="params">moduleDatagrid</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> dg= $(moduleDatagrid)</div><div class="line">	<span class="keyword">if</span>(editIndex != <span class="literal">undefined</span> )&#123;</div><div class="line">		dg.datagrid(<span class="string">"endEdit"</span>,editIndex)</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(editIndex == <span class="literal">undefined</span>)&#123;</div><div class="line">		dg.datagrid(<span class="string">"insertRow"</span>,&#123;</div><div class="line">			index : <span class="number">0</span>,</div><div class="line">			row : &#123;&#125;</div><div class="line">		&#125;)</div><div class="line">		dg.datagrid(<span class="string">"beginEdit"</span>,<span class="number">0</span>)</div><div class="line">		editIndex = <span class="number">0</span></div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"><span class="comment">//缓存操作移除行</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeRows</span>(<span class="params">moduleDatagrid</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">var</span> removeRows = dg.datagrid(<span class="string">'getChecked'</span>)</div><div class="line">	<span class="keyword">if</span>(removeRows.length&gt;<span class="number">0</span>)&#123;</div><div class="line">		$.each(removeRows,<span class="function"><span class="keyword">function</span>(<span class="params">index,row</span>)</span>&#123;</div><div class="line">			index = dg.datagrid(<span class="string">'getRowIndex'</span>, row)</div><div class="line">			dg.datagrid(<span class="string">'deleteRow'</span>, index)</div><div class="line">		&#125;)</div><div class="line">		editIndex = <span class="literal">undefined</span>;</div><div class="line"><span class="comment">//		向外部传送移除的行数</span></div><div class="line">		submitNum += removeRows.length</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		editIndex = <span class="literal">undefined</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"><span class="comment">//保存编辑</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveEditing</span>(<span class="params">moduleDatagrid</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">if</span> (editIndex != <span class="literal">undefined</span>) &#123;</div><div class="line">		dg.datagrid(<span class="string">'endEdit'</span>, editIndex);</div><div class="line">		editIndex = <span class="literal">undefined</span>;</div><div class="line">		dg.datagrid(<span class="string">'reload'</span>)</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">var</span> updateRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'updated'</span>)</div><div class="line">	<span class="keyword">var</span> insertRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'inserted'</span>)</div><div class="line">	submitNum += updateRows.length</div><div class="line">	submitNum += insertRows.length</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getChanges</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (editIndex == <span class="literal">undefined</span>) &#123;</div><div class="line">		alert(submitNum + <span class="string">'行被改变了!'</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		alert(<span class="string">"请先保存编辑的行"</span>)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//撤销更改的内容</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reject</span>(<span class="params">moduleDatagrid</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	dg.datagrid(<span class="string">'rejectChanges'</span>);</div><div class="line"><span class="comment">//	撤销之后清空全局信号量</span></div><div class="line">	editIndex = <span class="literal">undefined</span>;</div><div class="line">	editLength = <span class="number">0</span>;</div><div class="line">	submitNum = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">editRow</span>(<span class="params">moduleDatagrid</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">if</span> (editIndex != <span class="literal">undefined</span>)</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	<span class="keyword">var</span> row = dg.datagrid(<span class="string">'getSelected'</span>);</div><div class="line">	<span class="keyword">if</span> (row == <span class="literal">undefined</span>) &#123;</div><div class="line">		$.messager.alert(<span class="string">'提示'</span>, <span class="string">"请先单击选中要编辑的行"</span>, <span class="string">'info'</span>);</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">var</span> index = dg.datagrid(<span class="string">'getRowIndex'</span>, row);</div><div class="line">	dg.datagrid(<span class="string">'beginEdit'</span>, index);</div><div class="line">	<span class="keyword">var</span> editors = dg.datagrid(<span class="string">'getEditors'</span>, index);</div><div class="line">	editIndex = index;</div><div class="line">	editLength = <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="2017-11-01"><a href="#2017-11-01" class="headerlink" title="2017-11-01"></a>2017-11-01</h1><p>elasticsearch 查询hive 数据</p>
+<h1 id="2017-11-06"><a href="#2017-11-06" class="headerlink" title="2017-11-06"></a>2017-11-06</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/31/待办事项/" data-id="cj9muktly0058jclxu407cjba" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面试经验-中电科华云" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/31/面试经验-中电科华云/" class="article-date">
+  <time datetime="2016-10-31T14:09:36.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/31/面试经验-中电科华云/">面试经验-中电科华云</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="面试基本原则"><a href="#面试基本原则" class="headerlink" title="面试基本原则"></a>面试基本原则</h1><h1 id="hr电话面试"><a href="#hr电话面试" class="headerlink" title="hr电话面试"></a>hr电话面试</h1><h2 id="基于什么原因离开上家公司（hundsun）"><a href="#基于什么原因离开上家公司（hundsun）" class="headerlink" title="基于什么原因离开上家公司（hundsun）"></a>基于什么原因离开上家公司（hundsun）</h2><p>最简单的原因：工资低,出差频繁<br>工作本身同质化太多，业务场景到了一定瓶颈</p>
+<h2 id="为什么选择大数据"><a href="#为什么选择大数据" class="headerlink" title="为什么选择大数据"></a>为什么选择大数据</h2><p>看了一些大数据相关的书，阿里的DT时代，大数据时代 [英] 维克托，再结合已经发生的大数据应用场景，以及接下来的物联网时代，智慧城市等，未来数据是最基本的元素。有数据不一定能赢，但没数据一定会输。<br>开发呢，JAVA太多了，大数据本身竞争压力要小一些</p>
+<h2 id="期望薪资是多少"><a href="#期望薪资是多少" class="headerlink" title="期望薪资是多少"></a>期望薪资是多少</h2><p>看公司的具体情况，看下公司的技术氛围怎么样，有没有定期不定期的培训，平常的工作强度，公司的年终奖等等目前定位是16k-25k之间</p>
+<h2 id="用java还是scala"><a href="#用java还是scala" class="headerlink" title="用java还是scala"></a>用java还是scala</h2><p>可以反问 这公司侧重与java还是scala<br>hr答：公司总部在成都，还是侧重于java，上海团队java和scala都涉及<br> 可以问下公司团队的规模，做项目时一般几个人一组，项目周期，公司的项目主要涉及到哪些行业</p>
+<h2 id="scala-用了多久"><a href="#scala-用了多久" class="headerlink" title="scala 用了多久"></a>scala 用了多久</h2><p>scala用了半年多，以前java写mr时太繁琐</p>
+<h2 id="有多久没用过java了"><a href="#有多久没用过java了" class="headerlink" title="有多久没用过java了"></a>有多久没用过java了</h2><p>使用scala后基本上就没怎么用了，以前写毕设的时候用过ssm框架，进公司后就负责几个特定的模块，就用的少了</p>
+<h2 id="scala会到什么程度？"><a href="#scala会到什么程度？" class="headerlink" title="scala会到什么程度？"></a>scala会到什么程度？</h2><p>spark 相关的业务情景啊<br>数据处理：过滤，去重，排序，重组，打标签，存数据库<br>报表：用scala写一些报表，数据解析等等<br>实时处理：实时的topN情景 ，实时消费数据到hbase等 统计过去一段时间的某项指标（窗口函数）</p>
+<h2 id="通过什么方式学习新知识"><a href="#通过什么方式学习新知识" class="headerlink" title="通过什么方式学习新知识"></a>通过什么方式学习新知识</h2><p>blog,官网,github(把焦点引向自己擅长的地方)，视频网站（imooc，open163）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/EasyUI学习笔记第二天/" data-id="cj8tpe4cp0006dmlx6ntf0t76" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/31/面试经验-中电科华云/" data-id="cj9muktms007tjclxu0egwpg6" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datagrid/">datagrid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easyui/">easyui</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/增删改查/">增删改查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓存式编辑/">缓存式编辑</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面试准备-DMP项目" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/31/面试准备-DMP项目/" class="article-date">
+  <time datetime="2016-10-31T06:25:01.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/31/面试准备-DMP项目/">面试准备-DMP项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h1><h1 id="数据标签化"><a href="#数据标签化" class="headerlink" title="数据标签化"></a>数据标签化</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/31/面试准备-DMP项目/" data-id="cj9muktm80064jclxhtgkcrwc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dmp/">dmp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li></ul>
 
     </footer>
   </div>
@@ -560,7 +539,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -573,23 +552,23 @@
       <ul>
         
           <li>
-            <a href="/2017/10/16/Mybatis常用标签/">Mybatis 常用标签</a>
+            <a href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
           </li>
         
           <li>
-            <a href="/2017/10/16/mybatis generator的用法/">mybatis generator 的使用和问题</a>
+            <a href="/2016/11/03/面试准备-java基础/">面试准备-java基础</a>
           </li>
         
           <li>
-            <a href="/2017/10/16/Windows下eclipse的配置/">windows 下eclipse的配置</a>
+            <a href="/2016/11/03/面试准备-java设计模式/">面试准备-java设计模式</a>
           </li>
         
           <li>
-            <a href="/2017/10/16/前后台数据交互/">前后台数据交互</a>
+            <a href="/2016/11/01/sbt实用操作/">sbt实用操作</a>
           </li>
         
           <li>
-            <a href="/2017/10/16/每天练练markdown/">每天练练markdown</a>
+            <a href="/2016/11/01/not-use/面试准备-sparkSql/">面试准备-sparkSql</a>
           </li>
         
       </ul>
@@ -601,7 +580,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li></ul>
     </div>
   </div>
 
@@ -611,7 +590,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hadoop/">hadoop</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/hbase/">hbase</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/spark/">spark</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/">cloud-computing</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud-computing/docker/">docker</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/redis/">redis</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/centos/">centos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
     </div>
   </div>
 
@@ -621,7 +600,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 12.5px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/bigdata/" style="font-size: 10px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/datagrid/" style="font-size: 17.5px;">datagrid</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/easyui/" style="font-size: 15px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 10px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12.5px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 17.5px;">oracle</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/request/" style="font-size: 12.5px;">request</a> <a href="/tags/response/" style="font-size: 12.5px;">response</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/ubuntu/" style="font-size: 12.5px;">ubuntu</a> <a href="/tags/url/" style="font-size: 10px;">url</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a>
+      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 11.25px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 11.25px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 13.75px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 11.25px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 12.5px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 13.75px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 12.5px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 11.25px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 13.75px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 11.25px;">sparkSql</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 11.25px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 11.25px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 11.25px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 11.25px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 11.25px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 11.25px;">难点</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/项目/" style="font-size: 11.25px;">项目</a>
     </div>
   </div>
 
