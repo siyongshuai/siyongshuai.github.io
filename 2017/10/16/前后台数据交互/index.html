@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前后台数据交互 | hello yongshuai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="背景最近在做前后台的整合，我负责开发后台，完全没有前台，怎么测试呢？ 编码硬耦合PHP，JSP,ASP那种脚本里面嵌套着HTML，有时又用到各种额外的标签库各种代码代码属于编码硬耦合，涉及的东西比较杂，前后端分离效果很差，给调试维护都会带来不小的麻烦。 RESTful和前后端更加彻底的分离今年2016年，人家2000年就提出来了。维基百科REST 阮一峰 理解RESTful架构 写SpringMV">
+<meta name="keywords" content="http,request,response,URL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前后台数据交互">
+<meta property="og:url" content="http://yoursite.com/2017/10/16/前后台数据交互/index.html">
+<meta property="og:site_name" content="hello yongshuai">
+<meta property="og:description" content="背景最近在做前后台的整合，我负责开发后台，完全没有前台，怎么测试呢？ 编码硬耦合PHP，JSP,ASP那种脚本里面嵌套着HTML，有时又用到各种额外的标签库各种代码代码属于编码硬耦合，涉及的东西比较杂，前后端分离效果很差，给调试维护都会带来不小的麻烦。 RESTful和前后端更加彻底的分离今年2016年，人家2000年就提出来了。维基百科REST 阮一峰 理解RESTful架构 写SpringMV">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://7xs1xb.com1.z0.glb.clouddn.com/20160318-http-status-code.png">
+<meta property="og:image" content="http://7xs1xb.com1.z0.glb.clouddn.com/20160318-http-not-allowed.png">
+<meta property="og:updated_time" content="2017-10-16T03:32:15.951Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前后台数据交互">
+<meta name="twitter:description" content="背景最近在做前后台的整合，我负责开发后台，完全没有前台，怎么测试呢？ 编码硬耦合PHP，JSP,ASP那种脚本里面嵌套着HTML，有时又用到各种额外的标签库各种代码代码属于编码硬耦合，涉及的东西比较杂，前后端分离效果很差，给调试维护都会带来不小的麻烦。 RESTful和前后端更加彻底的分离今年2016年，人家2000年就提出来了。维基百科REST 阮一峰 理解RESTful架构 写SpringMV">
+<meta name="twitter:image" content="http://7xs1xb.com1.z0.glb.clouddn.com/20160318-http-status-code.png">
+  
+    <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hello yongshuai</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">司永帅个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-前后台数据交互" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/16/前后台数据交互/" class="article-date">
+  <time datetime="2017-10-16T04:50:55.932Z" itemprop="datePublished">2017-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前后台数据交互
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>最近在做前后台的整合，我负责开发后台，完全没有前台，怎么测试呢？</p>
+<h1 id="编码硬耦合"><a href="#编码硬耦合" class="headerlink" title="编码硬耦合"></a>编码硬耦合</h1><p>PHP，JSP,ASP那种脚本里面嵌套着HTML，有时又用到各种额外的标签库<br>各种代码代码属于编码硬耦合，涉及的东西比较杂，前后端分离效果很差，给调试维护<br>都会带来不小的麻烦。</p>
+<h1 id="RESTful和前后端更加彻底的分离"><a href="#RESTful和前后端更加彻底的分离" class="headerlink" title="RESTful和前后端更加彻底的分离"></a>RESTful和前后端更加彻底的分离</h1><p>今年2016年，人家2000年就提出来了。<br><a href="https://zh.wikipedia.org/zh-sg/REST" target="_blank" rel="external">维基百科REST</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2011/09/restful" target="_blank" rel="external">阮一峰 理解RESTful架构</a></p>
+<p>写SpringMVC控制器的时候，用的是RESTful风格<br>这两天一直痛URL来测试后台功能，试想如果前后台的基本方式只有URL该是多方便的事情。<br>URL传少量的参数还可以，测试添加和更改对象的时候遇到了问题，怎么传递一个对象或者对象列表呢？<br>RESTful 能够在当前这个环境下最大化的分离前后端。依赖少，只需要关注自己</p>
+<p>交互思路：</p>
+<p>前台向后台传递数据：如果只有少数参数，通过get请求附加一些参数就可以了。如果数据量比较大，先将json序列化，后台再反序列化，用post请求传递数据<br>后台向前台传递数据：json对象，由JavaScript来负责解析和填充数据。</p>
+<p>RESTful风格的盛行，我感觉跟ajax有莫大的关系，今天用ajax进行交互真是爽。jQuery封装的ajax更是只需要关注URL，数据部分。</p>
+<p>##前台是如何获取请求的执行状态呢？<br>换句话话说，URL弄好了，数据也准备好了，但是我怎么知道我的请求成功没成功呢？状态码<br>第一次认识到状态码的重要性。<br>ajax里面维护了对状态码的跟踪</p>
+<h1 id="关于URL编码"><a href="#关于URL编码" class="headerlink" title="关于URL编码"></a>关于URL编码</h1><p><a href="http://www.ruanyifeng.com/blog/2010/02/url_encoding.html" target="_blank" rel="external">阮一峰 关于URL编码</a></p>
+<h1 id="URL参数中文乱码"><a href="#URL参数中文乱码" class="headerlink" title="URL参数中文乱码"></a>URL参数中文乱码</h1><p><a href="http://localhost:8080/ACM/pt/query.do?id=1&amp;ptmc=估值" target="_blank" rel="external">http://localhost:8080/ACM/pt/query.do?id=1&amp;ptmc=估值</a><br>后台设置了Request编码为UTF-8仍然不行<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value= <span class="string">"pt/query.do"</span>,method=RequestMethod.GET)</div><div class="line"><span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">List&lt;Pt&gt; <span class="title">getPtbyName</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> UnsupportedEncodingException</span>&#123;</div><div class="line">    request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</div><div class="line">    String ptmc =request.getParameter(<span class="string">"ptmc"</span>).trim();</div><div class="line">    ptmc = <span class="keyword">new</span> String(ptmc.getBytes(<span class="string">"iso-8859-1"</span>),<span class="string">"utf-8"</span>);</div><div class="line">    </div><div class="line">    System.out.println(ptmc);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>不管是什么乱码，我先用一种确定的编码来读，然后再重新转码。</p>
+<p>所谓乱码不过是字符流解析错了，ISO-8859-1 换成GB18030还是乱码，这个字符集应该还是比较特殊的</p>
+<h1 id="ajax和SrpingMVC交互"><a href="#ajax和SrpingMVC交互" class="headerlink" title="ajax和SrpingMVC交互"></a>ajax和SrpingMVC交互</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"pt/add.do"</span>)</div><div class="line"><span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">String <span class="title">addPt</span><span class="params">(@RequestBody Pt record)</span></span>&#123;</div><div class="line"><span class="keyword">int</span> flag = <span class="keyword">this</span>.ptService.addPt(record);</div><div class="line">    <span class="keyword">if</span> (flag==<span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"error"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>@RequestBody 可以将接收的数据（不是json而是序列化的json）和模型进行关联，所以如果字段和model字段不匹配<br>是无法成功的。</p>
+<p>@ResponseBody 直接将返回的对象以json的形式发给前台。</p>
+<p>有的资料里面，要在@RequestMapping 里面加上相应的解析规则 content=”application/json”,实验的结果是加不加都可以</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"./jquery-1.11.3.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line"></div><div class="line">        $.ajax(&#123; </div><div class="line">            type:<span class="string">"POST"</span>, </div><div class="line">            url:<span class="string">"http://localhost:8080/ACM/manage_page/pt/add.do"</span>, </div><div class="line">            dataType:<span class="string">"json"</span>,      </div><div class="line">            contentType:<span class="string">"application/json;charset=UTF-8"</span>,               </div><div class="line">            data:<span class="built_in">JSON</span>.stringify(&#123;<span class="string">"qxyId"</span>:<span class="string">"1"</span>,<span class="string">"ptmc"</span>:<span class="string">"期货资管云688"</span>,<span class="string">"jcpt"</span>:<span class="string">"阿里云"</span>&#125;), </div><div class="line">            success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123; </div><div class="line">                alert(<span class="string">"添加成功"</span>)</div><div class="line">            &#125; ,</div><div class="line">            error:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123; </div><div class="line">                alert(<span class="string">"添加失败"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;); </div><div class="line">    &#125;);  </div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>注意： @RequestBody 接收的序列化的json，而不是直接json</p>
+<h1 id="跨域访问错误"><a href="#跨域访问错误" class="headerlink" title="跨域访问错误"></a>跨域访问错误</h1><p>本地上制作了静态页面，没有放到web服务器上面，请求时错的</p>
+<p>本地文件，浏览器URL   file:///C:/Users/siys16877/Desktop/front-end/index.html</p>
+<p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/20160318-http-status-code.png" alt="状态码正常"></p>
+<p>控制台报错</p>
+<p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/20160318-http-not-allowed.png" alt="控制台报错"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/16/前后台数据交互/" data-id="cj8tpe4dj002qdmlxk6zym0df" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL/">URL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/request/">request</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/response/">response</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/16/Windows下eclipse的配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          windows 下eclipse的配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/16/每天练练markdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每天练练markdown</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/16/Mybatis常用标签/">Mybatis 常用标签</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/mybatis generator的用法/">mybatis generator 的使用和问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/Windows下eclipse的配置/">windows 下eclipse的配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/前后台数据交互/">前后台数据交互</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/每天练练markdown/">每天练练markdown</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 12.5px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/bigdata/" style="font-size: 10px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/datagrid/" style="font-size: 17.5px;">datagrid</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/easyui/" style="font-size: 15px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 10px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12.5px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 17.5px;">oracle</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/request/" style="font-size: 12.5px;">request</a> <a href="/tags/response/" style="font-size: 12.5px;">response</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/ubuntu/" style="font-size: 12.5px;">ubuntu</a> <a href="/tags/url/" style="font-size: 10px;">url</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Si Yongshuai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

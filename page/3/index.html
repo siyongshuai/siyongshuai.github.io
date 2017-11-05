@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hello yongshuai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="hello yongshuai">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="hello yongshuai">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello yongshuai">
+  
+    <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hello yongshuai</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">司永帅个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-linux解析json" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/16/linux解析json/" class="article-date">
+  <time datetime="2017-10-16T04:50:55.928Z" itemprop="datePublished">2017-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/16/linux解析json/">linux 解析json</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://blog.chinaunix.net/uid-24774106-id-3830242.html" target="_blank" rel="external">jq : Linux下json的命令行工具</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/16/linux解析json/" data-id="cj8tpe4d8001kdmlx81gw1rtd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-debian软件源配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/15/debian软件源配置/" class="article-date">
+  <time datetime="2017-10-15T20:07:16.000Z" itemprop="datePublished">2017-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/15/debian软件源配置/">debian软件源配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="debian软件源配置"><a href="#debian软件源配置" class="headerlink" title="debian软件源配置"></a>debian软件源配置</h1><p>刚安装好的Debian默认还没有sudo功能。</p>
+<p>1、安装sudo</p>
+<pre><code># apt-get install sudo
+</code></pre><p>2、修改 /etc/sudoers 文件属性为可写</p>
+<pre><code># chmod +w /etc/sudoers
+</code></pre><p>3、编辑 /etc/sudoers ,添加如下行</p>
+<pre><code># vim /etc/sudoers
+root ALL=(ALL) ALL
+shuai ALL=(ALL) ALL 
+</code></pre><p>4、修改/etc/sudoers 文件属性为只读</p>
+<pre><code># chmod -w /etc/sudoers
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/15/debian软件源配置/" data-id="cj8twcppx000h5rlxxu45rzok" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/source/">source</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-flume学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/15/flume学习笔记/" class="article-date">
+  <time datetime="2017-10-15T19:54:40.000Z" itemprop="datePublished">2017-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bigdata/">bigdata</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/15/flume学习笔记/">flume学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>自动监控日志变化</p>
+<h1 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h1><p><strong>Source</strong> : 完成对日志数据的收集，分成transtion 和 event 打入到channel之中。<br><strong>Channel</strong> : 主要提供一个队列的功能，对source提供中的数据进行简单的缓存。<br><strong>Sink</strong> : 取出Channel中的数据，进行相应的存储文件系统，数据库，或者提交到远程服务器<br><img src="http://flume.apache.org/_images/DevGuide_image00.png" alt="架构图"></p>
+<h1 id="学习核心：配置个性化-组件的类型"><a href="#学习核心：配置个性化-组件的类型" class="headerlink" title="学习核心：配置个性化-组件的类型"></a>学习核心：配置个性化-组件的类型</h1><p><a href="http://www.cnblogs.com/tq03/p/5151954.html" target="_blank" rel="external">Flume（2）组件概述与列表</a></p>
+<p><a href="http://www.cnblogs.com/itdyb/p/6266789.html" target="_blank" rel="external">Flume 入门–几种不同的Sources</a> </p>
+<h1 id="错误-找不到或无法加载主类-org-apache-flume-tools-GetJavaProperty"><a href="#错误-找不到或无法加载主类-org-apache-flume-tools-GetJavaProperty" class="headerlink" title="错误:找不到或无法加载主类 org.apache.flume.tools.GetJavaProperty"></a>错误:找不到或无法加载主类 org.apache.flume.tools.GetJavaProperty</h1><p>原因：hbase的配置</p>
+<p><a href="http://blog.csdn.net/senvil/article/details/48894435" target="_blank" rel="external">org/apache/flume/tools/GetJavaProperty</a></p>
+<h1 id="配置文件示例1-spooldir"><a href="#配置文件示例1-spooldir" class="headerlink" title="配置文件示例1-spooldir"></a>配置文件示例1-spooldir</h1><pre><code># Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# &quot;License&quot;); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called &apos;agent&apos;
+agent1.sources = avro-source1
+agent1.channels = ch1
+agent1.sinks = logger-sink1
+# sources
+agent1.sources.avro-source1.type = spooldir
+agent1.sources.avro-source1.channels = ch1
+agent1.sources.avro-source1.spoolDir = /home/shuai/logs/
+agent1.sources.avro-source1.fileHeader = true
+agent1.sources.avro-source1.bind = 0.0.0.0
+agent1.sources.avro-source1.port = 4141
+# sink
+agent1.sinks.logger-sink1.type = logger
+agent1.sinks.logger-sink1.channel = ch1
+# channel
+agent1.channels.ch1.type = memory
+agent1.channels.ch1.capacity = 1000
+agent1.channels.ch1.transactionCapacity = 100
+</code></pre><h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>参考教程启动flume</p>
+<p><a href="http://blog.csdn.net/sunnyyoona/article/details/52585478" target="_blank" rel="external">Flume安装，部署与应用案例</a></p>
+<p>./flume-ng agent –conf ../conf –conf-file ../conf/flume-spool.conf –name agent -Dflume.root.logger=INFO,console</p>
+<p>没有提示报错，但是没什么功能</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th>列表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–conf 或 -c</td>
+<td>指定配置文件夹，包含flume-env.sh和log4j的配置文件</td>
+<td>–conf ../conf</td>
+</tr>
+<tr>
+<td>–conf-file 或 -f</td>
+<td>配置文件地址</td>
+<td>–conf-file ../conf/flume.conf</td>
+</tr>
+<tr>
+<td>–name 或 -n</td>
+<td>agent名称</td>
+<td>–name a1</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>zookeeper连接字符串</td>
+<td>-z zkhost:2181,zkhost1:2181</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>zookeeper中的存储路径前缀</td>
+<td>-p /flume</td>
+</tr>
+</tbody>
+</table>
+<p>分析日志 </p>
+<pre><code>SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/data/hadoop/apache-flume-1.8.0-bin/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/data/hadoop/hadoop-2.7.4/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/data/hadoop/hbase-1.2.6/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+2017-10-15 21:44:02,380 (lifecycleSupervisor-1-0) [INFO - org.apache.flume.node.PollingPropertiesFileConfigurationProvider.start(PollingPropertiesFileConfigurationProvider.java:62)] Configuration provider starting
+2017-10-15 21:44:02,382 (conf-file-poller-0) [INFO - org.apache.flume.node.PollingPropertiesFileConfigurationProvider$FileWatcherRunnable.run(PollingPropertiesFileConfigurationProvider.java:134)] Reloading configuration file:../conf/flume-spool.conf
+2017-10-15 21:44:02,385 (conf-file-poller-0) [INFO - org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty(FlumeConfiguration.java:1016)] Processing:logger-sink1
+2017-10-15 21:44:02,386 (conf-file-poller-0) [INFO - org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty(FlumeConfiguration.java:930)] Added sinks: logger-sink1 Agent: agent1
+2017-10-15 21:44:02,386 (conf-file-poller-0) [INFO - org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty(FlumeConfiguration.java:1016)] Processing:logger-sink1
+2017-10-15 21:44:02,392 (conf-file-poller-0) [INFO - org.apache.flume.conf.FlumeConfiguration.validateConfiguration(FlumeConfiguration.java:140)] Post-validation flume configuration contains configuration for agents: [agent1]
+2017-10-15 21:44:02,392 (conf-file-poller-0) [WARN - org.apache.flume.node.AbstractConfigurationProvider.getConfiguration(AbstractConfigurationProvider.java:135)] No configuration found for this host:agent
+2017-10-15 21:44:02,396 (conf-file-poller-0) [INFO - org.apache.flume.node.Application.startAllComponents(Application.java:137)] Starting new configuration:{ sourceRunners:{} sinkRunners:{} channels:{} }
+</code></pre><p>agent的名字是agent1,改成agent1成功</p>
+<pre><code>./flume-ng agent --conf ../conf --conf-file ../conf/flume-spool.conf --name agent1 -Dflume.root.logger=INFO,console
+</code></pre><h1 id="配置文件示例2-spooldir"><a href="#配置文件示例2-spooldir" class="headerlink" title="配置文件示例2-spooldir"></a>配置文件示例2-spooldir</h1><pre><code># Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# &quot;License&quot;); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called &apos;agent&apos;
+
+agent.sources = seqGenSrc
+agent.channels = memoryChannel
+agent.sinks = loggerSink
+
+# For each one of the sources, the type is defined
+agent.sources.seqGenSrc.type = spooldir
+agent.sources.seqGenSrc.spoolDir = /data/nginx/logs
+# The channel can be defined as follows.
+agent.sources.seqGenSrc.channels = memoryChannel
+
+# Each sink&apos;s type must be defined
+agent.sinks.loggerSink.type = logger
+
+#Specify the channel the sink should use
+agent.sinks.loggerSink.channel = memoryChannel
+
+# Each channel&apos;s type is defined.
+agent.channels.memoryChannel.type = memory
+
+# Other config values specific to each type of channel(sink or source)
+# can be defined as well
+# In this case, it specifies the capacity of the memory channel
+agent.channels.memoryChannel.capacity = 1000
+agent.channels.memoryChannel.transactionCapacity = 100
+</code></pre><p>采用flume提供的默认模板，需要将source 的类型改成spooldir并添加监控的文件夹，此时的名称必须为agent才行<br>➜  bin ./flume-ng agent –conf ../conf –conf-file ../conf/flume-conf.properties –name agent -Dflume.root.logger=INFO,console</p>
+<h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><ol>
+<li><a href="http://www.cnblogs.com/tq03/p/5151954.html" target="_blank" rel="external">Flume（2）组件概述与列表</a></li>
+<li><a href="http://www.cnblogs.com/itdyb/p/6266789.html" target="_blank" rel="external">Flume 入门–几种不同的Sources</a> </li>
+<li><a href="http://blog.csdn.net/sunnyyoona/article/details/52585478" target="_blank" rel="external">Flume安装，部署与应用案例</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/15/flume学习笔记/" data-id="cj8tvwi0a000a5rlxy4abomlr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flume/">flume</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-The-listener-supports-no-services" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/The-listener-supports-no-services/" class="article-date">
+  <time datetime="2016-08-22T06:18:26.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/oracle/">oracle</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/The-listener-supports-no-services/">The-listener-supports-no-services</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题描述-实例没有注册到监听里面"><a href="#问题描述-实例没有注册到监听里面" class="headerlink" title="问题描述 实例没有注册到监听里面"></a>问题描述 实例没有注册到监听里面</h1><p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-23_the-listener-supoorts-no-service.png" alt="The listener supports no services"></p>
+<h1 id="什么是注册"><a href="#什么是注册" class="headerlink" title="什么是注册"></a>什么是注册</h1><p>注册就是将数据库作为一个服务注册到监听程序。<br>客户端不需要知道数据库名和实例名，只需要知道该数据库对外提供的服务名就可以申请连接到数据库。</p>
+<p>这个服务名可能与实例名一样，也有可能不一样。</p>
+<p>在数据库服务器启动过程中，数据库服务器会向监听程序注册相应的服务（无论何时启动一个数据库，默认地都有两条信息注册到监听器中：数据库服务器对应的实例和服务）</p>
+<h1 id="监听程序所处位置及作用"><a href="#监听程序所处位置及作用" class="headerlink" title="监听程序所处位置及作用"></a>监听程序所处位置及作用</h1><p>在数据库服务器和客户端之间有一监听程序（Listener），在监听程序中，会记录相应数据库对应的服务名（一个数据库可能对应有多个服务名），当客户端需要连接数据库时，只需要提供服务名，就可以建立客户端和服务器之间的连接.<br><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-22_oracle-listener-architecture.png" alt="Listener监听"></p>
+<h1 id="没有监听程序会怎样"><a href="#没有监听程序会怎样" class="headerlink" title="没有监听程序会怎样"></a>没有监听程序会怎样</h1><h2 id="能不能连接数据库？"><a href="#能不能连接数据库？" class="headerlink" title="能不能连接数据库？"></a>能不能连接数据库？</h2><p>如果在ORACLE服务器是在本机安装的，可以通过sqlplus username/passwd 连接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[oracle@oracle11g ~]$ sqlplus system/123456</div><div class="line"></div><div class="line">SQL*Plus: Release 11.2.0.4.0 Production on Tue Aug 23 08:44:01 2016</div><div class="line"></div><div class="line">Copyright (c) 1982, 2013, Oracle.  All rights reserved.</div><div class="line"></div><div class="line"></div><div class="line">Connected to:</div><div class="line">Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production</div><div class="line">With the Partitioning, OLAP, Data Mining and Real Application Testing options</div><div class="line"></div><div class="line">SQL&gt;</div></pre></td></tr></table></figure></p>
+<p>无法通过监听连接服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sqlplus username/passwd@listener</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[oracle@oracle11g ~]$ sqlplus system/123456@orcl</div><div class="line"></div><div class="line">SQL*Plus: Release 11.2.0.4.0 Production on Tue Aug 23 08:44:56 2016</div><div class="line"></div><div class="line">Copyright (c) 1982, 2013, Oracle.  All rights reserved.</div><div class="line"></div><div class="line">ERROR:</div><div class="line">ORA-12541: TNS:no listener</div><div class="line"></div><div class="line"></div><div class="line">Enter user-name:</div></pre></td></tr></table></figure>
+<h1 id="监听服务名和实例名"><a href="#监听服务名和实例名" class="headerlink" title="监听服务名和实例名"></a>监听服务名和实例名</h1><p>listener.ora<br>配置的是监听服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># listener.ora Network Configuration File: /u01/app/oracle/product/11.2.0/dbhome_1/network/admin/listener.ora</span></div><div class="line"><span class="comment"># Generated by Oracle configuration tools.</span></div><div class="line"></div><div class="line">LISTENER =</div><div class="line">  (DESCRIPTION_LIST =</div><div class="line">    (DESCRIPTION =</div><div class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.56.2)(PORT = 1521))</div><div class="line">      (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line">ADR_BASE_LISTENER = /u01/app/oracle</div></pre></td></tr></table></figure></p>
+<p>tnsnames.ora<br>里面配置的是监听服务名与实例名的对应关系<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">find /u01 -name tnsnames.ora</div><div class="line">/u01/app/oracle/product/11.2.0/dbhome_1/network/admin/samples/tnsnames.ora</div><div class="line">/u01/app/oracle/product/11.2.0/dbhome_1/network/admin/tnsnames.ora</div><div class="line"><span class="comment"># tnsnames.ora Network Configuration File: /u01/app/oracle/product/11.2.0/dbhome_1/network/admin/tnsnames.ora</span></div><div class="line"><span class="comment"># Generated by Oracle configuration tools.</span></div><div class="line"></div><div class="line">ORCL =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS_LIST =</div><div class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.56.2)(PORT = 1521))</div><div class="line">    )</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SERVICE_NAME = oracle11g))</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line"><span class="comment">#ORCL是服务名，oracle11g是实例名</span></div></pre></td></tr></table></figure></p>
+<h1 id="主动监听和被动监听"><a href="#主动监听和被动监听" class="headerlink" title="主动监听和被动监听"></a>主动监听和被动监听</h1><p>可以使用命令lsnrctl status来查看某服务是静态注册还是动态注册。<br>实例状态为UNKNOWN值时表明此服务是静态注册的设置。<br>这时监听器用来表明它不知道关于该实例的任何信息，只有当客户发出连接请求时，它才检查该实例是否存在。<br>动态监听的状态是READY。</p>
+<h1 id="解决办法1"><a href="#解决办法1" class="headerlink" title="解决办法1"></a>解决办法1</h1><p>在listener.ora上面添加一行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SID_LIST_LISTENER =</div><div class="line">(SID_LIST =</div><div class="line">  (SID_DESC =</div><div class="line">  (GLOBAL_DBNAME = oracle11g)</div><div class="line">  (SID_NAME = oracle11g)</div><div class="line">  )</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<h1 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h1><p>先启动监听程序，后启动实例</p>
+<h1 id="解决方法3"><a href="#解决方法3" class="headerlink" title="解决方法3"></a>解决方法3</h1><p>启动实例后，手动注册<br><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-23_oracle-%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%86%8C.png" alt="手动注册"></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://blog.csdn.net/haibusuanyun/article/details/11136477" target="_blank" rel="external">ORACLE监听之动态监听与静态监听特点</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/The-listener-supports-no-services/" data-id="cj8tpe4d40015dmlxlhs5bph8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/listener/">listener</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vim删除匹配行" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/vim删除匹配行/" class="article-date">
+  <time datetime="2016-08-22T06:13:10.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vim/">vim</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/vim删除匹配行/">vim删除匹配行</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="删除包含特定字符的行"><a href="#删除包含特定字符的行" class="headerlink" title="删除包含特定字符的行"></a>删除包含特定字符的行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:g/pattern/d</div></pre></td></tr></table></figure>
+<h1 id="删除不包含指定字符的行"><a href="#删除不包含指定字符的行" class="headerlink" title="删除不包含指定字符的行"></a>删除不包含指定字符的行</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">:v/pattern/d</div><div class="line">:g!/pattern/d</div></pre></td></tr></table></figure>
+<h1 id="删除指定行"><a href="#删除指定行" class="headerlink" title="删除指定行"></a>删除指定行</h1><p>:x,.d #从ｘ行删除到当前行；<br>:.,xd #从当前行删除到x行；<br>:x,.+3d #从x行删除到当前行后第三行；<br>:x,.-1d #从x行删除到当前行前一行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/vim删除匹配行/" data-id="cj8tpe4dg002ddmlx0xyobnh2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/匹配行/">匹配行</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ubuntu16-04安装flash" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/ubuntu16-04安装flash/" class="article-date">
+  <time datetime="2016-08-22T06:02:29.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/ubuntu16-04安装flash/">ubuntu16.04安装flash</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="启用第三方软件源"><a href="#启用第三方软件源" class="headerlink" title="启用第三方软件源"></a>启用第三方软件源</h1><p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-22%E5%90%AF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90.png" alt="开启第三方软件源"></p>
+<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install adobe-flashplugin</div><div class="line">sudo apt-get install pepperflashplugin-nonfree</div></pre></td></tr></table></figure>
+<h1 id="配置chromium"><a href="#配置chromium" class="headerlink" title="配置chromium"></a>配置chromium</h1><p>sudo update-pepperflashplugin-nonfree –install<br>If this doesn’t work you may need to manually configure it. With Chromium fully closed/exited, run the following command in a Terminal to launch the appropriate file in a text editor:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/chromium-browser/default</div><div class="line"><span class="comment">#Add the following line at the end on a new line:</span></div><div class="line">. /usr/lib/pepflashplugin-installer/pepflashplayer.sh</div><div class="line"><span class="comment"># Save — it’s easy to forget to do that — and then close. Re-open this page in Chromium an</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/ubuntu16-04安装flash/" data-id="cj8tpe4dd0024dmlx3di38yjp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flash/">flash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ubuntu禁用错误报告" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/ubuntu禁用错误报告/" class="article-date">
+  <time datetime="2016-08-22T05:57:20.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/ubuntu禁用错误报告/">ubuntu禁用错误报告</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="16-04"><a href="#16-04" class="headerlink" title="16.04"></a>16.04</h1><p>sudo gedit /etc/default/apport</p>
+<p>或者</p>
+<p>sudo systemctl stop apport.service</p>
+<h1 id="14-04"><a href="#14-04" class="headerlink" title="14.04"></a>14.04</h1><p>sudo gedit /etc/default/apport</p>
+<p>或者</p>
+<p>sudo service apport stop</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/ubuntu禁用错误报告/" data-id="cj8tpe4de0029dmlx6caspa1b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-sqlplus格式化输出" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/sqlplus格式化输出/" class="article-date">
+  <time datetime="2016-08-22T04:34:08.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/oracle/">oracle</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/sqlplus格式化输出/">sqlplus格式化输出</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设置列宽"><a href="#设置列宽" class="headerlink" title="设置列宽"></a>设置列宽</h1><p>在sqlplus执行sql时，经常碰到显示结果，跨行输出，致使可读性很差，看起来特别乱。可通过set linesize及column命令进行调整。<br>set linesize 设置sqlplus输出的最大行宽<br>column 这个命令很好用，可使用此命修改显示字段的长度或名称，如：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">column c1 format a20           <span class="comment">--将列c1（字符型）显示最大宽度调整为20个字符</span></div><div class="line">column c1 format 9999999  <span class="comment">--将列c1（num型）显示最大宽度调整为7个字符</span></div><div class="line">column c1 heading c2       <span class="comment">--将c1的列名输出为c2</span></div></pre></td></tr></table></figure></p>
+<p>实际操作：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">--列宽前要加a或A</span></div><div class="line">SQL&gt; col parameter format a30</div><div class="line">SQL&gt; col value format a30</div><div class="line">SQL&gt; set linesize 100</div><div class="line">SQL&gt;  select * from nls_database_parameters ;</div></pre></td></tr></table></figure></p>
+<h1 id="永久生效"><a href="#永久生效" class="headerlink" title="永久生效"></a>永久生效</h1><p>可以在$ORACLE_HOME/sqlplus/admin/glogin.sql 里把常用的都设置好，这样就不用每次都设定了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/sqlplus格式化输出/" data-id="cj8tpe4db001tdmlx8qi7vlid" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sqlplus/">sqlplus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/格式化输出/">格式化输出</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-oracle查询结果中文乱码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/oracle查询结果中文乱码/" class="article-date">
+  <time datetime="2016-08-22T04:22:00.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/oracle/">oracle</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/oracle查询结果中文乱码/">oracle查询结果中文乱码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="查询服务器端字符参数"><a href="#查询服务器端字符参数" class="headerlink" title="查询服务器端字符参数"></a>查询服务器端字符参数</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> nls_database_parameters ;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">SQL&gt;  select * from nls_database_parameters ;</div><div class="line"></div><div class="line">PARAMETER                      VALUE                                                                </div><div class="line">------------------------------ ------------------------------                                       </div><div class="line">NLS_LANGUAGE                   AMERICAN                                                             </div><div class="line">NLS_TERRITORY                  AMERICA                                                              </div><div class="line">NLS_CURRENCY                   $                                                                    </div><div class="line">NLS_ISO_CURRENCY               AMERICA                                                              </div><div class="line">NLS_NUMERIC_CHARACTERS         .,                                                                   </div><div class="line">NLS_CHARACTERSET               ZHS16GBK                                                             </div><div class="line">NLS_CALENDAR                   GREGORIAN                                                            </div><div class="line">NLS_DATE_FORMAT                DD-MON-RR                                                            </div><div class="line">NLS_DATE_LANGUAGE              AMERICAN                                                             </div><div class="line">NLS_SORT                       BINARY                                                               </div><div class="line">NLS_TIME_FORMAT                HH.MI.SSXFF AM                                                       </div><div class="line"></div><div class="line">PARAMETER                      VALUE                                                                </div><div class="line">------------------------------ ------------------------------                                       </div><div class="line">NLS_TIMESTAMP_FORMAT           DD-MON-RR HH.MI.SSXFF AM                                             </div><div class="line">NLS_TIME_TZ_FORMAT             HH.MI.SSXFF AM TZR                                                   </div><div class="line">NLS_TIMESTAMP_TZ_FORMAT        DD-MON-RR HH.MI.SSXFF AM TZR                                         </div><div class="line">NLS_DUAL_CURRENCY              $                                                                    </div><div class="line">NLS_COMP                       BINARY                                                               </div><div class="line">NLS_LENGTH_SEMANTICS           BYTE                                                                 </div><div class="line">NLS_NCHAR_CONV_EXCP            FALSE                                                                </div><div class="line">NLS_NCHAR_CHARACTERSET         AL16UTF16                                                            </div><div class="line">NLS_RDBMS_VERSION              11.2.0.4.0                                                           </div><div class="line"></div><div class="line">20 rows selected.</div><div class="line"></div><div class="line">SQL&gt; spool off</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> userenv(<span class="string">'language'</span>) <span class="keyword">from</span> dual;</div><div class="line">USERENV('LANGUAGE')</div><div class="line"><span class="comment">--------------------------------------------------------------</span></div><div class="line">AMERICAN_AMERICA.ZHS16GBK</div></pre></td></tr></table></figure>
+<h1 id="查看客户端参数"><a href="#查看客户端参数" class="headerlink" title="查看客户端参数"></a>查看客户端参数</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> nls_instance_parameters</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">PARAMETER		       VALUE</div><div class="line">------------------------------ ------------------------------</div><div class="line">NLS_LANGUAGE		       AMERICAN</div><div class="line">NLS_TERRITORY		       AMERICA</div><div class="line">NLS_SORT</div><div class="line">NLS_DATE_LANGUAGE</div><div class="line">NLS_DATE_FORMAT</div><div class="line">NLS_CURRENCY</div><div class="line">NLS_NUMERIC_CHARACTERS</div><div class="line">NLS_ISO_CURRENCY</div><div class="line">NLS_CALENDAR</div><div class="line">NLS_TIME_FORMAT</div><div class="line">NLS_TIMESTAMP_FORMAT</div><div class="line"></div><div class="line">PARAMETER		       VALUE</div><div class="line">------------------------------ ------------------------------</div><div class="line">NLS_TIME_TZ_FORMAT</div><div class="line">NLS_TIMESTAMP_TZ_FORMAT</div><div class="line">NLS_DUAL_CURRENCY</div><div class="line">NLS_COMP		       BINARY</div><div class="line">NLS_LENGTH_SEMANTICS	       BYTE</div><div class="line">NLS_NCHAR_CONV_EXCP	       FALSE</div><div class="line"></div><div class="line">17 rows selected.</div></pre></td></tr></table></figure>
+<h1 id="NLS-LANG"><a href="#NLS-LANG" class="headerlink" title="NLS_LANG"></a>NLS_LANG</h1><p>影响oracle数据库字符集最重要的参数是NLS_LANG参数。</p>
+<p>　　它的格式如下: 　　NLS_LANG = language_territory.charset</p>
+<p>　　它有三个组成部分(语言、地域和字符集)，每个成分控制了NLS子集的特性。<br>其中:</p>
+<p>　　Language 指定服务器消息的语言，territory 指定服务器的日期和数字格式，charset 指定字符集。如:AMERICAN _ AMERICA. ZHS16GBK</p>
+<p>　　<code>从NLS_LANG的组成我们可以看出，真正影响数据库字符集的其实是第三部分。</code></p>
+<p>　　所以两个数据库之间的字符集只要第三部分一样就可以相互导入导出数据，前面影响的只是提示信息是中文还是英文。</p>
+<h1 id="设置oracle客户端编码"><a href="#设置oracle客户端编码" class="headerlink" title="设置oracle客户端编码"></a>设置oracle客户端编码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> NLS_LANG=AMERICAN_AMERICA.UTF8</div></pre></td></tr></table></figure>
+<h1 id="字符集的包含关系"><a href="#字符集的包含关系" class="headerlink" title="字符集的包含关系"></a>字符集的包含关系</h1><p>AMERICAN_AMERICA.UTF8 &gt; AMERICAN_AMERICA.ZHS16GBK &gt; ..</p>
+<h1 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h1><p>客户端与服务端字符集不匹配</p>
+<ul>
+<li>oracel server端的字符集;</li>
+<li>是oracle client端的字符集;</li>
+<li>dmp文件的字符集。<br>查看dmp文件的编码<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> nls_charset_name(to_number(<span class="string">'0354'</span>,<span class="string">'xxxx'</span>)) <span class="keyword">from</span> dual;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>客户端字符集 &gt;= 服务端字符集</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://soft.chinabyte.com/database/444/12618444.shtml" target="_blank" rel="external">Oracle服务器和客户端字符集的查看和修改</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/oracle查询结果中文乱码/" data-id="cj8tpe4db001wdmlxzsydyi8z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/乱码/">乱码</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-oracle表结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/oracle表结构/" class="article-date">
+  <time datetime="2016-08-22T04:12:57.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/oracle/">oracle</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/oracle表结构/">oracle表结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="获取用户表结构"><a href="#获取用户表结构" class="headerlink" title="获取用户表结构"></a>获取用户表结构</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> dbms_metadata.get_ddl(u.object_type,u.object_name) <span class="keyword">from</span> user_objects u <span class="keyword">where</span> u.object_type <span class="keyword">in</span>(<span class="string">'TABLE'</span>,<span class="string">'SEQUENCE'</span>,<span class="string">'TRIGGER'</span>);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/oracle表结构/" data-id="cj8tpe4da001pdmlxyf7du2zi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/表结构/">表结构</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/16/Mybatis常用标签/">Mybatis 常用标签</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/mybatis generator的用法/">mybatis generator 的使用和问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/Windows下eclipse的配置/">windows 下eclipse的配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/前后台数据交互/">前后台数据交互</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/每天练练markdown/">每天练练markdown</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 12.5px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/bigdata/" style="font-size: 10px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/datagrid/" style="font-size: 17.5px;">datagrid</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/easyui/" style="font-size: 15px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 10px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12.5px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 17.5px;">oracle</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/request/" style="font-size: 12.5px;">request</a> <a href="/tags/response/" style="font-size: 12.5px;">response</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/ubuntu/" style="font-size: 12.5px;">ubuntu</a> <a href="/tags/url/" style="font-size: 10px;">url</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Si Yongshuai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

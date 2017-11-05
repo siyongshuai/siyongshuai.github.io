@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>The-listener-supports-no-services | hello yongshuai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="问题描述 实例没有注册到监听里面 什么是注册注册就是将数据库作为一个服务注册到监听程序。客户端不需要知道数据库名和实例名，只需要知道该数据库对外提供的服务名就可以申请连接到数据库。 这个服务名可能与实例名一样，也有可能不一样。 在数据库服务器启动过程中，数据库服务器会向监听程序注册相应的服务（无论何时启动一个数据库，默认地都有两条信息注册到监听器中：数据库服务器对应的实例和服务） 监听程序所处位置">
+<meta name="keywords" content="oracle,listener">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The-listener-supports-no-services">
+<meta property="og:url" content="http://yoursite.com/2016/08/22/The-listener-supports-no-services/index.html">
+<meta property="og:site_name" content="hello yongshuai">
+<meta property="og:description" content="问题描述 实例没有注册到监听里面 什么是注册注册就是将数据库作为一个服务注册到监听程序。客户端不需要知道数据库名和实例名，只需要知道该数据库对外提供的服务名就可以申请连接到数据库。 这个服务名可能与实例名一样，也有可能不一样。 在数据库服务器启动过程中，数据库服务器会向监听程序注册相应的服务（无论何时启动一个数据库，默认地都有两条信息注册到监听器中：数据库服务器对应的实例和服务） 监听程序所处位置">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-23_the-listener-supoorts-no-service.png">
+<meta property="og:image" content="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-22_oracle-listener-architecture.png">
+<meta property="og:image" content="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-23_oracle-%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%86%8C.png">
+<meta property="og:updated_time" content="2017-10-16T03:32:15.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The-listener-supports-no-services">
+<meta name="twitter:description" content="问题描述 实例没有注册到监听里面 什么是注册注册就是将数据库作为一个服务注册到监听程序。客户端不需要知道数据库名和实例名，只需要知道该数据库对外提供的服务名就可以申请连接到数据库。 这个服务名可能与实例名一样，也有可能不一样。 在数据库服务器启动过程中，数据库服务器会向监听程序注册相应的服务（无论何时启动一个数据库，默认地都有两条信息注册到监听器中：数据库服务器对应的实例和服务） 监听程序所处位置">
+<meta name="twitter:image" content="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-23_the-listener-supoorts-no-service.png">
+  
+    <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hello yongshuai</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">司永帅个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-The-listener-supports-no-services" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/The-listener-supports-no-services/" class="article-date">
+  <time datetime="2016-08-22T06:18:26.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/oracle/">oracle</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      The-listener-supports-no-services
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题描述-实例没有注册到监听里面"><a href="#问题描述-实例没有注册到监听里面" class="headerlink" title="问题描述 实例没有注册到监听里面"></a>问题描述 实例没有注册到监听里面</h1><p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-23_the-listener-supoorts-no-service.png" alt="The listener supports no services"></p>
+<h1 id="什么是注册"><a href="#什么是注册" class="headerlink" title="什么是注册"></a>什么是注册</h1><p>注册就是将数据库作为一个服务注册到监听程序。<br>客户端不需要知道数据库名和实例名，只需要知道该数据库对外提供的服务名就可以申请连接到数据库。</p>
+<p>这个服务名可能与实例名一样，也有可能不一样。</p>
+<p>在数据库服务器启动过程中，数据库服务器会向监听程序注册相应的服务（无论何时启动一个数据库，默认地都有两条信息注册到监听器中：数据库服务器对应的实例和服务）</p>
+<h1 id="监听程序所处位置及作用"><a href="#监听程序所处位置及作用" class="headerlink" title="监听程序所处位置及作用"></a>监听程序所处位置及作用</h1><p>在数据库服务器和客户端之间有一监听程序（Listener），在监听程序中，会记录相应数据库对应的服务名（一个数据库可能对应有多个服务名），当客户端需要连接数据库时，只需要提供服务名，就可以建立客户端和服务器之间的连接.<br><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-22_oracle-listener-architecture.png" alt="Listener监听"></p>
+<h1 id="没有监听程序会怎样"><a href="#没有监听程序会怎样" class="headerlink" title="没有监听程序会怎样"></a>没有监听程序会怎样</h1><h2 id="能不能连接数据库？"><a href="#能不能连接数据库？" class="headerlink" title="能不能连接数据库？"></a>能不能连接数据库？</h2><p>如果在ORACLE服务器是在本机安装的，可以通过sqlplus username/passwd 连接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[oracle@oracle11g ~]$ sqlplus system/123456</div><div class="line"></div><div class="line">SQL*Plus: Release 11.2.0.4.0 Production on Tue Aug 23 08:44:01 2016</div><div class="line"></div><div class="line">Copyright (c) 1982, 2013, Oracle.  All rights reserved.</div><div class="line"></div><div class="line"></div><div class="line">Connected to:</div><div class="line">Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production</div><div class="line">With the Partitioning, OLAP, Data Mining and Real Application Testing options</div><div class="line"></div><div class="line">SQL&gt;</div></pre></td></tr></table></figure></p>
+<p>无法通过监听连接服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sqlplus username/passwd@listener</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[oracle@oracle11g ~]$ sqlplus system/123456@orcl</div><div class="line"></div><div class="line">SQL*Plus: Release 11.2.0.4.0 Production on Tue Aug 23 08:44:56 2016</div><div class="line"></div><div class="line">Copyright (c) 1982, 2013, Oracle.  All rights reserved.</div><div class="line"></div><div class="line">ERROR:</div><div class="line">ORA-12541: TNS:no listener</div><div class="line"></div><div class="line"></div><div class="line">Enter user-name:</div></pre></td></tr></table></figure>
+<h1 id="监听服务名和实例名"><a href="#监听服务名和实例名" class="headerlink" title="监听服务名和实例名"></a>监听服务名和实例名</h1><p>listener.ora<br>配置的是监听服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># listener.ora Network Configuration File: /u01/app/oracle/product/11.2.0/dbhome_1/network/admin/listener.ora</span></div><div class="line"><span class="comment"># Generated by Oracle configuration tools.</span></div><div class="line"></div><div class="line">LISTENER =</div><div class="line">  (DESCRIPTION_LIST =</div><div class="line">    (DESCRIPTION =</div><div class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.56.2)(PORT = 1521))</div><div class="line">      (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line">ADR_BASE_LISTENER = /u01/app/oracle</div></pre></td></tr></table></figure></p>
+<p>tnsnames.ora<br>里面配置的是监听服务名与实例名的对应关系<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">find /u01 -name tnsnames.ora</div><div class="line">/u01/app/oracle/product/11.2.0/dbhome_1/network/admin/samples/tnsnames.ora</div><div class="line">/u01/app/oracle/product/11.2.0/dbhome_1/network/admin/tnsnames.ora</div><div class="line"><span class="comment"># tnsnames.ora Network Configuration File: /u01/app/oracle/product/11.2.0/dbhome_1/network/admin/tnsnames.ora</span></div><div class="line"><span class="comment"># Generated by Oracle configuration tools.</span></div><div class="line"></div><div class="line">ORCL =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS_LIST =</div><div class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.56.2)(PORT = 1521))</div><div class="line">    )</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SERVICE_NAME = oracle11g))</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line"><span class="comment">#ORCL是服务名，oracle11g是实例名</span></div></pre></td></tr></table></figure></p>
+<h1 id="主动监听和被动监听"><a href="#主动监听和被动监听" class="headerlink" title="主动监听和被动监听"></a>主动监听和被动监听</h1><p>可以使用命令lsnrctl status来查看某服务是静态注册还是动态注册。<br>实例状态为UNKNOWN值时表明此服务是静态注册的设置。<br>这时监听器用来表明它不知道关于该实例的任何信息，只有当客户发出连接请求时，它才检查该实例是否存在。<br>动态监听的状态是READY。</p>
+<h1 id="解决办法1"><a href="#解决办法1" class="headerlink" title="解决办法1"></a>解决办法1</h1><p>在listener.ora上面添加一行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SID_LIST_LISTENER =</div><div class="line">(SID_LIST =</div><div class="line">  (SID_DESC =</div><div class="line">  (GLOBAL_DBNAME = oracle11g)</div><div class="line">  (SID_NAME = oracle11g)</div><div class="line">  )</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<h1 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h1><p>先启动监听程序，后启动实例</p>
+<h1 id="解决方法3"><a href="#解决方法3" class="headerlink" title="解决方法3"></a>解决方法3</h1><p>启动实例后，手动注册<br><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-23_oracle-%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%86%8C.png" alt="手动注册"></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://blog.csdn.net/haibusuanyun/article/details/11136477" target="_blank" rel="external">ORACLE监听之动态监听与静态监听特点</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/The-listener-supports-no-services/" data-id="cj8tpe4d40015dmlxlhs5bph8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/listener/">listener</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/15/flume学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          flume学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/22/vim删除匹配行/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vim删除匹配行</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/16/Mybatis常用标签/">Mybatis 常用标签</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/mybatis generator的用法/">mybatis generator 的使用和问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/Windows下eclipse的配置/">windows 下eclipse的配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/前后台数据交互/">前后台数据交互</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/每天练练markdown/">每天练练markdown</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 12.5px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/bigdata/" style="font-size: 10px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/datagrid/" style="font-size: 17.5px;">datagrid</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/easyui/" style="font-size: 15px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 10px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12.5px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 17.5px;">oracle</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/request/" style="font-size: 12.5px;">request</a> <a href="/tags/response/" style="font-size: 12.5px;">response</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/ubuntu/" style="font-size: 12.5px;">ubuntu</a> <a href="/tags/url/" style="font-size: 10px;">url</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Si Yongshuai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

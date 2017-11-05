@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mybatis generator 的使用和问题 | hello yongshuai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mybatis generator 自动生成代码需要准备的jar包12345├── generatorConfig.xml├── mybatis-3.2.7.jar├── mybatis-generator-core-1.3.2.jar├── mysql-connector-java-5.1.30.jar└── src 配置文件如下：12345678910111213141516171819202">
+<meta name="keywords" content="mybatis,SSM,generator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mybatis generator 的使用和问题">
+<meta property="og:url" content="http://yoursite.com/2017/10/16/mybatis generator的用法/index.html">
+<meta property="og:site_name" content="hello yongshuai">
+<meta property="og:description" content="mybatis generator 自动生成代码需要准备的jar包12345├── generatorConfig.xml├── mybatis-3.2.7.jar├── mybatis-generator-core-1.3.2.jar├── mysql-connector-java-5.1.30.jar└── src 配置文件如下：12345678910111213141516171819202">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-16T07:42:32.518Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mybatis generator 的使用和问题">
+<meta name="twitter:description" content="mybatis generator 自动生成代码需要准备的jar包12345├── generatorConfig.xml├── mybatis-3.2.7.jar├── mybatis-generator-core-1.3.2.jar├── mysql-connector-java-5.1.30.jar└── src 配置文件如下：12345678910111213141516171819202">
+  
+    <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hello yongshuai</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">司永帅个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-mybatis generator的用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/16/mybatis generator的用法/" class="article-date">
+  <time datetime="2017-10-16T07:42:32.522Z" itemprop="datePublished">2017-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mybatis generator 的使用和问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mybatis-generator-自动生成代码"><a href="#mybatis-generator-自动生成代码" class="headerlink" title="mybatis generator 自动生成代码"></a>mybatis generator 自动生成代码</h1><p>需要准备的jar包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">├── generatorConfig.xml</div><div class="line">├── mybatis-3.2.7.jar</div><div class="line">├── mybatis-generator-core-1.3.2.jar</div><div class="line">├── mysql-connector-java-5.1.30.jar</div><div class="line">└── src</div></pre></td></tr></table></figure></p>
+<p>配置文件如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;  </div><div class="line"><span class="meta">&lt;!DOCTYPE generatorConfiguration  </span></div><div class="line"><span class="meta">PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  </span></div><div class="line"><span class="meta">"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span>  </div><div class="line"><span class="comment">&lt;!-- 数据库驱动--&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">classPathEntry</span>  <span class="attr">location</span>=<span class="string">"mysql-connector-java-5.1.30.jar"</span>/&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"DB2Tables"</span>  <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">commentGenerator</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressDate"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">            <span class="comment">&lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressAllComments"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">commentGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!--数据库链接URL，用户名、密码 --&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"com.mysql.jdbc.Driver"</span> <span class="attr">connectionURL</span>=<span class="string">"jdbc:mysql://127.0.0.1/db_icp"</span> <span class="attr">userId</span>=<span class="string">"root"</span> <span class="attr">password</span>=<span class="string">"xxxx"</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">javaTypeResolver</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"forceBigDecimals"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 生成模型的包名和位置--&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.hundsun.acm.model"</span> <span class="attr">targetProject</span>=<span class="string">"src"</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 生成映射文件的包名和位置--&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"main.resources.mapping"</span> <span class="attr">targetProject</span>=<span class="string">"src"</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 生成DAO的包名和位置--&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"com.hundsun.acm.dao"</span> <span class="attr">targetProject</span>=<span class="string">"src"</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名--&gt;</span> </div><div class="line">        <span class="comment">&lt;!--想要生成几个表，就写几个table标签--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"zxxxb"</span> <span class="attr">domainObjectName</span>=<span class="string">"Zxxx"</span> <span class="attr">enableCountByExample</span>=<span class="string">"false"</span> <span class="attr">enableUpdateByExample</span>=<span class="string">"false"</span> <span class="attr">enableDeleteByExample</span>=<span class="string">"false"</span> <span class="attr">enableSelectByExample</span>=<span class="string">"false"</span> <span class="attr">selectByExampleQueryId</span>=<span class="string">"false"</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">context</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#＃ -overwrite 是覆盖选项，如果第一次生成没必要加</span></div><div class="line"><span class="variable">$java</span> -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite</div></pre></td></tr></table></figure>
+<p>生成之后的目录结构<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">├── generatorConfig.xml</div><div class="line">├── mybatis-3.2.7.jar</div><div class="line">├── mybatis-generator-core-1.3.2.jar</div><div class="line">├── mysql-connector-java-5.1.30.jar</div><div class="line">└── src</div><div class="line">    ├── com</div><div class="line">    │   └── hundsun</div><div class="line">    │       └── acm</div><div class="line">    │           ├── dao</div><div class="line">    │           │   └── ZxxxMapper.java</div><div class="line">    │           └── model</div><div class="line">    │               ├── Zxxx.java</div><div class="line">    │               └── ZxxxWithBLOBs.java</div><div class="line">    └── main</div><div class="line">        └── resources</div><div class="line">            └── mapping</div><div class="line">                └── ZxxxMapper.xml</div></pre></td></tr></table></figure></p>
+<h1 id="date类型映射错误"><a href="#date类型映射错误" class="headerlink" title="date类型映射错误"></a>date类型映射错误</h1><p>应该映射成　java.sql.Date<br>但是却映射成　java.util.Date</p>
+<h1 id="jdbc-type-和-javaType的映射关系"><a href="#jdbc-type-和-javaType的映射关系" class="headerlink" title="jdbc type 和 javaType的映射关系"></a>jdbc type 和 javaType的映射关系</h1><p><a href="https://db.apache.org/ojb/docu/guides/jdbc-types.html" target="_blank" rel="external">apache官方链接</a></p>
+<p>JDBC是直接和数据库打交道的，因此类型基本与数据库类型一致</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/16/mybatis generator的用法/" data-id="cj8tpe4d9001odmlxioalgv5z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/generator/">generator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/">mybatis</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/16/Mybatis常用标签/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Mybatis 常用标签
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/16/Windows下eclipse的配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">windows 下eclipse的配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/16/Mybatis常用标签/">Mybatis 常用标签</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/mybatis generator的用法/">mybatis generator 的使用和问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/Windows下eclipse的配置/">windows 下eclipse的配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/前后台数据交互/">前后台数据交互</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/每天练练markdown/">每天练练markdown</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">bigdata</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dev-tools/">dev tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/oracle/">oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/估值/">估值</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/语法/">语法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 12.5px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/bigdata/" style="font-size: 10px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/datagrid/" style="font-size: 17.5px;">datagrid</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/easyui/" style="font-size: 15px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 10px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12.5px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 17.5px;">oracle</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/request/" style="font-size: 12.5px;">request</a> <a href="/tags/response/" style="font-size: 12.5px;">response</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/ubuntu/" style="font-size: 12.5px;">ubuntu</a> <a href="/tags/url/" style="font-size: 10px;">url</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Si Yongshuai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
