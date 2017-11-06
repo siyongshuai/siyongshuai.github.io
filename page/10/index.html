@@ -66,239 +66,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-EasyUI学习笔记第二天" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ppt-doc转换成pdf" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/10/21/EasyUI学习笔记第二天/" class="article-date">
-  <time datetime="2015-10-21T09:35:49.000Z" itemprop="datePublished">2015-10-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/21/EasyUI学习笔记第二天/">EasyUI学习笔记第二天</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="待解决问题"><a href="#待解决问题" class="headerlink" title="待解决问题"></a>待解决问题</h1><ul>
-<li>datagrid缓存式增删改问题<h1 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h1>缓存式编辑是datagrid的一个核心特点</li>
-</ul>
-<p>允许用户有一个更改和撤销的机会，而不是频繁地与数据库交互</p>
-<p>缓存式编辑的行为核心是编辑状态</p>
-<p>正在编辑　editIndex !=undefined</p>
-<p>不在编辑状态　　editIndex == undefined</p>
-<p>增加和（删除，查询，更改）的区别</p>
-<p>新增加时，row会全部复制表单字段的值</p>
-<p>因为查询出来的数据是有id的，更改和删除时也是根据id来操作的，但是增加时有id一般会出错，</p>
-<p>一般的主键都是数据库里自增的，若手动设置id基本会插入失败</p>
-<p>所以增加之前必须获得的数据进行处理，删掉id属性</p>
-<p><code>delete obj[‘id’]</code></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p><a href="http://www.jeasyui.net/demo/340.html" target="_blank" rel="external">Row editing In datagrid 官网demo</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * </span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">var</span> editIndex;</div><div class="line"><span class="keyword">var</span> editLength;</div><div class="line"><span class="keyword">var</span> submitNum = <span class="number">0</span>;</div><div class="line"><span class="comment">//表单操作时，更改和保存表单共用一个保存函数，增加一个formMethod变量来区分</span></div><div class="line"><span class="keyword">var</span> urlPrefix = <span class="string">'http://localhost:8080/ACM/manage_page'</span>;</div><div class="line"></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//模块专属变量</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pagerFilter</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> data.length == <span class="string">'number'</span> &amp;&amp; <span class="keyword">typeof</span> data.splice == <span class="string">'function'</span>)&#123;    <span class="comment">// 判断数据是否是数组</span></div><div class="line">        data = &#123;</div><div class="line">            total: data.length,</div><div class="line">            rows: data</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> dg = $(<span class="keyword">this</span>);</div><div class="line">    <span class="keyword">var</span> opts = dg.datagrid(<span class="string">'options'</span>);</div><div class="line">    <span class="keyword">var</span> pager = dg.datagrid(<span class="string">'getPager'</span>);</div><div class="line">    pager.pagination(&#123;</div><div class="line"><span class="comment">//    	pageSize: 10,//每页显示的记录条数，默认为10 </span></div><div class="line">        pageList: [<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>,<span class="number">20</span>],<span class="comment">//可以设置每页记录条数的列表 </span></div><div class="line"><span class="comment">//        displayMsg: '当前显示 &#123;from&#125; - &#123;to&#125; 条记录   共 &#123;total&#125; 条记录', </span></div><div class="line">        beforePageText: <span class="string">'第'</span>,<span class="comment">//页数文本框前显示的汉字 </span></div><div class="line">        afterPageText: <span class="string">'页    共 &#123;pages&#125; 页'</span>, </div><div class="line">        displayMsg: <span class="string">'当前显示 &#123;from&#125; - &#123;to&#125; 条记录   共 &#123;total&#125; 条记录'</span>, </div><div class="line">        onSelectPage:<span class="function"><span class="keyword">function</span>(<span class="params">pageNum, pageSize</span>)</span>&#123;</div><div class="line">            </div><div class="line">        	opts.pageNumber = pageNum;</div><div class="line">            opts.pageSize = pageSize;</div><div class="line">            pager.pagination(<span class="string">'refresh'</span>,&#123;</div><div class="line">                pageNumber:pageNum,</div><div class="line">                pageSize:pageSize</div><div class="line">            &#125;);</div><div class="line">            dg.datagrid(<span class="string">'loadData'</span>,data);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">if</span> (!data.originalRows)&#123;</div><div class="line">        data.originalRows = (data.rows);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> start = (opts.pageNumber<span class="number">-1</span>)*<span class="built_in">parseInt</span>(opts.pageSize);</div><div class="line">    <span class="keyword">var</span> end = start + <span class="built_in">parseInt</span>(opts.pageSize);</div><div class="line">    data.rows = (data.originalRows.slice(start, end));</div><div class="line">    <span class="keyword">return</span> data;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">submitToDB</span>(<span class="params">moduleDatagrid,moduleName</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">if</span>(editIndex != <span class="literal">undefined</span>)&#123;alert(<span class="string">"请先保存更改的内容"</span>)</div><div class="line">		<span class="keyword">return</span> 	</div><div class="line">		&#125;</div><div class="line">	dg.datagrid(<span class="string">'loaded'</span>);</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="keyword">if</span> (submitNum &gt; <span class="number">0</span>) &#123;</div><div class="line">		<span class="keyword">var</span> submittedNum</div><div class="line">		<span class="keyword">var</span> updateRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'updated'</span>);</div><div class="line">		</div><div class="line">		</div><div class="line">		<span class="keyword">if</span> (updateRows.length &gt; <span class="number">0</span>) &#123;</div><div class="line"><span class="comment">//			submitNum += updateRows.length;</span></div><div class="line">			subSave(dg,moduleName,<span class="string">"update"</span>, updateRows);</div><div class="line">			alert(<span class="string">'成功更新了'</span> + updateRows.length + <span class="string">'行'</span>);</div><div class="line">			submitNum -= updateRows.length;</div><div class="line">			query(moduleDatagrid,moduleName);</div><div class="line">			</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">var</span> deleteRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'deleted'</span>);</div><div class="line">		<span class="keyword">if</span> (deleteRows.length &gt; <span class="number">0</span>) &#123;</div><div class="line"><span class="comment">//			submitNum += deleteRows.length;</span></div><div class="line">			subSave(dg,moduleName,<span class="string">"delete"</span>, deleteRows);</div><div class="line">			alert(<span class="string">'成功删除了'</span> + deleteRows.length + <span class="string">'行'</span>);</div><div class="line">			submitNum -= deleteRows.length;</div><div class="line">			query(moduleDatagrid,moduleName);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">var</span> insertRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'inserted'</span>);</div><div class="line"><span class="comment">//		增加时调用的数据是处理之后的数据，处理代码在各自模块的js文件中，统一用getAddRowsWithRightFormat()来处理数据</span></div><div class="line">		<span class="keyword">if</span> (insertRows.length &gt; <span class="number">0</span>)&#123;</div><div class="line">			<span class="keyword">var</span> rightFormatRows = getAddRowsWithRightFormat(moduleDatagrid)</div><div class="line">			subSave(moduleDatagrid,moduleName,<span class="string">"add"</span>, rightFormatRows);</div><div class="line">			alert(<span class="string">'成功增加了'</span> + insertRows.length + <span class="string">'行'</span>);</div><div class="line">			submitNum -= insertRows.length;</div><div class="line">			query(moduleDatagrid,moduleName);</div><div class="line">		&#125;</div><div class="line">	</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//删除和更改向后台提交</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">subSave</span>(<span class="params">moduleDatagrid,moduleName,method, rows</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">var</span> msg;</div><div class="line">	$.each(rows, <span class="function"><span class="keyword">function</span>(<span class="params">i, o</span>) </span>&#123; <span class="comment">// i：遍历的序号 o：当前遍历到的对象</span></div><div class="line">		o = rows[i]</div><div class="line">		<span class="keyword">var</span> url = urlPrefix + moduleName + method + <span class="string">'.do'</span>;</div><div class="line">		$.ajax(&#123;</div><div class="line">			url : url,</div><div class="line">			type : <span class="string">"POST"</span>,</div><div class="line">			data : <span class="built_in">JSON</span>.stringify(o),</div><div class="line">			success : <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">				<span class="keyword">if</span> (msg) &#123;</div><div class="line">					$.messager.alert(<span class="string">'错误'</span>, <span class="string">'操作失败:'</span> + msg, <span class="string">'error'</span>);</div><div class="line">					dg.datagrid(<span class="string">'loaded'</span>);</div><div class="line">				&#125;</div><div class="line">			&#125;,</div><div class="line">			error:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">				alert(<span class="string">"操作失败"</span>)</div><div class="line">			&#125;,</div><div class="line">			dataType : <span class="string">"json"</span>,</div><div class="line">			contentType : <span class="string">"application/json"</span></div><div class="line">		&#125;);</div><div class="line">		dg.datagrid(<span class="string">'acceptChanges'</span>);</div><div class="line">		dg.datagrid(<span class="string">'loaded'</span>);</div><div class="line">		dg.datagrid(<span class="string">'reload'</span>);</div><div class="line">	&#125;);</div><div class="line">&#125;</div><div class="line">$.fn.serializeObject = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">    <span class="keyword">var</span> a = <span class="keyword">this</span>.serializeArray();</div><div class="line">    $.each(a, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (o[<span class="keyword">this</span>.name] !== <span class="literal">undefined</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (!o[<span class="keyword">this</span>.name].push) &#123;</div><div class="line">                o[<span class="keyword">this</span>.name] = [o[<span class="keyword">this</span>.name]];</div><div class="line">            &#125;</div><div class="line">            o[<span class="keyword">this</span>.name].push(<span class="keyword">this</span>.value || <span class="string">''</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            o[<span class="keyword">this</span>.name] = <span class="keyword">this</span>.value || <span class="string">''</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//缓存操作添加一条记录</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertRow</span>(<span class="params">moduleDatagrid</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> dg= $(moduleDatagrid)</div><div class="line">	<span class="keyword">if</span>(editIndex != <span class="literal">undefined</span> )&#123;</div><div class="line">		dg.datagrid(<span class="string">"endEdit"</span>,editIndex)</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(editIndex == <span class="literal">undefined</span>)&#123;</div><div class="line">		dg.datagrid(<span class="string">"insertRow"</span>,&#123;</div><div class="line">			index : <span class="number">0</span>,</div><div class="line">			row : &#123;&#125;</div><div class="line">		&#125;)</div><div class="line">		dg.datagrid(<span class="string">"beginEdit"</span>,<span class="number">0</span>)</div><div class="line">		editIndex = <span class="number">0</span></div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"><span class="comment">//缓存操作移除行</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeRows</span>(<span class="params">moduleDatagrid</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">var</span> removeRows = dg.datagrid(<span class="string">'getChecked'</span>)</div><div class="line">	<span class="keyword">if</span>(removeRows.length&gt;<span class="number">0</span>)&#123;</div><div class="line">		$.each(removeRows,<span class="function"><span class="keyword">function</span>(<span class="params">index,row</span>)</span>&#123;</div><div class="line">			index = dg.datagrid(<span class="string">'getRowIndex'</span>, row)</div><div class="line">			dg.datagrid(<span class="string">'deleteRow'</span>, index)</div><div class="line">		&#125;)</div><div class="line">		editIndex = <span class="literal">undefined</span>;</div><div class="line"><span class="comment">//		向外部传送移除的行数</span></div><div class="line">		submitNum += removeRows.length</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		editIndex = <span class="literal">undefined</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"><span class="comment">//保存编辑</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveEditing</span>(<span class="params">moduleDatagrid</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">if</span> (editIndex != <span class="literal">undefined</span>) &#123;</div><div class="line">		dg.datagrid(<span class="string">'endEdit'</span>, editIndex);</div><div class="line">		editIndex = <span class="literal">undefined</span>;</div><div class="line">		dg.datagrid(<span class="string">'reload'</span>)</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">var</span> updateRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'updated'</span>)</div><div class="line">	<span class="keyword">var</span> insertRows = dg.datagrid(<span class="string">'getChanges'</span>, <span class="string">'inserted'</span>)</div><div class="line">	submitNum += updateRows.length</div><div class="line">	submitNum += insertRows.length</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getChanges</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (editIndex == <span class="literal">undefined</span>) &#123;</div><div class="line">		alert(submitNum + <span class="string">'行被改变了!'</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		alert(<span class="string">"请先保存编辑的行"</span>)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//撤销更改的内容</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reject</span>(<span class="params">moduleDatagrid</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	dg.datagrid(<span class="string">'rejectChanges'</span>);</div><div class="line"><span class="comment">//	撤销之后清空全局信号量</span></div><div class="line">	editIndex = <span class="literal">undefined</span>;</div><div class="line">	editLength = <span class="number">0</span>;</div><div class="line">	submitNum = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">editRow</span>(<span class="params">moduleDatagrid</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> dg = $(moduleDatagrid)</div><div class="line">	<span class="keyword">if</span> (editIndex != <span class="literal">undefined</span>)</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	<span class="keyword">var</span> row = dg.datagrid(<span class="string">'getSelected'</span>);</div><div class="line">	<span class="keyword">if</span> (row == <span class="literal">undefined</span>) &#123;</div><div class="line">		$.messager.alert(<span class="string">'提示'</span>, <span class="string">"请先单击选中要编辑的行"</span>, <span class="string">'info'</span>);</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">var</span> index = dg.datagrid(<span class="string">'getRowIndex'</span>, row);</div><div class="line">	dg.datagrid(<span class="string">'beginEdit'</span>, index);</div><div class="line">	<span class="keyword">var</span> editors = dg.datagrid(<span class="string">'getEditors'</span>, index);</div><div class="line">	editIndex = index;</div><div class="line">	editLength = <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/21/EasyUI学习笔记第二天/" data-id="cj9muktk8000ajclxo2khqjdv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datagrid/">datagrid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easyui/">easyui</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/增删改查/">增删改查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓存式编辑/">缓存式编辑</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-EasyUI学习笔记第一天" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/20/EasyUI学习笔记第一天/" class="article-date">
-  <time datetime="2015-10-20T09:35:48.000Z" itemprop="datePublished">2015-10-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/20/EasyUI学习笔记第一天/">EasyUI学习笔记第一天</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="学习背景"><a href="#学习背景" class="headerlink" title="学习背景"></a>学习背景</h1><p>前两个星期用springMVC和mybatis写运维配置管理系统的后台,</p>
-<p>增删改查全部使用json作为数据交换的标准</p>
-<p>现在需要用easyUI来实现前后台的对接</p>
-<p>easyui背景知识：</p>
-<p>同事用easyui实现了简单的样式和静态页面，我需要用datagrid来渲染后台返回的数据，</p>
-<p>后台返回的是具有内嵌对象的json数组</p>
-<p>比如：<br><code>[{“ptId”:2,”qxyId”:2,”ptmc”:”期货资管云４”,”ywzfzrId”:3,”ywbgId”:4,”qysj”:”2016-03-16”,”zt”:”已启用”,”jcpt”:”阿里云”,”ptdz”:”杭州”,”ptyt”:null,”pttp”:null,”bz”:”备注２”,”qxy”:{“qxyId”:2,”mc”:”经济云”},”zg”:{“ryId”:null,”xm”:”陈磊”,”gw”:null},”bg”:{“ryId”:null,”xm”:”谭俊”,”gw”:null},”ywList”:[{“ywId”:null,”ywmc”:”恒生估值2.0”,”ptId”:2,”bbh”:null,”bz”:null}]}]</code></p>
-<h1 id="需要解决的问题"><a href="#需要解决的问题" class="headerlink" title="需要解决的问题"></a>需要解决的问题</h1><ul>
-<li>datagrid加载远程数据</li>
-</ul>
-<ul>
-<li>datagrid 显示内嵌的json数据</li>
-</ul>
-<h1 id="解决思路和方法"><a href="#解决思路和方法" class="headerlink" title="解决思路和方法"></a>解决思路和方法</h1><h2 id="datagrid-关于数据的属性"><a href="#datagrid-关于数据的属性" class="headerlink" title="datagrid 关于数据的属性"></a>datagrid 关于数据的属性</h2><table class="table table-striped table-bordered"><br>    <tr><br>        <th align="left">名称</th><br>        <th align="left">类型</th><br>        <th align="left">描述</th><br>        <th align="left">默认值</th><br>    </tr><br>    <tr><br>        <td>method</td><br>        <td>string</td><br>        <td>请求远程数据的方法（method）类型。</td><br>        <td>post</td><br>    </tr><br>    <tr><br>        <td>url</td><br>        <td>string</td><br>        <td>从远程站点请求数据的 URL。</td><br>        <td>null</td><br>    </tr><br>    <tr><br>        <td>queryParams</td><br>        <td>object</td><br>        <td>当请求远程数据时，发送的额外参数。<br>            <br> 代码实例： <pre class="prettyprint linenums"><br>$(‘#dg’).datagrid({<br>    queryParams: {<br>        name: ‘easyui’,<br>        subject: ‘datagrid’<br>    }<br>});<br></pre> </td><br>        <td>{}</td><br>    </tr><br>    <tr><br>        <td>data</td><br>        <td>array,object</td><br>        <td>要加载的数据。该属性自版本 1.3.2 起可用。<br>            <br> 代码实例： <pre class="prettyprint linenums"><br>$(‘#dg’).datagrid({<br>    data: [<br>        {f1:’value11’, f2:’value12’},<br>        {f1:’value21’, f2:’value22’}<br>    ]<br>});<br></pre> </td><br>        <td>null</td><br>    </tr><br>    <tr><br><br>        <td>loader</td><br>        <td>function</td><br>        <td>定义如何从远程服务器加载数据。返回 false 则取消该动作。该函数有下列参数：<br>            <br> param：要传递到远程服务器的参数对象。<br>            <br> success(data)：当检索数据成功时调用的回调函数。<br>            <br> error()：当检索数据失败时调用的回调函数。<br>            <br> </td><br>        <td>json loader</td><br>    </tr><br></table>
-
-<p>后台接收的类型必须是序列化后的json,而且请求方式必须是post，但是datagrid的<code>queryParams</code>的形式是一个对象，json对象，而不是字符串</p>
-<p>不管datagrid选项中有没有<code>queryParams</code>,后面跟<code>{}</code>或者<code>JSON.stringify({})</code></p>
-<p>都是报415错误</p>
-<p><a href="http://7xs1xb.com1.z0.glb.clouddn.com/2016-04-02-JSON.stringify%28%7B%7D%29.png" target="_blank" rel="external">queryParams后面跟JSON.stringify({})</a></p>
-<p><a href="http://7xs1xb.com1.z0.glb.clouddn.com/2016-04-02-%7B%7D.png" target="_blank" rel="external">queryParams后面跟{}或者无queryParams</a></p>
-<p>解决方法：用ajax请求数据，将请求后的数据作为datagrid的本地数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">        type:<span class="string">"post"</span>, </div><div class="line">        url:urlPrefix + <span class="string">'/pt/query.do'</span>, </div><div class="line">        dataType:<span class="string">"json"</span>,      </div><div class="line">        contentType:<span class="string">"application/json;charset=UTF-8"</span>,               </div><div class="line">        data:<span class="built_in">JSON</span>.stringify(queryCondition), </div><div class="line">        success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">        <span class="comment">//  执行datagrid</span></div><div class="line">        <span class="comment">// 其中数据配置为data:data</span></div><div class="line">        *****</div><div class="line">        &#125;</div><div class="line">        error:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
-<p>@RequestBody要求必须有参数<br><a href="http://www.jeasyui.net/plugins/183.html" target="_blank" rel="external">EasyUI中文官网文档</a></p>
-<h2 id="js-是如何访问嵌套的json的？下面是在node中实现的"><a href="#js-是如何访问嵌套的json的？下面是在node中实现的" class="headerlink" title="js 是如何访问嵌套的json的？下面是在node中实现的"></a>js 是如何访问嵌套的json的？下面是在node中实现的</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">shuai@localhost ~ % node  </div><div class="line">    &gt; <span class="keyword">var</span> a = &#123;&#125;</div><div class="line">    <span class="literal">undefined</span></div><div class="line">    &gt; a.name = <span class="string">'siyongshuai'</span></div><div class="line">    <span class="string">'siyongshuai'</span></div><div class="line">    &gt; <span class="keyword">var</span> b = &#123;&#125;</div><div class="line">    <span class="literal">undefined</span></div><div class="line">    &gt; b.a = a</div><div class="line">    &#123; <span class="attr">name</span>: <span class="string">'siyongshuai'</span> &#125;</div><div class="line">    &gt; b.a.name</div><div class="line">    <span class="string">'siyongshuai'</span></div><div class="line">    <span class="comment">// 后台返回的数据是复杂的数组</span></div><div class="line">    <span class="keyword">var</span> d= [&#123;<span class="string">"ptId"</span>:<span class="number">2</span>,<span class="string">"qxyId"</span>:<span class="number">2</span>,<span class="string">"ptmc"</span>:<span class="string">"期货资管云４"</span>,<span class="string">"ywzfzrId"</span>:<span class="number">3</span>,<span class="string">"ywbgId"</span>:<span class="number">4</span>,<span class="string">"qysj"</span>:<span class="string">"2016-03-16"</span>,<span class="string">"zt"</span>:<span class="string">"已启用"</span>,<span class="string">"jcpt"</span>:<span class="string">"阿里云"</span>,<span class="string">"ptdz"</span>:<span class="string">"杭州"</span>,<span class="string">"ptyt"</span>:<span class="literal">null</span>,<span class="string">"pttp"</span>:<span class="literal">null</span>,<span class="string">"bz"</span>:<span class="string">"备注２"</span>,<span class="string">"qxy"</span>:&#123;<span class="string">"qxyId"</span>:<span class="number">2</span>,<span class="string">"mc"</span>:<span class="string">"经济云"</span>&#125;,<span class="string">"zg"</span>:&#123;<span class="string">"ryId"</span>:<span class="literal">null</span>,<span class="string">"xm"</span>:<span class="string">"陈磊"</span>,<span class="string">"gw"</span>:<span class="literal">null</span>&#125;,<span class="string">"bg"</span>:&#123;<span class="string">"ryId"</span>:<span class="literal">null</span>,<span class="string">"xm"</span>:<span class="string">"谭俊"</span>,<span class="string">"gw"</span>:<span class="literal">null</span>&#125;,<span class="string">"ywList"</span>:[&#123;<span class="string">"ywId"</span>:<span class="literal">null</span>,<span class="string">"ywmc"</span>:<span class="string">"恒生估值2.0"</span>,<span class="string">"ptId"</span>:<span class="number">2</span>,<span class="string">"bbh"</span>:<span class="literal">null</span>,<span class="string">"bz"</span>:<span class="literal">null</span>&#125;]&#125;]</div><div class="line">    <span class="literal">undefined</span></div><div class="line"> </div><div class="line"></div><div class="line">    &gt; d.zg.xm</div><div class="line">    <span class="comment">// TypeError: Cannot read property 'xm' of undefined</span></div><div class="line">    <span class="comment">// at repl:1:5</span></div><div class="line">    <span class="comment">// at REPLServer.defaultEval (repl.js:260:27)</span></div><div class="line">    <span class="comment">// at bound (domain.js:287:14)</span></div><div class="line">    <span class="comment">// at REPLServer.runBound [as eval] (domain.js:300:12)</span></div><div class="line">    <span class="comment">// at REPLServer.&lt;anonymous&gt; (repl.js:429:12)</span></div><div class="line">    <span class="comment">// at emitOne (events.js:95:20)</span></div><div class="line">    <span class="comment">// at REPLServer.emit (events.js:182:7)</span></div><div class="line">    <span class="comment">// at REPLServer.Interface._onLine (readline.js:211:10)</span></div><div class="line">    <span class="comment">// at REPLServer.Interface._line (readline.js:550:8)</span></div><div class="line">    <span class="comment">// at REPLServer.Interface._ttyWrite (readline.js:827:14)</span></div><div class="line">    </div><div class="line">    <span class="comment">// 按照数组的方式访问是可以的</span></div><div class="line">    &gt; d[<span class="number">0</span>].zg.xm</div><div class="line">    <span class="string">'陈磊'</span></div><div class="line">    　　　　　　　　　　　　　　</div><div class="line">    </div><div class="line">    &gt; <span class="keyword">var</span> e =&#123;<span class="string">"ptId"</span>:<span class="number">2</span>,<span class="string">"qxyId"</span>:<span class="number">2</span>,<span class="string">"ptmc"</span>:<span class="string">"期货资管云４"</span>,<span class="string">"ywzfzrId"</span>:<span class="number">3</span>,<span class="string">"ywbgId"</span>:<span class="number">4</span>,<span class="string">"qysj"</span>:<span class="string">"2016-03-16"</span>,<span class="string">"zt"</span>:<span class="string">"已启用"</span>,<span class="string">"jcpt"</span>:<span class="string">"阿里云"</span>,<span class="string">"ptdz"</span>:<span class="string">"杭州"</span>,<span class="string">"ptyt"</span>:<span class="literal">null</span>,<span class="string">"pttp"</span>:<span class="literal">null</span>,<span class="string">"bz"</span>:<span class="string">"备注２"</span>,<span class="string">"qxy"</span>:&#123;<span class="string">"qxyId"</span>:<span class="number">2</span>,<span class="string">"mc"</span>:<span class="string">"经济云"</span>&#125;,<span class="string">"zg"</span>:&#123;<span class="string">"ryId"</span>:<span class="literal">null</span>,<span class="string">"xm"</span>:<span class="string">"陈磊"</span>,<span class="string">"gw"</span>:<span class="literal">null</span>&#125;,<span class="string">"bg"</span>:&#123;<span class="string">"ryId"</span>:<span class="literal">null</span>,<span class="string">"xm"</span>:<span class="string">"谭俊"</span>,<span class="string">"gw"</span>:<span class="literal">null</span>&#125;,<span class="string">"ywList"</span>:[&#123;<span class="string">"ywId"</span>:<span class="literal">null</span>,<span class="string">"ywmc"</span>:<span class="string">"恒生估值2.0"</span>,<span class="string">"ptId"</span>:<span class="number">2</span>,<span class="string">"bbh"</span>:<span class="literal">null</span>,<span class="string">"bz"</span>:<span class="literal">null</span>&#125;]&#125;</div><div class="line">    <span class="literal">undefined</span></div><div class="line">    &gt; e.ptmc</div><div class="line">    <span class="string">'期货资管云４'</span></div><div class="line">    &gt; e.zg.xm</div><div class="line">    <span class="string">'陈磊'</span></div><div class="line">    &gt;</div></pre></td></tr></table></figure>
-<p>datagrid 操作json的方式，一级属性可通过下面的配置直接访问<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">        field : <span class="string">'ywbgId'</span>,</div><div class="line">        title : <span class="string">'运维备岗'</span>,</div><div class="line">        width : <span class="number">200</span>,</div><div class="line">        align : <span class="string">'center'</span>,</div><div class="line">        editor : &#123;</div><div class="line">            type : <span class="string">'validatebox'</span>,</div><div class="line">            options : &#123;</div><div class="line">                required : <span class="literal">false</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>若把<code>filed</code>filed换成<code>bg.xm</code><br>仍然什么都不显示<br>正确的解决方案是利用EasyUI,datagrid的formatter属性，根据formatter的参数可以看出它内部仍然是通过数组直接访问的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&#123;      </div><div class="line">    </div><div class="line">       field : <span class="string">'ywbgId'</span>,</div><div class="line">       title : <span class="string">'运维备岗'</span>,</div><div class="line">       width : <span class="number">200</span>,</div><div class="line">       align : <span class="string">'center'</span>,</div><div class="line">       editor : &#123;</div><div class="line">           type : <span class="string">'validatebox'</span>,</div><div class="line">           options : &#123;</div><div class="line">               required : <span class="literal">false</span></div><div class="line">           &#125;</div><div class="line">       &#125;,</div><div class="line"></div><div class="line">      formatter : <span class="function"><span class="keyword">function</span>(<span class="params">value, row, index</span>) </span>&#123;</div><div class="line">       					<span class="keyword">if</span> (row.zg) &#123;</div><div class="line">       						<span class="keyword">return</span> row.zg.xm;</div><div class="line">       					&#125; <span class="keyword">else</span> &#123;</div><div class="line">       						<span class="keyword">return</span> value;</div><div class="line">       					&#125;</div><div class="line"></div><div class="line">       				&#125;</div><div class="line">     &#125;</div></pre></td></tr></table></figure></p>
-<p>贴一下平台管理模块控制层（controller）代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.hundsun.acm.controller;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestBody;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.hundsun.acm.model.Pt;</div><div class="line"><span class="keyword">import</span> com.hundsun.acm.service.impl.PtServiceImpl;</div><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="meta">@RequestMapping</span>(<span class="string">"manage_page"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PtController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> PtServiceImpl ptService;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/get.do"</span>)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">List&lt;Pt&gt; <span class="title">get</span><span class="params">()</span> </span>&#123;</div><div class="line">        Pt pt = <span class="keyword">new</span> Pt();</div><div class="line">        <span class="keyword">return</span> ptService.getPtByCondition(pt);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/query.do"</span>)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">List&lt;Pt&gt; <span class="title">getPtByName</span><span class="params">(@RequestBody Pt condition)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> ptService.getPtByCondition(condition);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.println(<span class="string">"查询××××××××××平台信息×××××××××发生异常"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/update"</span>, method = RequestMethod.POST)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">String <span class="title">updatePt</span><span class="params">(@RequestBody Pt record)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">int</span> flag = ptService.updateById(record);</div><div class="line">            <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"error"</span>;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.println(<span class="string">"更新××××××××××平台信息×××××××××发生异常"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/add.do"</span>)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">String <span class="title">addPt</span><span class="params">(@RequestBody Pt record)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">int</span> flag = <span class="keyword">this</span>.ptService.add(record);</div><div class="line">            <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"error"</span>;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.println(<span class="string">"增加××××××××××平台信息×××××××××发生异常"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/pt/delete.do"</span>, method = RequestMethod.POST)</div><div class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">String <span class="title">deletePtByConditon</span><span class="params">(@RequestBody Pt record)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">int</span> flag = <span class="keyword">this</span>.ptService.deleteById(record);</div><div class="line">            <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">"error"</span>;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.println(<span class="string">"删除××××××××××平台信息×××××××××发生异常"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/20/EasyUI学习笔记第一天/" data-id="cj9muktk60006jclxbk22mazy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datagrid/">datagrid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easyui/">easyui</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内嵌json/">内嵌json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据渲染/">数据渲染</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-The-listener-supports-no-services" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/22/The-listener-supports-no-services/" class="article-date">
-  <time datetime="2015-08-22T06:18:26.000Z" itemprop="datePublished">2015-08-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/database/">database</a>►<a class="article-category-link" href="/categories/database/oracle/">oracle</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/The-listener-supports-no-services/">The-listener-supports-no-services</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="问题描述-实例没有注册到监听里面"><a href="#问题描述-实例没有注册到监听里面" class="headerlink" title="问题描述 实例没有注册到监听里面"></a>问题描述 实例没有注册到监听里面</h1><p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-23_the-listener-supoorts-no-service.png" alt="The listener supports no services"></p>
-<h1 id="什么是注册"><a href="#什么是注册" class="headerlink" title="什么是注册"></a>什么是注册</h1><p>注册就是将数据库作为一个服务注册到监听程序。<br>客户端不需要知道数据库名和实例名，只需要知道该数据库对外提供的服务名就可以申请连接到数据库。</p>
-<p>这个服务名可能与实例名一样，也有可能不一样。</p>
-<p>在数据库服务器启动过程中，数据库服务器会向监听程序注册相应的服务（无论何时启动一个数据库，默认地都有两条信息注册到监听器中：数据库服务器对应的实例和服务）</p>
-<h1 id="监听程序所处位置及作用"><a href="#监听程序所处位置及作用" class="headerlink" title="监听程序所处位置及作用"></a>监听程序所处位置及作用</h1><p>在数据库服务器和客户端之间有一监听程序（Listener），在监听程序中，会记录相应数据库对应的服务名（一个数据库可能对应有多个服务名），当客户端需要连接数据库时，只需要提供服务名，就可以建立客户端和服务器之间的连接.<br><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-22_oracle-listener-architecture.png" alt="Listener监听"></p>
-<h1 id="没有监听程序会怎样"><a href="#没有监听程序会怎样" class="headerlink" title="没有监听程序会怎样"></a>没有监听程序会怎样</h1><h2 id="能不能连接数据库？"><a href="#能不能连接数据库？" class="headerlink" title="能不能连接数据库？"></a>能不能连接数据库？</h2><p>如果在ORACLE服务器是在本机安装的，可以通过sqlplus username/passwd 连接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[oracle@oracle11g ~]$ sqlplus system/123456</div><div class="line"></div><div class="line">SQL*Plus: Release 11.2.0.4.0 Production on Tue Aug 23 08:44:01 2016</div><div class="line"></div><div class="line">Copyright (c) 1982, 2013, Oracle.  All rights reserved.</div><div class="line"></div><div class="line"></div><div class="line">Connected to:</div><div class="line">Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production</div><div class="line">With the Partitioning, OLAP, Data Mining and Real Application Testing options</div><div class="line"></div><div class="line">SQL&gt;</div></pre></td></tr></table></figure></p>
-<p>无法通过监听连接服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sqlplus username/passwd@listener</div></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[oracle@oracle11g ~]$ sqlplus system/123456@orcl</div><div class="line"></div><div class="line">SQL*Plus: Release 11.2.0.4.0 Production on Tue Aug 23 08:44:56 2016</div><div class="line"></div><div class="line">Copyright (c) 1982, 2013, Oracle.  All rights reserved.</div><div class="line"></div><div class="line">ERROR:</div><div class="line">ORA-12541: TNS:no listener</div><div class="line"></div><div class="line"></div><div class="line">Enter user-name:</div></pre></td></tr></table></figure>
-<h1 id="监听服务名和实例名"><a href="#监听服务名和实例名" class="headerlink" title="监听服务名和实例名"></a>监听服务名和实例名</h1><p>listener.ora<br>配置的是监听服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># listener.ora Network Configuration File: /u01/app/oracle/product/11.2.0/dbhome_1/network/admin/listener.ora</span></div><div class="line"><span class="comment"># Generated by Oracle configuration tools.</span></div><div class="line"></div><div class="line">LISTENER =</div><div class="line">  (DESCRIPTION_LIST =</div><div class="line">    (DESCRIPTION =</div><div class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.56.2)(PORT = 1521))</div><div class="line">      (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line">ADR_BASE_LISTENER = /u01/app/oracle</div></pre></td></tr></table></figure></p>
-<p>tnsnames.ora<br>里面配置的是监听服务名与实例名的对应关系<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">find /u01 -name tnsnames.ora</div><div class="line">/u01/app/oracle/product/11.2.0/dbhome_1/network/admin/samples/tnsnames.ora</div><div class="line">/u01/app/oracle/product/11.2.0/dbhome_1/network/admin/tnsnames.ora</div><div class="line"><span class="comment"># tnsnames.ora Network Configuration File: /u01/app/oracle/product/11.2.0/dbhome_1/network/admin/tnsnames.ora</span></div><div class="line"><span class="comment"># Generated by Oracle configuration tools.</span></div><div class="line"></div><div class="line">ORCL =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS_LIST =</div><div class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.56.2)(PORT = 1521))</div><div class="line">    )</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SERVICE_NAME = oracle11g))</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line"><span class="comment">#ORCL是服务名，oracle11g是实例名</span></div></pre></td></tr></table></figure></p>
-<h1 id="主动监听和被动监听"><a href="#主动监听和被动监听" class="headerlink" title="主动监听和被动监听"></a>主动监听和被动监听</h1><p>可以使用命令lsnrctl status来查看某服务是静态注册还是动态注册。<br>实例状态为UNKNOWN值时表明此服务是静态注册的设置。<br>这时监听器用来表明它不知道关于该实例的任何信息，只有当客户发出连接请求时，它才检查该实例是否存在。<br>动态监听的状态是READY。</p>
-<h1 id="解决办法1"><a href="#解决办法1" class="headerlink" title="解决办法1"></a>解决办法1</h1><p>在listener.ora上面添加一行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SID_LIST_LISTENER =</div><div class="line">(SID_LIST =</div><div class="line">  (SID_DESC =</div><div class="line">  (GLOBAL_DBNAME = oracle11g)</div><div class="line">  (SID_NAME = oracle11g)</div><div class="line">  )</div><div class="line">)</div></pre></td></tr></table></figure></p>
-<h1 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h1><p>先启动监听程序，后启动实例</p>
-<h1 id="解决方法3"><a href="#解决方法3" class="headerlink" title="解决方法3"></a>解决方法3</h1><p>启动实例后，手动注册<br><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-23_oracle-%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%86%8C.png" alt="手动注册"></p>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://blog.csdn.net/haibusuanyun/article/details/11136477" target="_blank" rel="external">ORACLE监听之动态监听与静态监听特点</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/22/The-listener-supports-no-services/" data-id="cj9muktkm0015jclxumnslbjy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/listener/">listener</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vim删除匹配行" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/22/vim删除匹配行/" class="article-date">
-  <time datetime="2015-08-22T06:13:10.000Z" itemprop="datePublished">2015-08-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/vim/">vim</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/vim删除匹配行/">vim删除匹配行</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="删除包含特定字符的行"><a href="#删除包含特定字符的行" class="headerlink" title="删除包含特定字符的行"></a>删除包含特定字符的行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:g/pattern/d</div></pre></td></tr></table></figure>
-<h1 id="删除不包含指定字符的行"><a href="#删除不包含指定字符的行" class="headerlink" title="删除不包含指定字符的行"></a>删除不包含指定字符的行</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">:v/pattern/d</div><div class="line">:g!/pattern/d</div></pre></td></tr></table></figure>
-<h1 id="删除指定行"><a href="#删除指定行" class="headerlink" title="删除指定行"></a>删除指定行</h1><p>:x,.d #从ｘ行删除到当前行；<br>:.,xd #从当前行删除到x行；<br>:x,.+3d #从x行删除到当前行后第三行；<br>:x,.-1d #从x行删除到当前行前一行。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/22/vim删除匹配行/" data-id="cj9muktlw0051jclxxaffyryt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/匹配行/">匹配行</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ubuntu16-04安装flash" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/22/ubuntu16-04安装flash/" class="article-date">
-  <time datetime="2015-08-22T06:02:29.000Z" itemprop="datePublished">2015-08-22</time>
+    <a href="/2015/08/21/ppt-doc转换成pdf/" class="article-date">
+  <time datetime="2015-08-21T11:24:17.000Z" itemprop="datePublished">2015-08-21</time>
 </a>
     
   <div class="article-category">
@@ -313,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/ubuntu16-04安装flash/">ubuntu16.04安装flash</a>
+      <a class="article-title" href="/2015/08/21/ppt-doc转换成pdf/">ppt,doc转换成pdf</a>
     </h1>
   
 
@@ -321,17 +92,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="启用第三方软件源"><a href="#启用第三方软件源" class="headerlink" title="启用第三方软件源"></a>启用第三方软件源</h1><p><img src="http://7xs1xb.com1.z0.glb.clouddn.com/2016-08-22%E5%90%AF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90.png" alt="开启第三方软件源"></p>
-<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install adobe-flashplugin</div><div class="line">sudo apt-get install pepperflashplugin-nonfree</div></pre></td></tr></table></figure>
-<h1 id="配置chromium"><a href="#配置chromium" class="headerlink" title="配置chromium"></a>配置chromium</h1><p>sudo update-pepperflashplugin-nonfree –install<br>If this doesn’t work you may need to manually configure it. With Chromium fully closed/exited, run the following command in a Terminal to launch the appropriate file in a text editor:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/chromium-browser/default</div><div class="line"><span class="comment">#Add the following line at the end on a new line:</span></div><div class="line">. /usr/lib/pepflashplugin-installer/pepflashplayer.sh</div><div class="line"><span class="comment"># Save — it’s easy to forget to do that — and then close. Re-open this page in Chromium an</span></div></pre></td></tr></table></figure></p>
+        <h1 id="批量转换成pdf"><a href="#批量转换成pdf" class="headerlink" title="批量转换成pdf"></a>批量转换成pdf</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">libreoffice --convert-to pdf *.ppt</div><div class="line">libreoffice --convert-to pdf *.doc</div></pre></td></tr></table></figure>
+<h1 id="合并pdf"><a href="#合并pdf" class="headerlink" title="合并pdf"></a>合并pdf</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pdfunite Chapter&#123;1..22&#125;.pdf out.pdf</div><div class="line">pdfunite *.pdf out.pdf</div><div class="line">pdfunite <span class="keyword">in</span>-1.pdf <span class="keyword">in</span>-2.pdf out.pdf</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/22/ubuntu16-04安装flash/" data-id="cj9muktlu004qjclx1gngv0dw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/21/ppt-doc转换成pdf/" data-id="cj9otdzjb003ec8lxnp2ufzlw" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flash/">flash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/doc/">doc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pdf/">pdf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ppt/">ppt</a></li></ul>
 
     </footer>
   </div>
@@ -340,10 +110,56 @@
 
 
   
-    <article id="post-ubuntu禁用错误报告" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-git无父分支" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/22/ubuntu禁用错误报告/" class="article-date">
-  <time datetime="2015-08-22T05:57:20.000Z" itemprop="datePublished">2015-08-22</time>
+    <a href="/2015/08/21/git无父分支/" class="article-date">
+  <time datetime="2015-08-21T10:16:55.000Z" itemprop="datePublished">2015-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/21/git无父分支/">git无父分支</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="创建无父分支"><a href="#创建无父分支" class="headerlink" title="创建无父分支"></a>创建无父分支</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout --orphan version2 <span class="comment">#创建分支时会继承父分支已经commit过里面的文件</span></div></pre></td></tr></table></figure>
+<h1 id="删除继承过来的东西"><a href="#删除继承过来的东西" class="headerlink" title="删除继承过来的东西"></a>删除继承过来的东西</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rm -rf . <span class="comment">#删除继承过来的对象</span></div></pre></td></tr></table></figure>
+<h1 id="添加新的对象"><a href="#添加新的对象" class="headerlink" title="添加新的对象"></a>添加新的对象</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add .</div></pre></td></tr></table></figure>
+<h1 id="提交新的对象"><a href="#提交新的对象" class="headerlink" title="提交新的对象"></a>提交新的对象</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m <span class="string">"version2 commit "</span></div></pre></td></tr></table></figure>
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><h2 id="每个分支管理不同的产品"><a href="#每个分支管理不同的产品" class="headerlink" title="每个分支管理不同的产品"></a>每个分支管理不同的产品</h2><h2 id="一个分支管理博客静态代码，一个分支管理源码"><a href="#一个分支管理博客静态代码，一个分支管理源码" class="headerlink" title="一个分支管理博客静态代码，一个分支管理源码"></a>一个分支管理博客静态代码，一个分支管理源码</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/21/git无父分支/" data-id="cj9otdzir001rc8lx7t8zlrh2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/无父分支/">无父分支</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ffmpeg录制视频" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/21/ffmpeg录制视频/" class="article-date">
+  <time datetime="2015-08-21T09:48:10.000Z" itemprop="datePublished">2015-08-21</time>
 </a>
     
   <div class="article-category">
@@ -358,7 +174,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/ubuntu禁用错误报告/">ubuntu禁用错误报告</a>
+      <a class="article-title" href="/2015/08/21/ffmpeg录制视频/">ffmpeg录制视频</a>
     </h1>
   
 
@@ -366,20 +182,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="16-04"><a href="#16-04" class="headerlink" title="16.04"></a>16.04</h1><p>sudo gedit /etc/default/apport</p>
-<p>或者</p>
-<p>sudo systemctl stop apport.service</p>
-<h1 id="14-04"><a href="#14-04" class="headerlink" title="14.04"></a>14.04</h1><p>sudo gedit /etc/default/apport</p>
-<p>或者</p>
-<p>sudo service apport stop</p>
-
+        <h1 id="hello"><a href="#hello" class="headerlink" title="hello"></a>hello</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/22/ubuntu禁用错误报告/" data-id="cj9muktlu004tjclxjaj9na2t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/21/ffmpeg录制视频/" data-id="cj9otdziq001pc8lxfeno0q96" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ffmpeg/">ffmpeg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/录制视频/">录制视频</a></li></ul>
 
     </footer>
   </div>
@@ -388,14 +198,14 @@
 
 
   
-    <article id="post-sqlplus格式化输出" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-mybatis generator的用法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/22/sqlplus格式化输出/" class="article-date">
-  <time datetime="2015-08-22T04:34:08.000Z" itemprop="datePublished">2015-08-22</time>
+    <a href="/2015/08/21/mybatis generator的用法/" class="article-date">
+  <time datetime="2015-08-21T09:36:50.000Z" itemprop="datePublished">2015-08-21</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/database/">database</a>►<a class="article-category-link" href="/categories/database/oracle/">oracle</a>
+    <a class="article-category-link" href="/categories/java/">java</a>
   </div>
 
   </div>
@@ -406,7 +216,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/sqlplus格式化输出/">sqlplus格式化输出</a>
+      <a class="article-title" href="/2015/08/21/mybatis generator的用法/">mybatis generator 的使用和问题</a>
     </h1>
   
 
@@ -414,17 +224,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="设置列宽"><a href="#设置列宽" class="headerlink" title="设置列宽"></a>设置列宽</h1><p>在sqlplus执行sql时，经常碰到显示结果，跨行输出，致使可读性很差，看起来特别乱。可通过set linesize及column命令进行调整。<br>set linesize 设置sqlplus输出的最大行宽<br>column 这个命令很好用，可使用此命修改显示字段的长度或名称，如：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">column c1 format a20           <span class="comment">--将列c1（字符型）显示最大宽度调整为20个字符</span></div><div class="line">column c1 format 9999999  <span class="comment">--将列c1（num型）显示最大宽度调整为7个字符</span></div><div class="line">column c1 heading c2       <span class="comment">--将c1的列名输出为c2</span></div></pre></td></tr></table></figure></p>
-<p>实际操作：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">--列宽前要加a或A</span></div><div class="line">SQL&gt; col parameter format a30</div><div class="line">SQL&gt; col value format a30</div><div class="line">SQL&gt; set linesize 100</div><div class="line">SQL&gt;  select * from nls_database_parameters ;</div></pre></td></tr></table></figure></p>
-<h1 id="永久生效"><a href="#永久生效" class="headerlink" title="永久生效"></a>永久生效</h1><p>可以在$ORACLE_HOME/sqlplus/admin/glogin.sql 里把常用的都设置好，这样就不用每次都设定了</p>
+        <h1 id="mybatis-generator-自动生成代码"><a href="#mybatis-generator-自动生成代码" class="headerlink" title="mybatis generator 自动生成代码"></a>mybatis generator 自动生成代码</h1><p>需要准备的jar包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">├── generatorConfig.xml</div><div class="line">├── mybatis-3.2.7.jar</div><div class="line">├── mybatis-generator-core-1.3.2.jar</div><div class="line">├── mysql-connector-java-5.1.30.jar</div><div class="line">└── src</div></pre></td></tr></table></figure></p>
+<p>配置文件如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;  </div><div class="line"><span class="meta">&lt;!DOCTYPE generatorConfiguration  </span></div><div class="line"><span class="meta">PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  </span></div><div class="line"><span class="meta">"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span>  </div><div class="line"><span class="comment">&lt;!-- 数据库驱动--&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">classPathEntry</span>  <span class="attr">location</span>=<span class="string">"mysql-connector-java-5.1.30.jar"</span>/&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"DB2Tables"</span>  <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">commentGenerator</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressDate"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">            <span class="comment">&lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressAllComments"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">commentGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!--数据库链接URL，用户名、密码 --&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"com.mysql.jdbc.Driver"</span> <span class="attr">connectionURL</span>=<span class="string">"jdbc:mysql://127.0.0.1/db_icp"</span> <span class="attr">userId</span>=<span class="string">"root"</span> <span class="attr">password</span>=<span class="string">"xxxx"</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">javaTypeResolver</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"forceBigDecimals"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 生成模型的包名和位置--&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.hundsun.acm.model"</span> <span class="attr">targetProject</span>=<span class="string">"src"</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 生成映射文件的包名和位置--&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"main.resources.mapping"</span> <span class="attr">targetProject</span>=<span class="string">"src"</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 生成DAO的包名和位置--&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"com.hundsun.acm.dao"</span> <span class="attr">targetProject</span>=<span class="string">"src"</span>&gt;</span>  </div><div class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </div><div class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span>  </div><div class="line">        <span class="comment">&lt;!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名--&gt;</span> </div><div class="line">        <span class="comment">&lt;!--想要生成几个表，就写几个table标签--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"zxxxb"</span> <span class="attr">domainObjectName</span>=<span class="string">"Zxxx"</span> <span class="attr">enableCountByExample</span>=<span class="string">"false"</span> <span class="attr">enableUpdateByExample</span>=<span class="string">"false"</span> <span class="attr">enableDeleteByExample</span>=<span class="string">"false"</span> <span class="attr">enableSelectByExample</span>=<span class="string">"false"</span> <span class="attr">selectByExampleQueryId</span>=<span class="string">"false"</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">context</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#＃ -overwrite 是覆盖选项，如果第一次生成没必要加</span></div><div class="line"><span class="variable">$java</span> -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite</div></pre></td></tr></table></figure>
+<p>生成之后的目录结构<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">├── generatorConfig.xml</div><div class="line">├── mybatis-3.2.7.jar</div><div class="line">├── mybatis-generator-core-1.3.2.jar</div><div class="line">├── mysql-connector-java-5.1.30.jar</div><div class="line">└── src</div><div class="line">    ├── com</div><div class="line">    │   └── hundsun</div><div class="line">    │       └── acm</div><div class="line">    │           ├── dao</div><div class="line">    │           │   └── ZxxxMapper.java</div><div class="line">    │           └── model</div><div class="line">    │               ├── Zxxx.java</div><div class="line">    │               └── ZxxxWithBLOBs.java</div><div class="line">    └── main</div><div class="line">        └── resources</div><div class="line">            └── mapping</div><div class="line">                └── ZxxxMapper.xml</div></pre></td></tr></table></figure></p>
+<h1 id="date类型映射错误"><a href="#date类型映射错误" class="headerlink" title="date类型映射错误"></a>date类型映射错误</h1><p>应该映射成　java.sql.Date<br>但是却映射成　java.util.Date</p>
+<h1 id="jdbc-type-和-javaType的映射关系"><a href="#jdbc-type-和-javaType的映射关系" class="headerlink" title="jdbc type 和 javaType的映射关系"></a>jdbc type 和 javaType的映射关系</h1><p><a href="https://db.apache.org/ojb/docu/guides/jdbc-types.html" target="_blank" rel="external">apache官方链接</a></p>
+<p>JDBC是直接和数据库打交道的，因此类型基本与数据库类型一致</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/22/sqlplus格式化输出/" data-id="cj9muktlt004ljclxhqzs8xrt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/21/mybatis generator的用法/" data-id="cj9otdzja003ac8lxsbhtj76d" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sqlplus/">sqlplus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/格式化输出/">格式化输出</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/generator/">generator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/">mybatis</a></li></ul>
 
     </footer>
   </div>
@@ -433,14 +247,14 @@
 
 
   
-    <article id="post-oracle查询结果中文乱码" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Mybatis学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/22/oracle查询结果中文乱码/" class="article-date">
-  <time datetime="2015-08-22T04:22:00.000Z" itemprop="datePublished">2015-08-22</time>
+    <a href="/2015/08/21/Mybatis学习笔记/" class="article-date">
+  <time datetime="2015-08-21T09:36:49.000Z" itemprop="datePublished">2015-08-21</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/database/">database</a>►<a class="article-category-link" href="/categories/database/oracle/">oracle</a>
+    <a class="article-category-link" href="/categories/java/">java</a>
   </div>
 
   </div>
@@ -451,7 +265,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/oracle查询结果中文乱码/">oracle查询结果中文乱码</a>
+      <a class="article-title" href="/2015/08/21/Mybatis学习笔记/">Mybatis学习笔记</a>
     </h1>
   
 
@@ -459,36 +273,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="查询服务器端字符参数"><a href="#查询服务器端字符参数" class="headerlink" title="查询服务器端字符参数"></a>查询服务器端字符参数</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> nls_database_parameters ;</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">SQL&gt;  select * from nls_database_parameters ;</div><div class="line"></div><div class="line">PARAMETER                      VALUE                                                                </div><div class="line">------------------------------ ------------------------------                                       </div><div class="line">NLS_LANGUAGE                   AMERICAN                                                             </div><div class="line">NLS_TERRITORY                  AMERICA                                                              </div><div class="line">NLS_CURRENCY                   $                                                                    </div><div class="line">NLS_ISO_CURRENCY               AMERICA                                                              </div><div class="line">NLS_NUMERIC_CHARACTERS         .,                                                                   </div><div class="line">NLS_CHARACTERSET               ZHS16GBK                                                             </div><div class="line">NLS_CALENDAR                   GREGORIAN                                                            </div><div class="line">NLS_DATE_FORMAT                DD-MON-RR                                                            </div><div class="line">NLS_DATE_LANGUAGE              AMERICAN                                                             </div><div class="line">NLS_SORT                       BINARY                                                               </div><div class="line">NLS_TIME_FORMAT                HH.MI.SSXFF AM                                                       </div><div class="line"></div><div class="line">PARAMETER                      VALUE                                                                </div><div class="line">------------------------------ ------------------------------                                       </div><div class="line">NLS_TIMESTAMP_FORMAT           DD-MON-RR HH.MI.SSXFF AM                                             </div><div class="line">NLS_TIME_TZ_FORMAT             HH.MI.SSXFF AM TZR                                                   </div><div class="line">NLS_TIMESTAMP_TZ_FORMAT        DD-MON-RR HH.MI.SSXFF AM TZR                                         </div><div class="line">NLS_DUAL_CURRENCY              $                                                                    </div><div class="line">NLS_COMP                       BINARY                                                               </div><div class="line">NLS_LENGTH_SEMANTICS           BYTE                                                                 </div><div class="line">NLS_NCHAR_CONV_EXCP            FALSE                                                                </div><div class="line">NLS_NCHAR_CHARACTERSET         AL16UTF16                                                            </div><div class="line">NLS_RDBMS_VERSION              11.2.0.4.0                                                           </div><div class="line"></div><div class="line">20 rows selected.</div><div class="line"></div><div class="line">SQL&gt; spool off</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> userenv(<span class="string">'language'</span>) <span class="keyword">from</span> dual;</div><div class="line">USERENV('LANGUAGE')</div><div class="line"><span class="comment">--------------------------------------------------------------</span></div><div class="line">AMERICAN_AMERICA.ZHS16GBK</div></pre></td></tr></table></figure>
-<h1 id="查看客户端参数"><a href="#查看客户端参数" class="headerlink" title="查看客户端参数"></a>查看客户端参数</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> nls_instance_parameters</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">PARAMETER		       VALUE</div><div class="line">------------------------------ ------------------------------</div><div class="line">NLS_LANGUAGE		       AMERICAN</div><div class="line">NLS_TERRITORY		       AMERICA</div><div class="line">NLS_SORT</div><div class="line">NLS_DATE_LANGUAGE</div><div class="line">NLS_DATE_FORMAT</div><div class="line">NLS_CURRENCY</div><div class="line">NLS_NUMERIC_CHARACTERS</div><div class="line">NLS_ISO_CURRENCY</div><div class="line">NLS_CALENDAR</div><div class="line">NLS_TIME_FORMAT</div><div class="line">NLS_TIMESTAMP_FORMAT</div><div class="line"></div><div class="line">PARAMETER		       VALUE</div><div class="line">------------------------------ ------------------------------</div><div class="line">NLS_TIME_TZ_FORMAT</div><div class="line">NLS_TIMESTAMP_TZ_FORMAT</div><div class="line">NLS_DUAL_CURRENCY</div><div class="line">NLS_COMP		       BINARY</div><div class="line">NLS_LENGTH_SEMANTICS	       BYTE</div><div class="line">NLS_NCHAR_CONV_EXCP	       FALSE</div><div class="line"></div><div class="line">17 rows selected.</div></pre></td></tr></table></figure>
-<h1 id="NLS-LANG"><a href="#NLS-LANG" class="headerlink" title="NLS_LANG"></a>NLS_LANG</h1><p>影响oracle数据库字符集最重要的参数是NLS_LANG参数。</p>
-<p>　　它的格式如下: 　　NLS_LANG = language_territory.charset</p>
-<p>　　它有三个组成部分(语言、地域和字符集)，每个成分控制了NLS子集的特性。<br>其中:</p>
-<p>　　Language 指定服务器消息的语言，territory 指定服务器的日期和数字格式，charset 指定字符集。如:AMERICAN _ AMERICA. ZHS16GBK</p>
-<p>　　<code>从NLS_LANG的组成我们可以看出，真正影响数据库字符集的其实是第三部分。</code></p>
-<p>　　所以两个数据库之间的字符集只要第三部分一样就可以相互导入导出数据，前面影响的只是提示信息是中文还是英文。</p>
-<h1 id="设置oracle客户端编码"><a href="#设置oracle客户端编码" class="headerlink" title="设置oracle客户端编码"></a>设置oracle客户端编码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> NLS_LANG=AMERICAN_AMERICA.UTF8</div></pre></td></tr></table></figure>
-<h1 id="字符集的包含关系"><a href="#字符集的包含关系" class="headerlink" title="字符集的包含关系"></a>字符集的包含关系</h1><p>AMERICAN_AMERICA.UTF8 &gt; AMERICAN_AMERICA.ZHS16GBK &gt; ..</p>
-<h1 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h1><p>客户端与服务端字符集不匹配</p>
-<ul>
-<li>oracel server端的字符集;</li>
-<li>是oracle client端的字符集;</li>
-<li>dmp文件的字符集。<br>查看dmp文件的编码<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> nls_charset_name(to_number(<span class="string">'0354'</span>,<span class="string">'xxxx'</span>)) <span class="keyword">from</span> dual;</div></pre></td></tr></table></figure>
+        <h1 id="mybatis-的基本组织方式"><a href="#mybatis-的基本组织方式" class="headerlink" title="mybatis 的基本组织方式"></a>mybatis 的基本组织方式</h1><p>核心配置文件<br>sqlxml文件</p>
+<h1 id="mybatis新颖的地方"><a href="#mybatis新颖的地方" class="headerlink" title="mybatis新颖的地方"></a>mybatis新颖的地方</h1><ul>
+<li>将sql独立成xml文件，将这种方式作为唯一处理sql的方式，将sql作为独立的一部分。</li>
+<li>支持接口编程，dao层无需实现（但不许遵循mybatis接口编程的规范）</li>
+</ul>
+<h1 id="sql语句支持ognl表达式"><a href="#sql语句支持ognl表达式" class="headerlink" title="sql语句支持ognl表达式"></a>sql语句支持ognl表达式</h1><ul>
+<li>可直接调用java对象的方法</li>
+<li>where set sql … 极大的增加了sql的灵活性和功能性</li>
+<li><p>灵活的日志框架</p>
+<h1 id="控制台调试Mybatis"><a href="#控制台调试Mybatis" class="headerlink" title="控制台调试Mybatis"></a>控制台调试Mybatis</h1><p><a href="http://www.mybatis.org/mybatis-3/zh/logging.html" target="_blank" rel="external">mybatis中文文档-日志说明</a></p>
+</li>
+<li><p>独立mybatis的话，核心配置文件，配置日志的接口</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></div><div class="line">    ...</div><div class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"logImpl"</span> <span class="attr">value</span>=<span class="string">"LOG4J"</span>/&gt;</span></div><div class="line">    ...</div><div class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>客户端字符集 &gt;= 服务端字符集</p>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://soft.chinabyte.com/database/444/12618444.shtml" target="_blank" rel="external">Oracle服务器和客户端字符集的查看和修改</a></p>
+<p>log4j.properties文件的配置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">log4j.rootLogger=DEBUG,Console</div><div class="line">log4j.appender.Console=org.apache.log4j.ConsoleAppender</div><div class="line">log4j.appender.Console.layout=org.apache.log4j.PatternLayout</div><div class="line">log4j.appender.Console.layout.ConversionPattern=%d [%t] %-<span class="number">5</span>p [%c] - %m%n</div><div class="line">log4j.logger.org.apache=INFO</div></pre></td></tr></table></figure></p>
+<ul>
+<li>如果要跟spring结合的话,在web.xml添加log4j的相关参数<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">   &lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line">   <span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></div><div class="line"><span class="tag">       <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xmlns:web</span>=<span class="string">"http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span></span></div><div class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span></span></div><div class="line"><span class="tag">       <span class="attr">id</span>=<span class="string">"WebApp_ID"</span> <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></div><div class="line">       <span class="comment">&lt;!--log4j参数部分--&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>log4jConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:log4j.properties<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>log4jExposeWebAppRoot<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>log4jRefreshInterval<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>10000<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div><div class="line">       <span class="comment">&lt;!--log4j监听器--&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">listener</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">listener-class</span>&gt;</span></div><div class="line">		org.springframework.web.util.Log4jConfigListener</div><div class="line">	<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/22/oracle查询结果中文乱码/" data-id="cj9muktlj003tjclxjfj3kowr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/21/Mybatis学习笔记/" data-id="cj9otdzi7000kc8lxm6bs5oi1" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/乱码/">乱码</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
 
     </footer>
   </div>
@@ -497,14 +309,14 @@
 
 
   
-    <article id="post-oracle表结构" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux 下wireshark权限问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/22/oracle表结构/" class="article-date">
-  <time datetime="2015-08-22T04:12:57.000Z" itemprop="datePublished">2015-08-22</time>
+    <a href="/2015/08/21/linux 下wireshark权限问题/" class="article-date">
+  <time datetime="2015-08-21T09:36:49.000Z" itemprop="datePublished">2015-08-21</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/database/">database</a>►<a class="article-category-link" href="/categories/database/oracle/">oracle</a>
+    <a class="article-category-link" href="/categories/http/">http</a>
   </div>
 
   </div>
@@ -515,7 +327,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/oracle表结构/">oracle表结构</a>
+      <a class="article-title" href="/2015/08/21/linux 下wireshark权限问题/">linux wireshark 权限问题</a>
     </h1>
   
 
@@ -523,15 +335,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="获取用户表结构"><a href="#获取用户表结构" class="headerlink" title="获取用户表结构"></a>获取用户表结构</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> dbms_metadata.get_ddl(u.object_type,u.object_name) <span class="keyword">from</span> user_objects u <span class="keyword">where</span> u.object_type <span class="keyword">in</span>(<span class="string">'TABLE'</span>,<span class="string">'SEQUENCE'</span>,<span class="string">'TRIGGER'</span>);</div></pre></td></tr></table></figure>
+        <h1 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h1><p>最近需要分析一些http 报文里面的一些细节问题，比如post是如何携带数据传递给后台的</p>
+<p>需要安装wireshark 来分析报文</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pacman -S wireshark-gtk</div></pre></td></tr></table></figure>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题　"></a>遇到的问题　</h1><h2 id="无法显示网卡列表-usr-bin-dumpcap子进程启动失败"><a href="#无法显示网卡列表-usr-bin-dumpcap子进程启动失败" class="headerlink" title="无法显示网卡列表　/usr/bin/dumpcap子进程启动失败"></a>无法显示网卡列表　/usr/bin/dumpcap子进程启动失败</h2><p>更改当前执行用户的权限即可</p>
+<p>可以更改用户的用户组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo usermod -aG wireshark currentUserName</div></pre></td></tr></table></figure>
+<p>也可以直接用chmod更改程序的权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod u+x  /usr/bin/dumpcap</div></pre></td></tr></table></figure>
+<h2 id="选中相应网卡后提示没有权限"><a href="#选中相应网卡后提示没有权限" class="headerlink" title="选中相应网卡后提示没有权限"></a>选中相应网卡后提示没有权限</h2><p>第一种解决办法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">setcap</span> <span class="string">'CAP_NET_RAW+eip CAP_NET_ADMIN+eip'</span> /usr/sbin/dumpcap</div></pre></td></tr></table></figure></p>
+<h3 id="参数简要解释"><a href="#参数简要解释" class="headerlink" title="参数简要解释"></a>参数简要解释</h3><p>eip是将chown的能力以cap_effective(e),cap_inheritable(i),cap_permitted(p)三种位图的方式授权给相关的程序文件.</p>
+<p>CAP_NET_RAW 13 (允许使用原始(raw)套接字)</p>
+<p>CAP_NET_ADMIN 12 允许执行网络管理任务：接口、防火墙和路由等.</p>
+<p>普通用户不能创建新的网络接口(interface),不能更改ip地址,而CAP_NET_ADMIN可以帮助普通用户完成这项工作</p>
+<p>原始套接字编程可以接收到本机网卡上的数据帧或者数据包,对监控网络流量和分析是很有作用的.</p>
+<p><a href="https://wiki.wireshark.org/CaptureSetup/CapturePrivileges" target="_blank" rel="external">wireshark 官方wiki 权限问题</a></p>
+<p><a href="http://blog.csdn.net/wangpengqi/article/details/9821231" target="_blank" rel="external"> Linux的capability深入分析</a></p>
+<p>第二种解决办法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chown root /usr/bin/dumpcap</div><div class="line"></div><div class="line">chmod u+s /usr/bin/dumpcap</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/22/oracle表结构/" data-id="cj9muktlm0040jclxl4ilo05v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/21/linux 下wireshark权限问题/" data-id="cj9otdzj4002tc8lxj8dz1sd0" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/表结构/">表结构</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/archLinux/">archLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wireshark/">wireshark</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/权限问题/">权限问题</a></li></ul>
 
     </footer>
   </div>
@@ -540,14 +368,14 @@
 
 
   
-    <article id="post-oracle统计表的行数" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Mybatis常用标签" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/22/oracle统计表的行数/" class="article-date">
-  <time datetime="2015-08-22T04:02:41.000Z" itemprop="datePublished">2015-08-22</time>
+    <a href="/2015/08/21/Mybatis常用标签/" class="article-date">
+  <time datetime="2015-08-21T09:36:48.000Z" itemprop="datePublished">2015-08-21</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/database/">database</a>►<a class="article-category-link" href="/categories/database/oracle/">oracle</a>
+    <a class="article-category-link" href="/categories/java/">java</a>
   </div>
 
   </div>
@@ -558,7 +386,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/oracle统计表的行数/">oracle统计表的行数</a>
+      <a class="article-title" href="/2015/08/21/Mybatis常用标签/">Mybatis 常用标签</a>
     </h1>
   
 
@@ -566,17 +394,152 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="num-rows-统计每张表的行数"><a href="#num-rows-统计每张表的行数" class="headerlink" title="num_rows 统计每张表的行数"></a>num_rows 统计每张表的行数</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span></div><div class="line">   table_name,</div><div class="line">   num_rows counter</div><div class="line"><span class="keyword">from</span></div><div class="line">   user_tables</div><div class="line"><span class="comment">-- 从object 统计</span></div><div class="line">   <span class="keyword">select</span></div><div class="line">   object_name,</div><div class="line">   num_rows counter</div><div class="line"><span class="keyword">from</span></div><div class="line">   USER_OBJECTS <span class="keyword">where</span> object_type <span class="keyword">in</span> (<span class="string">'TABLE'</span>,<span class="string">'VIEW'</span>)</div></pre></td></tr></table></figure>
-<h1 id="pl-sql存储过程"><a href="#pl-sql存储过程" class="headerlink" title="pl/sql存储过程"></a>pl/sql存储过程</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">DECLARE</span></div><div class="line">val <span class="built_in">NUMBER</span>;</div><div class="line"><span class="keyword">BEGIN</span></div><div class="line"><span class="keyword">FOR</span> I <span class="keyword">IN</span> (<span class="keyword">SELECT</span> TABLE_NAME <span class="keyword">FROM</span> USER_TABLES) <span class="keyword">LOOP</span></div><div class="line"><span class="keyword">EXECUTE</span> <span class="keyword">IMMEDIATE</span> <span class="string">'SELECT count(*) FROM '</span> || i.table_name <span class="keyword">INTO</span> val;</div><div class="line">DBMS_OUTPUT.PUT_LINE(i.table_name || ' ==&gt; ' || val );</div><div class="line"><span class="keyword">END</span> <span class="keyword">LOOP</span>;</div><div class="line"><span class="keyword">END</span>;</div><div class="line">/</div></pre></td></tr></table></figure>
-<h1 id="找出非空表"><a href="#找出非空表" class="headerlink" title="找出非空表"></a>找出非空表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">--找出空表/非空表</span></div><div class="line"><span class="keyword">select</span> table_name, NUM_ROWS <span class="keyword">from</span> user_tables t <span class="keyword">where</span> t.NUM_ROWS &gt; <span class="number">0</span></div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;selelct id=&quot;&quot; resultMap=&quot;&quot; parameterType=&quot;&quot;&gt;</div><div class="line">selelct * from MESSAGE</div><div class="line">    &lt;where&gt;</div><div class="line">        &lt;if test=&quot;&quot;&gt;</div><div class="line">        and COMMAND =#&#123;commonad&#125;</div><div class="line">        &lt;/if&gt;</div><div class="line">        &lt;if test=&quot;&quot;&gt;</div><div class="line">        and DESCRIPTION</div><div class="line">        &lt;/if&gt;</div><div class="line">    &lt;/where&gt;</div><div class="line">&lt;/selelct&gt;</div></pre></td></tr></table></figure>
+<p>where 标签的作用：<br>如果条件都不满足的话可执行空条件查询<br><img src="http://7xs1xb.com1.z0.glb.clouddn.com/20160316-Mybatis-tags.png" alt="Mybatis-tags"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/22/oracle统计表的行数/" data-id="cj9muktli003qjclxknjjmwih" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/21/Mybatis常用标签/" data-id="cj9otdzi9000mc8lxnb0upgk4" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pl-sql/">pl/sql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux-制作启动盘" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/21/linux-制作启动盘/" class="article-date">
+  <time datetime="2015-08-21T09:36:47.000Z" itemprop="datePublished">2015-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/21/linux-制作启动盘/">linux-制作启动盘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dd制作启动盘"><a href="#dd制作启动盘" class="headerlink" title="dd制作启动盘"></a>dd制作启动盘</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">dd -i /path/to/ubuntu16.04.iso -o /dev/sdx</div><div class="line"><span class="comment">#sdx x指的是第几块硬盘 不能是sdx1,sdx2等磁盘分区，而是整块硬盘，通过lsblk可显示块设备</span></div><div class="line">➜  hexo lsblk</div><div class="line">NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT</div><div class="line">nvme0n1     259:0    0 238.5G  0 disk</div><div class="line">├─nvme0n1p1 259:1    0  18.7G  0 part /</div><div class="line">├─nvme0n1p2 259:2    0   1.9G  0 part /boot</div><div class="line">├─nvme0n1p3 259:3    0     1K  0 part</div><div class="line">├─nvme0n1p5 259:4    0  15.1G  0 part [SWAP]</div><div class="line">└─nvme0n1p6 259:5    0 202.9G  0 part /home</div><div class="line"><span class="comment">#我的本机硬盘是ssd，识别的时候名称不再是传统的命令方式</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/21/linux-制作启动盘/" data-id="cj9otdzj5002vc8lxytmj8sic" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dd/">dd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/启动盘/">启动盘</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux解析json" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/21/linux解析json/" class="article-date">
+  <time datetime="2015-08-21T09:35:47.000Z" itemprop="datePublished">2015-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/21/linux解析json/">linux 解析json</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://blog.chinaunix.net/uid-24774106-id-3830242.html" target="_blank" rel="external">jq : Linux下json的命令行工具</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/21/linux解析json/" data-id="cj9otdzj80031c8lx3l3mnxq5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo遇到的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/20/hexo遇到的问题/" class="article-date">
+  <time datetime="2015-08-20T09:35:48.000Z" itemprop="datePublished">2015-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/20/hexo遇到的问题/">hexo 遇到的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p><a href="http://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="external">github+hexo搭建独立博客</a></p>
+<p>#＃　淘宝的npm源无法安装成功，标准的可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</div><div class="line">$ npm install hexo-cli -g</div><div class="line">$ npm install hexo --save</div></pre></td></tr></table></figure></p>
+<p>本想加快速度,但却安装失败</p>
+<h1 id="hexo-常用插件汇总"><a href="#hexo-常用插件汇总" class="headerlink" title="hexo 常用插件汇总"></a>hexo 常用插件汇总</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-index --save</div><div class="line">$ npm install hexo-generator-archive --save</div><div class="line">$ npm install hexo-generator-category --save</div><div class="line">$ npm install hexo-generator-tag --save</div><div class="line">$ npm install hexo-server --save</div><div class="line">$ npm install hexo-deployer-git --save</div><div class="line">$ npm install hexo-deployer-heroku --save</div><div class="line">$ npm install hexo-deployer-rsync --save</div><div class="line">$ npm install hexo-deployer-openshift --save</div><div class="line">$ npm install hexo-renderer-marked@0.2 --save</div><div class="line">$ npm install hexo-renderer-stylus@0.2 --save</div><div class="line">$ npm install hexo-generator-feed@1 --save</div><div class="line">$ npm install hexo-generator-sitemap@1 --save</div></pre></td></tr></table></figure>
+<h1 id="markdown-语法基本问题"><a href="#markdown-语法基本问题" class="headerlink" title="markdown 语法基本问题"></a>markdown 语法基本问题</h1><h2 id="如何使用标签和目录"><a href="#如何使用标签和目录" class="headerlink" title="如何使用标签和目录"></a>如何使用标签和目录</h2><p>标准写法参照本文档开头部分</p>
+<h2 id="空格是重要的分隔符"><a href="#空格是重要的分隔符" class="headerlink" title="空格是重要的分隔符"></a>空格是重要的分隔符</h2><p>tags 后’-‘之后要有空格，否则无法识别标签<br>_config.yml 每一个配置项后面要有空格</p>
+<h1 id="如何为hexo的常用变量赋值"><a href="#如何为hexo的常用变量赋值" class="headerlink" title="如何为hexo的常用变量赋值"></a>如何为hexo的常用变量赋值</h1><p>title: 标题名</p>
+<h1 id="hexo-是如何解析变量的？"><a href="#hexo-是如何解析变量的？" class="headerlink" title="hexo 是如何解析变量的？"></a>hexo 是如何解析变量的？</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">变量名： 值</div><div class="line">title： 文章名</div><div class="line">categories: 目录名</div><div class="line">tags: tag4</div><div class="line">tags:</div><div class="line">- tag1</div><div class="line">- tag2</div><div class="line">- tag3</div><div class="line"></div><div class="line">---</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/20/hexo遇到的问题/" data-id="cj9otdzix002fc8lxw1rcm12l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FAQ/">FAQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 
     </footer>
   </div>
@@ -588,7 +551,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/9/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
   </nav>
 </section>
         
@@ -601,23 +564,23 @@
       <ul>
         
           <li>
+            <a href="/2017/11/06/面试准备-大数据算法/">面试准备-大数据算法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/面试准备-hive-hbase/">面试准备-hive-hbase整合</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/面试准备-sparkStreaming数据流/">面试准备-sparkStreaming数据流</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/面试准备-spark-hive/">面试准备-spark+hive</a>
+          </li>
+        
+          <li>
             <a href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/03/面试准备-java基础/">面试准备-java基础</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/03/面试准备-java设计模式/">面试准备-java设计模式</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/01/sbt实用操作/">sbt实用操作</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/01/not-use/面试准备-sparkSql/">面试准备-sparkSql</a>
           </li>
         
       </ul>
@@ -629,7 +592,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li></ul>
     </div>
   </div>
 
@@ -649,7 +612,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 11.25px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 11.25px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 13.75px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 11.25px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 12.5px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 13.75px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 12.5px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 11.25px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 13.75px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 11.25px;">sparkSql</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 11.25px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 11.25px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 11.25px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 11.25px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 11.25px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 11.25px;">难点</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/项目/" style="font-size: 11.25px;">项目</a>
+      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 10px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 15px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 10px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 11.25px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 16.25px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 11.25px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 10px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 15px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 10px;">sparkSql</a> <a href="/tags/sparkStreaming/" style="font-size: 10px;">sparkStreaming</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 10px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 10px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 10px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/面试/" style="font-size: 13.75px;">面试</a> <a href="/tags/项目/" style="font-size: 10px;">项目</a>
     </div>
   </div>
 

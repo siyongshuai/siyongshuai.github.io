@@ -5,18 +5,18 @@
   
   <title>面试准备-hbase篇 | hello yongshuai</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hbase的设计有什么心得？Hbase的操作是用的什么API还是什么工具？Hbase的PUT的一个过程（hbase写过程）做过hbase的二级索引吗？.问二次排序是什么。topn是什么,二次排序要继承什么接口？计算的数据怎么来的。.hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？hbase 的特点是什么(1) Hbase一个分布式的基于列式存储的数据库,基">
+  <meta name="description" content="hbase功能组件一个Master主服务器许多个Region服务器 主服务器Master负责管理和维护HBase表的分区信息,维护Region服务器列表,分配Region,负载均衡 Region服务器负责存储和维护分配给自己的Region,处理来自客户端的读写请求 客户端并不是直接从Master主服务器上读取数据,而是在获得Region的存储位置信息后,直接从Region服务器上读取数据 客户端并">
 <meta name="keywords" content="bigdata,hbase">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试准备-hbase篇">
 <meta property="og:url" content="http://yoursite.com/2016/10/26/面试准备-hbase篇/index.html">
 <meta property="og:site_name" content="hello yongshuai">
-<meta property="og:description" content="Hbase的设计有什么心得？Hbase的操作是用的什么API还是什么工具？Hbase的PUT的一个过程（hbase写过程）做过hbase的二级索引吗？.问二次排序是什么。topn是什么,二次排序要继承什么接口？计算的数据怎么来的。.hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？hbase 的特点是什么(1) Hbase一个分布式的基于列式存储的数据库,基">
+<meta property="og:description" content="hbase功能组件一个Master主服务器许多个Region服务器 主服务器Master负责管理和维护HBase表的分区信息,维护Region服务器列表,分配Region,负载均衡 Region服务器负责存储和维护分配给自己的Region,处理来自客户端的读写请求 客户端并不是直接从Master主服务器上读取数据,而是在获得Region的存储位置信息后,直接从Region服务器上读取数据 客户端并">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-05T14:15:36.366Z">
+<meta property="og:updated_time" content="2017-11-06T14:41:54.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试准备-hbase篇">
-<meta name="twitter:description" content="Hbase的设计有什么心得？Hbase的操作是用的什么API还是什么工具？Hbase的PUT的一个过程（hbase写过程）做过hbase的二级索引吗？.问二次排序是什么。topn是什么,二次排序要继承什么接口？计算的数据怎么来的。.hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？hbase 的特点是什么(1) Hbase一个分布式的基于列式存储的数据库,基">
+<meta name="twitter:description" content="hbase功能组件一个Master主服务器许多个Region服务器 主服务器Master负责管理和维护HBase表的分区信息,维护Region服务器列表,分配Region,负载均衡 Region服务器负责存储和维护分配给自己的Region,处理来自客户端的读写请求 客户端并不是直接从Master主服务器上读取数据,而是在获得Region的存储位置信息后,直接从Region服务器上读取数据 客户端并">
   
     <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
   
@@ -91,7 +91,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Hbase的设计有什么心得？"><a href="#Hbase的设计有什么心得？" class="headerlink" title="Hbase的设计有什么心得？"></a>Hbase的设计有什么心得？</h1><h1 id="Hbase的操作是用的什么API还是什么工具？"><a href="#Hbase的操作是用的什么API还是什么工具？" class="headerlink" title="Hbase的操作是用的什么API还是什么工具？"></a>Hbase的操作是用的什么API还是什么工具？</h1><h1 id="Hbase的PUT的一个过程（hbase写过程）"><a href="#Hbase的PUT的一个过程（hbase写过程）" class="headerlink" title="Hbase的PUT的一个过程（hbase写过程）"></a>Hbase的PUT的一个过程（hbase写过程）</h1><h1 id="做过hbase的二级索引吗？"><a href="#做过hbase的二级索引吗？" class="headerlink" title="做过hbase的二级索引吗？"></a>做过hbase的二级索引吗？</h1><h1 id="问二次排序是什么。topn是什么-二次排序要继承什么接口？"><a href="#问二次排序是什么。topn是什么-二次排序要继承什么接口？" class="headerlink" title=".问二次排序是什么。topn是什么,二次排序要继承什么接口？"></a>.问二次排序是什么。topn是什么,二次排序要继承什么接口？</h1><h1 id="计算的数据怎么来的。"><a href="#计算的数据怎么来的。" class="headerlink" title="计算的数据怎么来的。"></a>计算的数据怎么来的。</h1><h1 id="hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？"><a href="#hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？" class="headerlink" title=".hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？"></a>.hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？</h1><h1 id="hbase-的特点是什么"><a href="#hbase-的特点是什么" class="headerlink" title="hbase 的特点是什么"></a>hbase 的特点是什么</h1><p>(1) Hbase一个分布式的基于列式存储的数据库,基于Hadoop的hdfs存储，zookeeper进行管理。<br>(2) Hbase适合存储半结构化或非结构化数据，对于数据结构字段不够确定或者杂乱无章很难按一个概念去抽取的数据。<br>(3) Hbase为null的记录不会被存储.<br>(4)基于的表包含rowkey，时间戳，和列族。新写入数据时，时间戳更新，同时可以查询到以前的版本.<br>(5) hbase是主从架构。hmaster作为主节点，hregionserver作为从节点。<br><a href="http://blog.csdn.net/haohaixingyun/article/details/52819563" target="_blank" rel="external">大数据Hbase 面试题</a></p>
+        <h1 id="hbase功能组件"><a href="#hbase功能组件" class="headerlink" title="hbase功能组件"></a>hbase功能组件</h1><p>一个Master主服务器<br>许多个Region服务器</p>
+<p>主服务器Master负责管理和维护HBase表的分区信息,维护Region服<br>务器列表,分配Region,负载均衡</p>
+<p>Region服务器负责存储和维护分配给自己的Region,处理来自客户<br>端的读写请求</p>
+<p>客户端并不是直接从Master主服务器上读取数据,而是在获得Region<br>的存储位置信息后,直接从Region服务器上读取数据</p>
+<p>客户端并不依赖Master,而是通过Zookeeper来获得Region位置信息<br>,大多数客户端甚至从来不和Master通信,这种设计方式使得Master<br>负载很小</p>
+<h1 id="讲讲列式存储的-parquet文件底层格式"><a href="#讲讲列式存储的-parquet文件底层格式" class="headerlink" title="讲讲列式存储的 parquet文件底层格式"></a>讲讲列式存储的 parquet文件底层格式</h1><h1 id="region多大会分区？"><a href="#region多大会分区？" class="headerlink" title="region多大会分区？"></a>region多大会分区？</h1><h1 id="Hbase的设计有什么心得？"><a href="#Hbase的设计有什么心得？" class="headerlink" title="Hbase的设计有什么心得？"></a>Hbase的设计有什么心得？</h1><h1 id="Hbase的操作是用的什么API还是什么工具？"><a href="#Hbase的操作是用的什么API还是什么工具？" class="headerlink" title="Hbase的操作是用的什么API还是什么工具？"></a>Hbase的操作是用的什么API还是什么工具？</h1><h1 id="Hbase的PUT的一个过程（hbase写过程）"><a href="#Hbase的PUT的一个过程（hbase写过程）" class="headerlink" title="Hbase的PUT的一个过程（hbase写过程）"></a>Hbase的PUT的一个过程（hbase写过程）</h1><h1 id="做过hbase的二级索引吗？"><a href="#做过hbase的二级索引吗？" class="headerlink" title="做过hbase的二级索引吗？"></a>做过hbase的二级索引吗？</h1><h1 id="问二次排序是什么。topn是什么-二次排序要继承什么接口？"><a href="#问二次排序是什么。topn是什么-二次排序要继承什么接口？" class="headerlink" title=".问二次排序是什么。topn是什么,二次排序要继承什么接口？"></a>.问二次排序是什么。topn是什么,二次排序要继承什么接口？</h1><h1 id="计算的数据怎么来的。"><a href="#计算的数据怎么来的。" class="headerlink" title="计算的数据怎么来的。"></a>计算的数据怎么来的。</h1><h1 id="hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？"><a href="#hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？" class="headerlink" title=".hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？"></a>.hbase存数据用什么rowkey？加时间戳的话，会不会出现时间戳重复的问题，怎么做的呢？</h1><h1 id="hbase-的特点是什么"><a href="#hbase-的特点是什么" class="headerlink" title="hbase 的特点是什么"></a>hbase 的特点是什么</h1><p>(1) Hbase一个分布式的基于列式存储的数据库,基于Hadoop的hdfs存储，zookeeper进行管理。<br>(2) Hbase适合存储半结构化或非结构化数据，对于数据结构字段不够确定或者杂乱无章很难按一个概念去抽取的数据。<br>(3) Hbase为null的记录不会被存储.<br>(4)基于的表包含rowkey，时间戳，和列族。新写入数据时，时间戳更新，同时可以查询到以前的版本.<br>(5) hbase是主从架构。hmaster作为主节点，hregionserver作为从节点。<br><a href="http://blog.csdn.net/haohaixingyun/article/details/52819563" target="_blank" rel="external">大数据Hbase 面试题</a></p>
 <h1 id="Hbase和hive-有什么区别"><a href="#Hbase和hive-有什么区别" class="headerlink" title="Hbase和hive 有什么区别"></a>Hbase和hive 有什么区别</h1><p>从以下几个方面来说<br>  |hbase|hive<br>———|———————————————|————————–<br>类型|列式数据库|数据仓库<br>内部机制|数据库引擎|MapReduce<br>增删改查|都支持|只支持导入和查询<br>Schema|只需要预先定义列族，不需要具体到列列可以动态修改|需要预先定义表格<br>应用场景|实时|离线处理<br>特点|以K-V形式存储（NoSql）|类SQL</p>
 <p>Hive和Hbase是两种基于Hadoop的不同技术–Hive是一种类SQL 的引擎，并且运行MapReduce 任务，Hbase 是一种在Hadoop之上的NoSQL的Key/vale数据库。当然，这两种工具是可以同时使用的。就像用Google 来搜索，用FaceBook 进行社交一样，Hive 可以用来进行统计查询，HBase 可以用来进行实时查询，数据也可以从Hive 写到Hbase，设置再从Hbase 写回Hive。</p>
 <p>HIVE 直接可以通过sql来实现统计，hbase不行<br>Hbase非常适合用来进行大数据的实时查询<br>HBase 是一种Key/Value 系统，它运行在HDFS 之上。和Hive 不一样，Hbase 的能够在<br>它的数据库上实时运行，而不是运行MapReduce 任务</p>
@@ -125,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/26/面试准备-hbase篇/" data-id="cj9muktmd006tjclxqift4ltw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/26/面试准备-hbase篇/" data-id="cj9otdzkd006qc8lxnjinr1zf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li></ul>
@@ -136,7 +141,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/10/26/not-use/面试准备-map-reduce篇/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/10/26/面试准备-map-reduce篇/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -146,9 +151,9 @@
     </a>
   
   
-    <a href="/2016/10/26/not-use/面试准备-hbase篇/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/10/26/ETL面试准备2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">面试准备-hbase篇</div>
+      <div class="article-nav-title">ETL面试准备2</div>
     </a>
   
 </nav>
@@ -167,23 +172,23 @@
       <ul>
         
           <li>
+            <a href="/2017/11/06/面试准备-大数据算法/">面试准备-大数据算法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/面试准备-hive-hbase/">面试准备-hive-hbase整合</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/面试准备-sparkStreaming数据流/">面试准备-sparkStreaming数据流</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/面试准备-spark-hive/">面试准备-spark+hive</a>
+          </li>
+        
+          <li>
             <a href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/03/面试准备-java基础/">面试准备-java基础</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/03/面试准备-java设计模式/">面试准备-java设计模式</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/01/sbt实用操作/">sbt实用操作</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/01/not-use/面试准备-sparkSql/">面试准备-sparkSql</a>
           </li>
         
       </ul>
@@ -195,7 +200,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li></ul>
     </div>
   </div>
 
@@ -215,7 +220,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 11.25px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 11.25px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 13.75px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 11.25px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 12.5px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 13.75px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 12.5px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 11.25px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 13.75px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 11.25px;">sparkSql</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 11.25px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 11.25px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 11.25px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 11.25px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 11.25px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 11.25px;">难点</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/项目/" style="font-size: 11.25px;">项目</a>
+      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 10px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 15px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 10px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 11.25px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 16.25px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 11.25px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 10px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 15px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 10px;">sparkSql</a> <a href="/tags/sparkStreaming/" style="font-size: 10px;">sparkStreaming</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 10px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 10px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 10px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/面试/" style="font-size: 13.75px;">面试</a> <a href="/tags/项目/" style="font-size: 10px;">项目</a>
     </div>
   </div>
 
