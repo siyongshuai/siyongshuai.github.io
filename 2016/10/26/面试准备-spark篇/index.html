@@ -5,18 +5,18 @@
   
   <title>面试准备-spark篇 | hello yongshuai</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="spark开发分两个方面？哪两个方面呢？比如 一个读取hdfs上的文件，然后count有多少行的操作，你可以说说过程吗。那这个count是在内存中，还是磁盘中计算的呢？磁盘中。spark比Mapreduce快？ 为什么快呢？ 快在哪里呢？ 内存迭代。 RDD设计。 算子的设计。  spark sql又为什么比hive快呢？RDD的数据结构是怎么样的？ Partition数组。 dependence">
+  <meta name="description" content="spark开发分两个方面？哪两个方面呢？比如 一个读取hdfs上的文件，然后count有多少行的操作，你可以说说过程吗。那这个count是在内存中，还是磁盘中计算的呢？磁盘中。spark比Mapreduce快？ 为什么快呢？ 快在哪里呢？ 内存迭代。 RDD设计。 算子的设计。  spark sql又为什么比hive快呢？执行机制不一样spark sql最终被翻译成DAG作业执行hive 是翻译成">
 <meta name="keywords" content="spark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试准备-spark篇">
 <meta property="og:url" content="http://yoursite.com/2016/10/26/面试准备-spark篇/index.html">
 <meta property="og:site_name" content="hello yongshuai">
-<meta property="og:description" content="spark开发分两个方面？哪两个方面呢？比如 一个读取hdfs上的文件，然后count有多少行的操作，你可以说说过程吗。那这个count是在内存中，还是磁盘中计算的呢？磁盘中。spark比Mapreduce快？ 为什么快呢？ 快在哪里呢？ 内存迭代。 RDD设计。 算子的设计。  spark sql又为什么比hive快呢？RDD的数据结构是怎么样的？ Partition数组。 dependence">
+<meta property="og:description" content="spark开发分两个方面？哪两个方面呢？比如 一个读取hdfs上的文件，然后count有多少行的操作，你可以说说过程吗。那这个count是在内存中，还是磁盘中计算的呢？磁盘中。spark比Mapreduce快？ 为什么快呢？ 快在哪里呢？ 内存迭代。 RDD设计。 算子的设计。  spark sql又为什么比hive快呢？执行机制不一样spark sql最终被翻译成DAG作业执行hive 是翻译成">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-06T15:08:00.542Z">
+<meta property="og:updated_time" content="2017-11-06T23:51:20.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试准备-spark篇">
-<meta name="twitter:description" content="spark开发分两个方面？哪两个方面呢？比如 一个读取hdfs上的文件，然后count有多少行的操作，你可以说说过程吗。那这个count是在内存中，还是磁盘中计算的呢？磁盘中。spark比Mapreduce快？ 为什么快呢？ 快在哪里呢？ 内存迭代。 RDD设计。 算子的设计。  spark sql又为什么比hive快呢？RDD的数据结构是怎么样的？ Partition数组。 dependence">
+<meta name="twitter:description" content="spark开发分两个方面？哪两个方面呢？比如 一个读取hdfs上的文件，然后count有多少行的操作，你可以说说过程吗。那这个count是在内存中，还是磁盘中计算的呢？磁盘中。spark比Mapreduce快？ 为什么快呢？ 快在哪里呢？ 内存迭代。 RDD设计。 算子的设计。  spark sql又为什么比hive快呢？执行机制不一样spark sql最终被翻译成DAG作业执行hive 是翻译成">
   
     <link rel="alternate" href="/atom.xml" title="hello yongshuai" type="application/atom+xml">
   
@@ -96,13 +96,17 @@
 <li>RDD设计。</li>
 <li>算子的设计。</li>
 </ol>
-<h1 id="spark-sql又为什么比hive快呢？"><a href="#spark-sql又为什么比hive快呢？" class="headerlink" title="spark sql又为什么比hive快呢？"></a>spark sql又为什么比hive快呢？</h1><h1 id="RDD的数据结构是怎么样的？"><a href="#RDD的数据结构是怎么样的？" class="headerlink" title="RDD的数据结构是怎么样的？"></a>RDD的数据结构是怎么样的？</h1><p> Partition数组。 dependence</p>
+<h1 id="spark-sql又为什么比hive快呢？"><a href="#spark-sql又为什么比hive快呢？" class="headerlink" title="spark sql又为什么比hive快呢？"></a>spark sql又为什么比hive快呢？</h1><p>执行机制不一样<br>spark sql最终被翻译成DAG作业执行<br>hive 是翻译成map-reduce 任务</p>
+<h1 id="RDD的数据结构是怎么样的？"><a href="#RDD的数据结构是怎么样的？" class="headerlink" title="RDD的数据结构是怎么样的？"></a>RDD的数据结构是怎么样的？</h1><p> Partition数组。 dependence</p>
 <h1 id="hadoop的生态呢"><a href="#hadoop的生态呢" class="headerlink" title="hadoop的生态呢"></a>hadoop的生态呢</h1><h1 id="Spark工作的一个流程。"><a href="#Spark工作的一个流程。" class="headerlink" title="Spark工作的一个流程。"></a>Spark工作的一个流程。</h1><p>用户提交一个任务。 入口是从sc开始的。 sc会去创建一个taskScheduler。根据不同的提交模式， 会根据相应的taskchedulerImpl进行任务调度。<br>同时会去创建Scheduler和DAGScheduler。DAGScheduler 会根据RDD的宽依赖或者窄依赖，进行阶段的划分。划分好后放入taskset中，交给taskscheduler 。<br>appclient会到master上注册。首先会去判断数据本地化，尽量选最好的本地化模式去执行。<br>打散 Executor选择相应的Executor去执行。ExecutorRunner会去创建CoarseGrainerExecutorBackend进程。 通过线程池的方式去执行任务。</p>
 <p>反向：<br>Executor向 SchedulerBackend反向注册</p>
 <p>Spark On Yarn模式下。 driver负责计算调度。appmaster 负责资源的申请。</p>
 <h1 id="RDD算子里操作一个外部map比如往里面put数据。然后算子外再遍历map。有什么问题吗。"><a href="#RDD算子里操作一个外部map比如往里面put数据。然后算子外再遍历map。有什么问题吗。" class="headerlink" title="RDD算子里操作一个外部map比如往里面put数据。然后算子外再遍历map。有什么问题吗。"></a>RDD算子里操作一个外部map比如往里面put数据。然后算子外再遍历map。有什么问题吗。</h1><h1 id="shuffle的过程。调优。"><a href="#shuffle的过程。调优。" class="headerlink" title="shuffle的过程。调优。"></a>shuffle的过程。调优。</h1><h1 id="5个partition里面分布有12345678910-用算子求最大值或者和。不能用广播变量和累加器。或者sortbykey"><a href="#5个partition里面分布有12345678910-用算子求最大值或者和。不能用广播变量和累加器。或者sortbykey" class="headerlink" title="5个partition里面分布有12345678910.用算子求最大值或者和。不能用广播变量和累加器。或者sortbykey."></a>5个partition里面分布有12345678910.用算子求最大值或者和。不能用广播变量和累加器。或者sortbykey.</h1><h1 id="知道spark怎么读hbase吗？spark-on-hbase-。华为的"><a href="#知道spark怎么读hbase吗？spark-on-hbase-。华为的" class="headerlink" title="知道spark怎么读hbase吗？spark on hbase.。华为的"></a>知道spark怎么读hbase吗？spark on hbase.。华为的</h1><h1 id="sort-shuffle的优点？"><a href="#sort-shuffle的优点？" class="headerlink" title="sort shuffle的优点？"></a>sort shuffle的优点？</h1><h1 id="stage怎么划分的？-宽依赖窄依赖是什么？"><a href="#stage怎么划分的？-宽依赖窄依赖是什么？" class="headerlink" title="stage怎么划分的？ 宽依赖窄依赖是什么？"></a>stage怎么划分的？ 宽依赖窄依赖是什么？</h1><h1 id="怎么用spark做数据清洗"><a href="#怎么用spark做数据清洗" class="headerlink" title="怎么用spark做数据清洗"></a>怎么用spark做数据清洗</h1><p>具体：<br>去除脏脏数据（过滤）<br>元组内容重组（分散，组合 ）<br>元组内容过滤列（map）<br>其他数据类型解析（比如json解析）</p>
 <h1 id="spark读取-数据，是几个Partition呢？hdfs几个block-就有几个-Partition？"><a href="#spark读取-数据，是几个Partition呢？hdfs几个block-就有几个-Partition？" class="headerlink" title="spark读取 数据，是几个Partition呢？hdfs几个block 就有几个 Partition？"></a>spark读取 数据，是几个Partition呢？hdfs几个block 就有几个 Partition？</h1><h1 id="spark-on-yarn的两种模式"><a href="#spark-on-yarn的两种模式" class="headerlink" title=".spark on yarn的两种模式?"></a>.spark on yarn的两种模式?</h1><p>client (driver+appmaster)（多用于测试）<br>cluster (appmaster    client)(多用于生产)</p>
-<h1 id="spark-数据倾斜"><a href="#spark-数据倾斜" class="headerlink" title="spark 数据倾斜"></a>spark 数据倾斜</h1><p>因为是链式操作，比较方便进行 先打散（对给key加个随机前缀）进行局部聚合，后整体聚合（去掉随机前缀）</p>
+<h1 id="spark-数据倾斜"><a href="#spark-数据倾斜" class="headerlink" title="spark 数据倾斜"></a>spark 数据倾斜</h1><p>充分利用资源</p>
+<p>提高并发度</p>
+<p>reduce端join转换成map端join(大表与小表  广播变量)</p>
+<p>因为是链式操作，比较方便进行 先打散（对给key加个随机前缀）进行局部聚合，后整体聚合（去掉随机前缀）</p>
 <h1 id="jdbc？mysql的驱动包名字叫什么？"><a href="#jdbc？mysql的驱动包名字叫什么？" class="headerlink" title="jdbc？mysql的驱动包名字叫什么？"></a>jdbc？mysql的驱动包名字叫什么？</h1><p>mysql-connector-java-5.1.44.jar</p>
 <h1 id="画图，画Spark的工作模式，部署分布架构图"><a href="#画图，画Spark的工作模式，部署分布架构图" class="headerlink" title="画图，画Spark的工作模式，部署分布架构图"></a>画图，画Spark的工作模式，部署分布架构图</h1><h1 id="画图，画图讲解spark工作流程。以及在集群上和各个角色的对应关系。"><a href="#画图，画图讲解spark工作流程。以及在集群上和各个角色的对应关系。" class="headerlink" title="画图，画图讲解spark工作流程。以及在集群上和各个角色的对应关系。"></a>画图，画图讲解spark工作流程。以及在集群上和各个角色的对应关系。</h1><h1 id="画图，讲讲shuffle的过程。那你怎么在编程的时候注意避免这些性能问题"><a href="#画图，讲讲shuffle的过程。那你怎么在编程的时候注意避免这些性能问题" class="headerlink" title="画图，讲讲shuffle的过程。那你怎么在编程的时候注意避免这些性能问题"></a>画图，讲讲shuffle的过程。那你怎么在编程的时候注意避免这些性能问题</h1><h1 id="dataset和dataframe？"><a href="#dataset和dataframe？" class="headerlink" title="dataset和dataframe？"></a>dataset和dataframe？</h1><h1 id="通过什么方式学习spark的？"><a href="#通过什么方式学习spark的？" class="headerlink" title="通过什么方式学习spark的？"></a>通过什么方式学习spark的？</h1><h1 id="有哪些数据倾斜，怎么解决？"><a href="#有哪些数据倾斜，怎么解决？" class="headerlink" title="有哪些数据倾斜，怎么解决？"></a>有哪些数据倾斜，怎么解决？</h1><h1 id="宽依赖窄依赖？"><a href="#宽依赖窄依赖？" class="headerlink" title="宽依赖窄依赖？"></a>宽依赖窄依赖？</h1><h1 id="yarn的原理？"><a href="#yarn的原理？" class="headerlink" title="yarn的原理？"></a>yarn的原理？</h1><h1 id="BlockManager怎么管理硬盘和内存的"><a href="#BlockManager怎么管理硬盘和内存的" class="headerlink" title="BlockManager怎么管理硬盘和内存的"></a>BlockManager怎么管理硬盘和内存的</h1><h1 id="哪些算子操作涉及到shuffle-宽依赖"><a href="#哪些算子操作涉及到shuffle-宽依赖" class="headerlink" title="哪些算子操作涉及到shuffle(宽依赖)"></a>哪些算子操作涉及到shuffle(宽依赖)</h1><p>groupByKey<br>reduceByKey</p>
 <h1 id="看过源码？-你熟悉哪几个部分的源码？"><a href="#看过源码？-你熟悉哪几个部分的源码？" class="headerlink" title="看过源码？ 你熟悉哪几个部分的源码？"></a>看过源码？ 你熟悉哪几个部分的源码？</h1><h1 id="spark怎么整合hive？"><a href="#spark怎么整合hive？" class="headerlink" title="spark怎么整合hive？"></a>spark怎么整合hive？</h1><p>大概这样。 spark on hive 。 hive还是hive 执行引擎是spark</p>
@@ -112,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/26/面试准备-spark篇/" data-id="cj9otdzko007oc8lxh4qqcpif" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/26/面试准备-spark篇/" data-id="cj9oueh1m00arn7lx6sd4xfn0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li></ul>
