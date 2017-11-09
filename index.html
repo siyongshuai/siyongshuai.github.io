@@ -66,10 +66,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-面试准备-大数据算法" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-面试准备-javaIO" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/06/面试准备-大数据算法/" class="article-date">
-  <time datetime="2017-11-06T14:06:13.000Z" itemprop="datePublished">2017-11-06</time>
+    <a href="/2017/11/09/面试准备-javaIO/" class="article-date">
+  <time datetime="2017-11-09T01:29:30.000Z" itemprop="datePublished">2017-11-09</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/06/面试准备-大数据算法/">面试准备-大数据算法</a>
+      <a class="article-title" href="/2017/11/09/面试准备-javaIO/">面试准备-javaIO</a>
     </h1>
   
 
@@ -92,7 +92,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/06/面试准备-大数据算法/" data-id="cj9oueh1q00b5n7lxut0otaeo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/09/面试准备-javaIO/" data-id="cj9rspmmy0000dvlxwcxj213c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -102,10 +102,10 @@
 
 
   
-    <article id="post-面试准备-hive-hbase" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hbase-JAVA-API" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/06/面试准备-hive-hbase/" class="article-date">
-  <time datetime="2017-11-06T12:13:58.000Z" itemprop="datePublished">2017-11-06</time>
+    <a href="/2017/11/08/hbase-JAVA-API/" class="article-date">
+  <time datetime="2017-11-08T10:06:17.000Z" itemprop="datePublished">2017-11-08</time>
 </a>
     
   </div>
@@ -116,7 +116,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/06/面试准备-hive-hbase/">面试准备-hive-hbase整合</a>
+      <a class="article-title" href="/2017/11/08/hbase-JAVA-API/">hbase-JAVA API</a>
     </h1>
   
 
@@ -124,15 +124,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="应用场景-数据转移"><a href="#应用场景-数据转移" class="headerlink" title="应用场景(数据转移)"></a>应用场景(数据转移)</h1><h2 id="什么情况下需要整合hive-hbase"><a href="#什么情况下需要整合hive-hbase" class="headerlink" title="什么情况下需要整合hive,hbase"></a>什么情况下需要整合hive,hbase</h2><p>Hive与HBase的整合功能从Hive0.6.0版本已经开始出现,利用两者对外<br>的API接口互相通信,通信主要依靠hive_hbase-handler.jar工具包(Hive<br>Storage Handlers)。由于HBase有一次比较大的版本变动,所以并不是每个<br>版本的Hive都能和现有的HBase版本进行整合,所以在使用过程中特别注意<br>的就是两者版本的一致性。</p>
+        <h1 id="jar包"><a href="#jar包" class="headerlink" title="jar包"></a>jar包</h1><p>hdfs<br>hbase-client<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-hdfs<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-client --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hbase<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hbase-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="DDL操作基本流程梳理"><a href="#DDL操作基本流程梳理" class="headerlink" title="DDL操作基本流程梳理"></a>DDL操作基本流程梳理</h1><ol>
+<li>建立连接<br>Connection conn = ConnectionFactory.createConnection(conf);</li>
+<li><p>得到admin(org.apache.hadoop.hbase.client.Admin);<br>Admin admin = conn.getAdmin();</p>
+</li>
+<li><p>HTableDescriptor 组装元信息<br>HTableDescriptor tableDesc = new HTableDescriptor(TableName.valueOf(tablename));<br>tableDesc.addFamily(new HColumnDescriptor(columnFamily));</p>
+</li>
+<li>admin 结合HTableDescriptor 进行DDL操作<br>admin.createTable(tableDesc);</li>
+<li>释放资源<br>admin.close();<br>conn.close();<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">createTable</span><span class="params">(String tablename, String columnFamily)</span> <span class="keyword">throws</span> Exception</span>&#123;</div><div class="line">  Connection conn = ConnectionFactory.createConnection(conf);</div><div class="line">  Admin admin = conn.getAdmin();</div><div class="line">  TableName tableNameObj = TableName.valueOf(tablename);</div><div class="line">  <span class="keyword">if</span> (admin.tableExists(tableNameObj)) &#123;</div><div class="line">    System.out.println(<span class="string">"Table exists!"</span>);</div><div class="line">     System.exit(<span class="number">0</span>);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    HTableDescriptor tableDesc = <span class="keyword">new</span> HTableDescriptor(TableName.valueOf(tablename));</div><div class="line">    tableDesc.addFamily(<span class="keyword">new</span> HColumnDescriptor(columnFamily));</div><div class="line">    admin.createTable(tableDesc);</div><div class="line">    System.out.println(<span class="string">"create table success!"</span>);</div><div class="line">  &#125;</div><div class="line">  admin.close();</div><div class="line">  conn.close();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="DML-操作基本流程梳理"><a href="#DML-操作基本流程梳理" class="headerlink" title="DML 操作基本流程梳理"></a>DML 操作基本流程梳理</h1><ol>
+<li>建立连接<br>Connection conn = ConnectionFactory.createConnection(conf);</li>
+<li>得到table(org.apache.hadoop.hbase.client.Table);<br>Table table = connection.getTable(TableName.valueOf(tableName));</li>
+<li>组装put或者get对象<br>Put put = new Put(Bytes.toBytes(rowKey));<br>put.addColumn(Bytes.toBytes(family), Bytes.toBytes(qualifier), Bytes.toBytes(value));<br>put.addColumn(Bytes.toBytes(family), Bytes.toBytes(qualifier), Bytes.toBytes(value));</li>
+<li>table+put(get)执行<br>table.put(put);</li>
+<li>释放资源<br>table.close();<br>connection.close();<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addRecord</span><span class="params">(String tableName, String rowKey, String family, String qualifier, String value)</span></span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Connection connection = ConnectionFactory.createConnection(conf);</div><div class="line">            Table table = connection.getTable(TableName.valueOf(tableName));</div><div class="line">            Put put = <span class="keyword">new</span> Put(Bytes.toBytes(rowKey));</div><div class="line">            put.addColumn(Bytes.toBytes(family), Bytes.toBytes(qualifier), Bytes.toBytes(value));</div><div class="line">            put.addColumn(Bytes.toBytes(family), Bytes.toBytes(qualifier), Bytes.toBytes(value));</div><div class="line">            table.put(put);</div><div class="line">            table.close();</div><div class="line">            connection.close();</div><div class="line">            System.out.println(<span class="string">"insert recored "</span> + rowKey + <span class="string">" to table "</span> + tableName + <span class="string">" ok."</span>);</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="资源列表"><a href="#资源列表" class="headerlink" title="资源列表"></a>资源列表</h1><p>[Windows+Eclipse+Maven+HBase 1.2.4开发环境搭建]（0<a href="http://blog.csdn.net/chengyuqiang/article/details/69568496）" target="_blank" rel="external">http://blog.csdn.net/chengyuqiang/article/details/69568496）</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/06/面试准备-hive-hbase/" data-id="cj9oueh1c009sn7lxzy8x9utm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/08/hbase-JAVA-API/" data-id="cj9qvqd2b00gebplxwqbnyisw" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
 
     </footer>
   </div>
@@ -141,10 +160,10 @@
 
 
   
-    <article id="post-面试准备-sparkStreaming数据流" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-java操作hive" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/06/面试准备-sparkStreaming数据流/" class="article-date">
-  <time datetime="2017-11-06T09:17:01.000Z" itemprop="datePublished">2017-11-06</time>
+    <a href="/2017/11/08/java操作hive/" class="article-date">
+  <time datetime="2017-11-08T02:01:30.000Z" itemprop="datePublished">2017-11-08</time>
 </a>
     
   </div>
@@ -155,7 +174,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/06/面试准备-sparkStreaming数据流/">面试准备-sparkStreaming数据流</a>
+      <a class="article-title" href="/2017/11/08/java操作hive/">java操作hive</a>
     </h1>
   
 
@@ -163,20 +182,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="sparkStreaming核心抽象"><a href="#sparkStreaming核心抽象" class="headerlink" title="sparkStreaming核心抽象"></a>sparkStreaming核心抽象</h1><p>Dstream</p>
-<h1 id="两种方式消费kafka-Receiver与Direct"><a href="#两种方式消费kafka-Receiver与Direct" class="headerlink" title="两种方式消费kafka(Receiver与Direct)"></a>两种方式消费kafka(Receiver与Direct)</h1><p><a href="http://blog.csdn.net/wisgood/article/details/51815845" target="_blank" rel="external">Spark-Streaming获取kafka数据的两种方式-Receiver与Direct的方式</a></p>
-<h2 id="Direct优势"><a href="#Direct优势" class="headerlink" title="Direct优势"></a>Direct优势</h2><p>Receiver的offset保存在zookeeper，如果要同步需要开启（WAL）（会造成性能损耗及增加数据冗余量）</p>
-<p>基于receiver的方式，是使用Kafka的高阶API来在ZooKeeper中保存消费过的offset的。这是消费Kafka数据的传统方式。这种方式配合着WAL机制可以保证数据零丢失的高可靠性，但是却无法保证数据被处理一次且仅一次，可能会处理两次。因为Spark和ZooKeeper之间可能是不同步的。</p>
-<p>Direct的同步交给spark来控制（checkpoint）<br>基于direct的方式，使用kafka的简单api，Spark Streaming自己就负责追踪消费的offset，并保存在checkpoint中。Spark自己一定是同步的，因此可以保证数据是消费一次且仅消费一次。</p>
-<h1 id="spark-kafka整合"><a href="#spark-kafka整合" class="headerlink" title="spark-kafka整合"></a>spark-kafka整合</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka_2.11 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.spark<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spark-streaming-kafka_2.11<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.6.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+        <h1 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h1><p>hadoop 2.7.4<br>hive 1.2.2</p>
+<h1 id="启动hive远程服务"><a href="#启动hive远程服务" class="headerlink" title="启动hive远程服务"></a>启动hive远程服务</h1><p>hiveserver2 默认开启10000端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hiveserver2</div><div class="line"></div><div class="line">hive --service hiveserver2</div><div class="line"><span class="comment"># 验证是否启动成功</span></div><div class="line">netstat -ntulp |grep 10000</div></pre></td></tr></table></figure></p>
+<h1 id="依赖的jar包"><a href="#依赖的jar包" class="headerlink" title="依赖的jar包"></a>依赖的jar包</h1><h2 id="java-lang-ClassNotFoundException-org-apache-hive-jdbc-HiveDriver"><a href="#java-lang-ClassNotFoundException-org-apache-hive-jdbc-HiveDriver" class="headerlink" title="java.lang.ClassNotFoundException: org.apache.hive.jdbc.HiveDriver"></a>java.lang.ClassNotFoundException: org.apache.hive.jdbc.HiveDriver</h2><p>缺少hive-jdbc依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hive<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hive-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;hive.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="java-lang-NoClassDefFoundError-org-apache-hadoop-conf-Configuration"><a href="#java-lang-NoClassDefFoundError-org-apache-hadoop-conf-Configuration" class="headerlink" title="java.lang.NoClassDefFoundError: org/apache/hadoop/conf/Configuration"></a>java.lang.NoClassDefFoundError: org/apache/hadoop/conf/Configuration</h2><p>原因：缺少hadoop-common依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-common<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;hadoop.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="jdbc工具类"><a href="#jdbc工具类" class="headerlink" title="jdbc工具类"></a>jdbc工具类</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> siys16877.HiveDemo.utils;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> java.sql.Statement;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBCUtils</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String driver = <span class="string">"org.apache.hive.jdbc.HiveDriver"</span>;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String url = <span class="string">"jdbc:hive2://127.0.0.1:10000/default"</span>;</div><div class="line"></div><div class="line"></div><div class="line">	<span class="comment">//注册驱动</span></div><div class="line">	<span class="keyword">static</span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			Class.forName(driver);</div><div class="line">			System.out.println(<span class="string">"驱动加载成功"</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">			System.out.println(<span class="string">"驱动加载失败"</span>);</div><div class="line"></div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> ExceptionInInitializerError(e);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//获取连接</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			System.out.println(<span class="string">"获取连接成功"</span>);</div><div class="line">			<span class="keyword">return</span> DriverManager.getConnection(url);</div><div class="line"></div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			System.out.println(<span class="string">"获取连接失败"</span>);</div><div class="line">			e.printStackTrace();</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//释放资源</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">release</span><span class="params">(Connection conn,Statement st,ResultSet rs)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(rs != <span class="keyword">null</span>)&#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				rs.close();</div><div class="line">				System.out.println(<span class="string">"release rs done !"</span>);</div><div class="line">			&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;<span class="keyword">finally</span>&#123;</div><div class="line">				rs = <span class="keyword">null</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(st != <span class="keyword">null</span>)&#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				st.close();</div><div class="line">				System.out.println(<span class="string">"release st done ! "</span>);</div><div class="line"></div><div class="line">			&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">				<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;<span class="keyword">finally</span>&#123;</div><div class="line">				st = <span class="keyword">null</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(conn != <span class="keyword">null</span>)&#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				conn.close();</div><div class="line">				System.out.println(<span class="string">"release conn done !"</span>);</div><div class="line"></div><div class="line">			&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">				<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;<span class="keyword">finally</span>&#123;</div><div class="line">				conn = <span class="keyword">null</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="hive-jdbc-demo测试类"><a href="#hive-jdbc-demo测试类" class="headerlink" title="hive-jdbc-demo测试类"></a>hive-jdbc-demo测试类</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> siys16877.HiveDemo.hive;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> java.sql.Statement;</div><div class="line"></div><div class="line"><span class="keyword">import</span> siys16877.HiveDemo.utils.JDBCUtils;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</div><div class="line">		 <span class="keyword">try</span> &#123;</div><div class="line">			String  sql = <span class="string">"select * from test1"</span>;</div><div class="line">			Connection con = JDBCUtils.getConnection();</div><div class="line">			Statement statement =  con.createStatement();</div><div class="line">			ResultSet rs = statement.executeQuery(sql);</div><div class="line">			<span class="keyword">while</span>(rs.next()) &#123;</div><div class="line">				String  name = rs.getString(<span class="number">2</span>);</div><div class="line">				System.out.println(name);</div><div class="line">			&#125;</div><div class="line">			JDBCUtils.release(con, statement, rs);</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/06/面试准备-sparkStreaming数据流/" data-id="cj9oueh1l00ann7lxda1nwa50" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/08/java操作hive/" data-id="cj9qeex6700g7bplxjamiqngl" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sparkStreaming/">sparkStreaming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据流/">数据流</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
 
     </footer>
   </div>
@@ -185,10 +204,10 @@
 
 
   
-    <article id="post-面试准备-spark-hive" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hive学习笔记-udf-udaf" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/06/面试准备-spark-hive/" class="article-date">
-  <time datetime="2017-11-06T06:37:57.000Z" itemprop="datePublished">2017-11-06</time>
+    <a href="/2017/11/08/hive学习笔记-udf-udaf/" class="article-date">
+  <time datetime="2017-11-08T01:55:17.000Z" itemprop="datePublished">2017-11-08</time>
 </a>
     
   </div>
@@ -199,7 +218,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/06/面试准备-spark-hive/">面试准备-spark+hive</a>
+      <a class="article-title" href="/2017/11/08/hive学习笔记-udf-udaf/">hive学习笔记-udf-udaf</a>
     </h1>
   
 
@@ -207,43 +226,298 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h1><table>
+        <h1 id="依賴-jar包-hive-exec"><a href="#依賴-jar包-hive-exec" class="headerlink" title="依賴 jar包 hive-exec"></a>依賴 jar包 hive-exec</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hive<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hive-exec<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;hive.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="udfDemo"><a href="#udfDemo" class="headerlink" title="udfDemo"></a>udfDemo</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> siys16877.HiveDemo.hive;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.hadoop.hive.ql.exec.UDF;</div><div class="line"><span class="keyword">import</span> org.apache.hadoop.io.Text;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">udfDemo</span> <span class="keyword">extends</span> <span class="title">UDF</span></span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> Text <span class="title">evaluate</span><span class="params">(Text a,Text b)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Text(a.toString()+<span class="string">"------"</span>+b.toString());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>hive被翻译成map-reduce ,Text类型必须是hadoop里面的，hadoop里面 String是无法识别的</p>
+<h1 id="use-udfDemo"><a href="#use-udfDemo" class="headerlink" title="use udfDemo"></a>use udfDemo</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hive&gt; add jar /home/shuai/udfDemo.jar</div><div class="line">Added [/home/shuai/udfDemo.jar] to class path</div><div class="line">Added resources: [/home/shuai/udfDemo.jar]</div><div class="line"><span class="comment"># function name is not limit</span></div><div class="line">create temporary <span class="keyword">function</span> udfDemo as <span class="string">'siys16877.HiveDemo.hive.udfDemo'</span>;</div><div class="line">select concat(tid,<span class="string">'--'</span>,tname) from test1;</div></pre></td></tr></table></figure>
+<h1 id="udf使用场景扩充"><a href="#udf使用场景扩充" class="headerlink" title="udf使用场景扩充"></a>udf使用场景扩充</h1><p>网上的例子大多数都是字符串连接，没什么实际意义<br>将查询结果封装成json格式</p>
+<h1 id="封装为json"><a href="#封装为json" class="headerlink" title="封装为json"></a>封装为json</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> siys16877.HiveDemo.hive;</div><div class="line"><span class="keyword">import</span> org.apache.hadoop.hive.ql.exec.UDF;</div><div class="line"><span class="keyword">import</span> org.apache.hadoop.io.Text;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">udfJson</span>  <span class="keyword">extends</span> <span class="title">UDF</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> Text <span class="title">evaluate</span><span class="params">(Text a, Text b)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Text(<span class="string">"&#123; tid:"</span> + a.toString() + <span class="string">','</span>+ <span class="string">"tanme:"</span></div><div class="line">				+ b.toString() + <span class="string">" &#125;"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="获取表的列名信息"><a href="#获取表的列名信息" class="headerlink" title="获取表的列名信息"></a>获取表的列名信息</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> siys16877.HiveDemo.hive;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSetMetaData;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> java.sql.Statement;</div><div class="line"></div><div class="line"><span class="keyword">import</span> siys16877.HiveDemo.utils.JDBCUtils;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ColumnName</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">		String sql = <span class="string">"select * from test1"</span>;</div><div class="line">		Connection conn  = JDBCUtils.getConnection();</div><div class="line">		Statement st = conn.createStatement();</div><div class="line">		ResultSet rs = st.executeQuery(sql);</div><div class="line">		ResultSetMetaData rsmt =  rs.getMetaData();</div><div class="line">		String col1 = 	rsmt.getColumnName(<span class="number">1</span>);</div><div class="line">		String col2 = rsmt.getColumnName(<span class="number">2</span>);</div><div class="line">		System.out.println(col1+<span class="string">'\t'</span>+col2);</div><div class="line">		JDBCUtils.release(conn, st, rs);</div><div class="line"></div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h1 id="udaf-学习案例-求平均数"><a href="#udaf-学习案例-求平均数" class="headerlink" title="udaf 学习案例-求平均数"></a>udaf 学习案例-求平均数</h1><p>(数据模型+Evaluator)继承（extends） UDAF</p>
+<p>Evaluator 实现 UDAFEvaluator接口</p>
+<ul>
+<li>init</li>
+<li>iterate</li>
+<li>terminatePartial</li>
+<li>merge</li>
+<li>terminate</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.apache.hadoop.hive.contrib.udaf.example;</div><div class="line"><span class="keyword">import</span> org.apache.hadoop.hive.ql.exec.Description;</div><div class="line"><span class="keyword">import</span> org.apache.hadoop.hive.ql.exec.UDAF;</div><div class="line"><span class="keyword">import</span> org.apache.hadoop.hive.ql.exec.UDAFEvaluator;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * This is a simple UDAF that calculates average.</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> * It should be very easy to follow and can be used as an example for writing</span></div><div class="line"><span class="comment"> * new UDAFs.</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> * Note that Hive internally uses a different mechanism (called GenericUDAF) to</span></div><div class="line"><span class="comment"> * implement built-in aggregation functions, which are harder to program but</span></div><div class="line"><span class="comment"> * more efficient.</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="meta">@Description</span>(name = <span class="string">"example_avg"</span>,</div><div class="line">value = <span class="string">"_FUNC_(col) - Example UDAF to compute average"</span>)</div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">UDAFExampleAvg</span> <span class="keyword">extends</span> <span class="title">UDAF</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">UDAFAvgState</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">long</span> mCount;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">double</span> mSum;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * The actual class for doing the aggregation. Hive will automatically look</span></div><div class="line"><span class="comment">   * for all internal classes of the UDAF that implements UDAFEvaluator.</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">UDAFExampleAvgEvaluator</span> <span class="keyword">implements</span> <span class="title">UDAFEvaluator</span> </span>&#123;</div><div class="line"></div><div class="line">    UDAFAvgState state;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UDAFExampleAvgEvaluator</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">super</span>();</div><div class="line">      state = <span class="keyword">new</span> UDAFAvgState();</div><div class="line">      init();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Reset the state of the aggregation.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">      state.mSum = <span class="number">0</span>;</div><div class="line">      state.mCount = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Iterate through one row of original data.</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * The number and type of arguments need to the same as we call this UDAF</span></div><div class="line"><span class="comment">     * from Hive command line.</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * This function should always return true.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">iterate</span><span class="params">(Double o)</span> </span>&#123;</div><div class="line">      <span class="keyword">if</span> (o != <span class="keyword">null</span>) &#123;</div><div class="line">        state.mSum += o;</div><div class="line">        state.mCount++;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Terminate a partial aggregation and return the state. If the state is a</span></div><div class="line"><span class="comment">     * primitive, just return primitive Java classes like Integer or String.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> UDAFAvgState <span class="title">terminatePartial</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="comment">// This is SQL standard - average of zero items should be null.</span></div><div class="line">      <span class="keyword">return</span> state.mCount == <span class="number">0</span> ? <span class="keyword">null</span> : state;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Merge with a partial aggregation.</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * This function should always have a single argument which has the same</span></div><div class="line"><span class="comment">     * type as the return value of terminatePartial().</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">merge</span><span class="params">(UDAFAvgState o)</span> </span>&#123;</div><div class="line">      <span class="keyword">if</span> (o != <span class="keyword">null</span>) &#123;</div><div class="line">        state.mSum += o.mSum;</div><div class="line">        state.mCount += o.mCount;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Terminates the aggregation and return the final result.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Double <span class="title">terminate</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="comment">// This is SQL standard - average of zero items should be null.</span></div><div class="line">      <span class="keyword">return</span> state.mCount == <span class="number">0</span> ? <span class="keyword">null</span> : Double.valueOf(state.mSum</div><div class="line">          / state.mCount);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="title">UDAFExampleAvg</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">// prevent instantiation</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="udaf-学习案例-max-minNUtil"><a href="#udaf-学习案例-max-minNUtil" class="headerlink" title="udaf 学习案例-max_minNUtil"></a>udaf 学习案例-max_minNUtil</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.apache.hadoop.hive.contrib.udaf.example;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.Collections;</div><div class="line"><span class="keyword">import</span> java.util.Comparator;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.hadoop.hive.ql.exec.UDAFEvaluator;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * The utility class for UDAFMaxN and UDAFMinN.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">UDAFExampleMaxMinNUtil</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * This class stores the information during an aggregation.</span></div><div class="line"><span class="comment">   *</span></div><div class="line"><span class="comment">   * Note that this class has to have a public constructor, so that Hive can</span></div><div class="line"><span class="comment">   * serialize/deserialize this class using reflection.  </span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">State</span> </span>&#123;</div><div class="line">    ArrayList&lt;Double&gt; a; <span class="comment">// This ArrayList holds the max/min N</span></div><div class="line">    <span class="keyword">int</span> n; <span class="comment">// This is the N</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * The base class of the UDAFEvaluator for UDAFMaxN and UDAFMinN.  </span></div><div class="line"><span class="comment">   * We just need to override the getAscending function to make it work.</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Evaluator</span> <span class="keyword">implements</span> <span class="title">UDAFEvaluator</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> State state;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Evaluator</span><span class="params">()</span> </span>&#123;</div><div class="line">      state = <span class="keyword">new</span> State();</div><div class="line">      init();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Reset the state.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;    </div><div class="line">      state.a = <span class="keyword">new</span> ArrayList&lt;Double&gt;();</div><div class="line">      state.n = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     *  Returns true in UDAFMaxN, and false in UDAFMinN.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">boolean</span> <span class="title">getAscending</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Iterate through one row of original data.</span></div><div class="line"><span class="comment">     * This function will update the internal max/min buffer if the internal buffer is not full,</span></div><div class="line"><span class="comment">     * or the new row is larger/smaller than the current max/min n.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">iterate</span><span class="params">(Double o, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">      <span class="keyword">boolean</span> ascending = getAscending();</div><div class="line">      state.n = n;</div><div class="line">      <span class="keyword">if</span> (o != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">boolean</span> doInsert = state.a.size() &lt; n;</div><div class="line">        <span class="keyword">if</span> (!doInsert) &#123;</div><div class="line">          Double last = state.a.get(state.a.size()-<span class="number">1</span>);</div><div class="line">          <span class="keyword">if</span> (ascending) &#123;</div><div class="line">            doInsert = o &lt; last;</div><div class="line">          &#125; <span class="keyword">else</span> &#123;</div><div class="line">            doInsert = o &gt; last;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (doInsert) &#123;</div><div class="line">          binaryInsert(state.a, o, ascending);   </div><div class="line">          <span class="keyword">if</span> (state.a.size() &gt; n) &#123;</div><div class="line">            state.a.remove(state.a.size()-<span class="number">1</span>);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Get partial aggregation results.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> State <span class="title">terminatePartial</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="comment">// This is SQL standard - max_n of zero items should be null.</span></div><div class="line">      <span class="keyword">return</span> state.a.size() == <span class="number">0</span> ? <span class="keyword">null</span> : state;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/** Two pointers are created to track the maximal elements in both o and MaxNArray.</span></div><div class="line"><span class="comment">     *  The smallest element is added into tempArrayList</span></div><div class="line"><span class="comment">     *  Consider the sizes of o and MaxNArray may be different.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">merge</span><span class="params">(State o)</span> </span>&#123;</div><div class="line">      <span class="keyword">if</span> (o != <span class="keyword">null</span>) &#123;</div><div class="line">        state.n = o.n;</div><div class="line">        state.a = sortedMerge(o.a, state.a, getAscending(), o.n);</div><div class="line">      &#125;      </div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Terminates the max N lookup and return the final result.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Double&gt; <span class="title">terminate</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="comment">// This is SQL standard - return state.MaxNArray, or null if the size is zero.</span></div><div class="line">      <span class="keyword">return</span> state.a.size() == <span class="number">0</span> ? <span class="keyword">null</span> : state.a;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * Returns a comparator based on whether the order is ascending or not.</span></div><div class="line"><span class="comment">   * Has a dummy parameter to make sure generics can infer the type correctly.</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="keyword">static</span> &lt;T extends Comparable&lt;T&gt;&gt; <span class="function">Comparator&lt;T&gt; <span class="title">getComparator</span><span class="params">(<span class="keyword">boolean</span> ascending, T dummy)</span> </span>&#123;</div><div class="line">    Comparator&lt;T&gt; comp;</div><div class="line">    <span class="keyword">if</span> (ascending) &#123;</div><div class="line">      comp = <span class="keyword">new</span> Comparator&lt;T&gt;() &#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(T o1, T o2)</span> </span>&#123;</div><div class="line">          <span class="keyword">return</span> o1.compareTo(o2);</div><div class="line">        &#125;</div><div class="line">      &#125;;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      comp = <span class="keyword">new</span> Comparator&lt;T&gt;() &#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(T o1, T o2)</span> </span>&#123;</div><div class="line">          <span class="keyword">return</span> o2.compareTo(o1);</div><div class="line">        &#125;</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> comp;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * Insert an element into an ascending/descending array, and keep the order.</span></div><div class="line"><span class="comment">   * <span class="doctag">@param</span> ascending</span></div><div class="line"><span class="comment">   *            if true, the array is sorted in ascending order,</span></div><div class="line"><span class="comment">   *            otherwise it is in descending order.</span></div><div class="line"><span class="comment">   *</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="keyword">static</span> &lt;T extends Comparable&lt;T&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">binaryInsert</span><span class="params">(List&lt;T&gt; list, T value, <span class="keyword">boolean</span> ascending)</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> position = Collections.binarySearch(list, value, getComparator(ascending, (T)<span class="keyword">null</span>));</div><div class="line">    <span class="keyword">if</span> (position &lt; <span class="number">0</span>) &#123;</div><div class="line">      position = (-position) - <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    list.add(position, value);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * Merge two ascending/descending array and keep the first n elements.</span></div><div class="line"><span class="comment">   * <span class="doctag">@param</span> ascending</span></div><div class="line"><span class="comment">   *            if true, the array is sorted in ascending order,</span></div><div class="line"><span class="comment">   *            otherwise it is in descending order.</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="keyword">static</span> &lt;T extends Comparable&lt;T&gt;&gt; <span class="function">ArrayList&lt;T&gt; <span class="title">sortedMerge</span><span class="params">(List&lt;T&gt; a1, List&lt;T&gt; a2,</span></span></div><div class="line"><span class="function"><span class="params">      <span class="keyword">boolean</span> ascending, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line"></div><div class="line">    Comparator&lt;T&gt; comparator = getComparator(ascending, (T)<span class="keyword">null</span>);</div><div class="line"></div><div class="line">    <span class="keyword">int</span> n1 = a1.size();</div><div class="line">    <span class="keyword">int</span> n2 = a2.size();</div><div class="line">    <span class="keyword">int</span> p1 = <span class="number">0</span>; <span class="comment">// The current element in a1</span></div><div class="line">    <span class="keyword">int</span> p2 = <span class="number">0</span>; <span class="comment">// The current element in a2</span></div><div class="line"></div><div class="line">    ArrayList&lt;T&gt; output = <span class="keyword">new</span> ArrayList&lt;T&gt;(n);</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (output.size() &lt; n &amp;&amp; (p1 &lt; n1 || p2 &lt; n2)) &#123;</div><div class="line">      <span class="keyword">if</span> (p1 &lt; n1) &#123;</div><div class="line">        <span class="keyword">if</span> (p2 == n2 || comparator.compare(a1.get(p1), a2.get(p2)) &lt; <span class="number">0</span>) &#123;</div><div class="line">          output.add(a1.get(p1++));</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (output.size() == n) &#123;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (p2 &lt; n2) &#123;</div><div class="line">        <span class="keyword">if</span> (p1 == n1 || comparator.compare(a2.get(p2), a1.get(p1)) &lt; <span class="number">0</span>) &#123;</div><div class="line">          output.add(a2.get(p2++));</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> output;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// No instantiation.</span></div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="title">UDAFExampleMaxMinNUtil</span><span class="params">()</span> </span>&#123;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/08/hive学习笔记-udf-udaf/" data-id="cj9qe6xt500g6bplxw2rmdkfk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/udaf/">udaf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/udf/">udf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面试经验-永仑车汇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/08/面试经验-永仑车汇/" class="article-date">
+  <time datetime="2017-11-08T01:53:36.000Z" itemprop="datePublished">2017-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/08/面试经验-永仑车汇/">面试经验-永仑车汇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/08/面试经验-永仑车汇/" data-id="cj9qe4rsx00g5bplxbvsxvxbr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面试经验-润和软件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/08/面试经验-润和软件/" class="article-date">
+  <time datetime="2017-11-08T01:48:49.000Z" itemprop="datePublished">2017-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/08/面试经验-润和软件/">面试经验-润和软件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总体来说问的比较宽泛</p>
+<h1 id="介绍一下自己的工作经验"><a href="#介绍一下自己的工作经验" class="headerlink" title="介绍一下自己的工作经验"></a>介绍一下自己的工作经验</h1><p># </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/08/面试经验-润和软件/" data-id="cj9qdyxhq00g3bplxkg9gkza5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hadoop安装snappy压缩" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/08/hadoop安装snappy压缩/" class="article-date">
+  <time datetime="2017-11-08T01:01:36.000Z" itemprop="datePublished">2017-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/08/hadoop安装snappy压缩/">hadoop安装snappy压缩</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hadoop检查是否支持snappy"><a href="#hadoop检查是否支持snappy" class="headerlink" title="hadoop检查是否支持snappy"></a>hadoop检查是否支持snappy</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hadoop checknative -a</div></pre></td></tr></table></figure>
+<h1 id="hbase检查是否支持snappy"><a href="#hbase检查是否支持snappy" class="headerlink" title="hbase检查是否支持snappy"></a>hbase检查是否支持snappy</h1><p>参考<a href="http://hbase.apache.org/1.2/book.html#compression" target="_blank" rel="external">hbase官方-压缩</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hbase --config ~/conf_hbase org.apache.hadoop.util.NativeLibraryChecker</div></pre></td></tr></table></figure></p>
+<h1 id="压缩算法简要介绍"><a href="#压缩算法简要介绍" class="headerlink" title="压缩算法简要介绍"></a>压缩算法简要介绍</h1><p>hadoop中常用的压缩算法有bzip2、gzip、lzo、snappy，<br><strong>其中lzo、snappy需要操作系统安装native库才可以支持</strong><br>下面这张表，是比较官方一点的统计，不同的场合用不同的压缩算法。bzip2和GZIP是比较消耗CPU的，压缩比最高，GZIP不能被分块并行的处理；Snappy和LZO差不多，稍微胜出一点，cpu消耗的比GZIP少。<br>通常情况下，想在CPU和IO之间取得平衡的话，用Snappy和lzo比较常见一些</p>
+<h1 id="编译安装snappy"><a href="#编译安装snappy" class="headerlink" title="编译安装snappy"></a>编译安装snappy</h1><p>版本号： snappy 1.1.7<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/google/snappy.git</div><div class="line"><span class="built_in">cd</span> snappy</div><div class="line">mkdir build</div><div class="line"><span class="built_in">cd</span> build</div><div class="line">make</div><div class="line"><span class="comment"># 默认情况下会安装到 /usr/local/lib</span></div><div class="line">sudo make install</div></pre></td></tr></table></figure></p>
+<h1 id="编译安装protobuf"><a href="#编译安装protobuf" class="headerlink" title="编译安装protobuf"></a>编译安装protobuf</h1><p>查看hadoop 2.7.4源码包的building.txt可知 要求 protobuf为 2.5<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Requirements:</div><div class="line"></div><div class="line">* Unix System</div><div class="line">* JDK 1.7+</div><div class="line">* Maven 3.0 or later</div><div class="line">* Findbugs 1.3.9 (<span class="keyword">if</span> running findbugs)</div><div class="line">* ProtocolBuffer 2.5.0</div><div class="line">* CMake 2.6 or newer (<span class="keyword">if</span> compiling native code), must be 3.0 or newer on Mac</div><div class="line">* Zlib devel (<span class="keyword">if</span> compiling native code)</div><div class="line">* openssl devel ( <span class="keyword">if</span> compiling native hadoop-pipes and to get the best HDFS encryption performance )</div><div class="line">* Linux FUSE (Filesystem <span class="keyword">in</span> Userspace) version 2.6 or above ( <span class="keyword">if</span> compiling fuse_dfs )</div><div class="line">* Internet connection <span class="keyword">for</span> first build (to fetch all Maven and Hadoop dependencies)</div></pre></td></tr></table></figure></p>
+<p>下载源码包</p>
+<p><a href="https://github.com/google/protobuf/releases" target="_blank" rel="external">https://github.com/google/protobuf/releases</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">./autogen.sh</div><div class="line">./configure</div><div class="line">make</div><div class="line">make check</div><div class="line">sudo make install</div><div class="line">sudo ldconfig <span class="comment"># refresh shared library cache</span></div><div class="line"><span class="comment"># 安装完成之后，可以使用protoc –version查看版本号。</span></div></pre></td></tr></table></figure></p>
+<h1 id="源码编译安装hadoop-2-7-4并添加snappy-支持"><a href="#源码编译安装hadoop-2-7-4并添加snappy-支持" class="headerlink" title="源码编译安装hadoop 2.7.4并添加snappy 支持"></a>源码编译安装hadoop 2.7.4并添加snappy 支持</h1><p>参考<a href="http://blog.csdn.net/strongyoung88/article/details/68951387" target="_blank" rel="external">Hadoop源码学习－编译源码</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mvn package -Pdist,native -DskipTests -Dtar -Drequire.snappy</div><div class="line"><span class="comment">#mvn clean package -Pdist,native -DskipTests -Dtar -Drequire.snappy -Dbundle.snappy -Dsnappy.lib=/usr/local/lib</span></div></pre></td></tr></table></figure></p>
+<p>参考<br><a href="http://www.cnblogs.com/zlzhoulei/p/5735698.html" target="_blank" rel="external">hadoop安装snappy</a></p>
+<p>编译好之后，将原来的$HADOOP_HOME/lib/native替换为编译好的新的native库</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/08/hadoop安装snappy压缩/" data-id="cj9qc9w8e00fxbplxh1r1otxs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/snappy/">snappy</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hbase学习笔记-基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/07/hbase学习笔记-基本操作/" class="article-date">
+  <time datetime="2017-11-07T13:06:05.000Z" itemprop="datePublished">2017-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/07/hbase学习笔记-基本操作/">hbase学习笔记-基本操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="开启hbase"><a href="#开启hbase" class="headerlink" title="开启hbase"></a>开启hbase</h1><p>start-hbase.sh</p>
+<h1 id="hbase-shell"><a href="#hbase-shell" class="headerlink" title="hbase shell"></a>hbase shell</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hbase shell</div></pre></td></tr></table></figure>
+<h1 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h1><h2 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h2><p>语法：create <table>, {NAME =&gt;<family>, VERSIONS =&gt; <versions>}<br>例示：create ‘product’,{NAME =&gt; ‘computer’, VERSIONS =&gt; 5},{ NAME =&gt; ‘food’ , VERSIONS =&gt; 3}</versions></family></table></p>
+<h2 id="显示数据库表"><a href="#显示数据库表" class="headerlink" title="显示数据库表"></a>显示数据库表</h2><p>list</p>
+<h2 id="查看表结构描述"><a href="#查看表结构描述" class="headerlink" title="查看表结构描述"></a>查看表结构描述</h2><p>describe<br>describe ‘product’</p>
+<h2 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h2><p>修改表结构必须先disable，再修改表，修改完成后，再enable表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">disable</span> <span class="string">'product'</span></div><div class="line">alter <span class="string">'product'</span>,&#123;NAME =&gt; <span class="string">'food'</span>,VERSIONS=&gt; 3&#125;</div><div class="line"><span class="built_in">enable</span> <span class="string">'product'</span></div></pre></td></tr></table></figure></p>
+<h2 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">disable</span> <span class="string">'product'</span></div><div class="line">drop <span class="string">'product'</span></div></pre></td></tr></table></figure>
+<h1 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h1><h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><p>put <table>,<rowkey>,<family:column>,<value>,<timestamp><br>put ‘product’,’rowkey001’,  ‘computer:name’, ‘ThinkPad E550’</timestamp></value></family:column></rowkey></table></p>
+<h2 id="scan-扫描表"><a href="#scan-扫描表" class="headerlink" title="scan:扫描表"></a>scan:扫描表</h2><h2 id="get-查询数据"><a href="#get-查询数据" class="headerlink" title="get:查询数据"></a>get:查询数据</h2><h2 id="count-查询表中的数据行数"><a href="#count-查询表中的数据行数" class="headerlink" title="count:查询表中的数据行数"></a>count:查询表中的数据行数</h2><h2 id="delete-删除行中的某个列值"><a href="#delete-删除行中的某个列值" class="headerlink" title="delete:删除行中的某个列值"></a>delete:删除行中的某个列值</h2><h2 id="deleteall-删除行中的某个列值"><a href="#deleteall-删除行中的某个列值" class="headerlink" title="deleteall:删除行中的某个列值"></a>deleteall:删除行中的某个列值</h2><h2 id="truncate-删除表中的所有数据"><a href="#truncate-删除表中的所有数据" class="headerlink" title="truncate:删除表中的所有数据"></a>truncate:删除表中的所有数据</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/07/hbase学习笔记-基本操作/" data-id="cj9pmqzul00fvbplx3a4be2v9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面试经验-xx技术面试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/07/面试经验-xx技术面试/" class="article-date">
+  <time datetime="2017-11-07T12:49:04.000Z" itemprop="datePublished">2017-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/07/面试经验-xx技术面试/">面试经验-xx技术面试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hive用到哪些技术点"><a href="#hive用到哪些技术点" class="headerlink" title="hive用到哪些技术点"></a>hive用到哪些技术点</h1><p>数据迁移(oracle 到 hive)<br>sql脚本</p>
+<h1 id="udf-udaf举例-hive"><a href="#udf-udaf举例-hive" class="headerlink" title="udf udaf举例(hive)"></a>udf udaf举例(hive)</h1><p> udf 继承extends 重写 evaluate<br> udf的输入参数一般对应数据表的列，以行为单位</p>
+<h1 id="hive-sparkSql实现udaf-需要继承什么-自己需要实现哪部分逻辑"><a href="#hive-sparkSql实现udaf-需要继承什么-自己需要实现哪部分逻辑" class="headerlink" title="hive/sparkSql实现udaf 需要继承什么,自己需要实现哪部分逻辑"></a>hive/sparkSql实现udaf 需要继承什么,自己需要实现哪部分逻辑</h1><h1 id="hbase随机热点问题"><a href="#hbase随机热点问题" class="headerlink" title="hbase随机热点问题"></a>hbase随机热点问题</h1><p>自己入坑，加了随机前缀，加随机前缀的话怎么查询rowkey<br>如果随机前缀的话，怎么查询rowkey？随机前缀的话会破坏rowkey,使得rowkey没有意义。可以加随机后缀的方式，这样可以再通过前缀过滤器来查询</p>
+<p>rowkey 简短性<br>rowkey 唯一性<br>rowkey 散列性</p>
+<p>rowkey 设计举例：</p>
+<p>userid|timestamp|hashCode</p>
+<h1 id="kafka-sparkStreaming中断时，如何保证消息只消费一次"><a href="#kafka-sparkStreaming中断时，如何保证消息只消费一次" class="headerlink" title="kafka+sparkStreaming中断时，如何保证消息只消费一次"></a>kafka+sparkStreaming中断时，如何保证消息只消费一次</h1><p>消息中断时采用checkpoint恢复，恢复的原理是什么？sparkStreaming 如何维护offset<br><a href="http://blog.csdn.net/luoyexuge/article/details/53610125" target="_blank" rel="external">spark streaming读取kakfka数据手动维护offset</a></p>
+<h1 id="hbase压缩算法问题"><a href="#hbase压缩算法问题" class="headerlink" title="hbase压缩算法问题"></a>hbase压缩算法问题</h1><p><a href="http://hbase.apache.org/1.2/book.html" target="_blank" rel="external">hbase 1.2官方文档</a></p>
+<table>
 <thead>
 <tr>
-<th>组件</th>
-<th>版本</th>
+<th>hadoop</th>
+<th>hbase算法</th>
+<th>表示</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>spark</td>
-<td>2.2</td>
+<td></td>
+<td></td>
+<td>‘none’</td>
 </tr>
 <tr>
-<td>hadoop</td>
-<td>2.7.4</td>
+<td>zlib</td>
+<td>gzip</td>
+<td>‘GZ’</td>
 </tr>
 <tr>
-<td>hive</td>
-<td>1.2.2</td>
+<td>lz4</td>
+<td>LZ4</td>
+<td>‘LZ4’</td>
+</tr>
+<tr>
+<td>snappy</td>
+<td>Snappy</td>
+<td>‘SNAPPY’</td>
+</tr>
+<tr>
+<td>bzip2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>LZO</td>
+<td>‘LZO’</td>
 </tr>
 </tbody>
 </table>
-<h1 id="spark-读取hive数据"><a href="#spark-读取hive数据" class="headerlink" title="spark 读取hive数据"></a>spark 读取hive数据</h1><h2 id="测试一下电脑上已经安装的Spark版本是否支持Hive"><a href="#测试一下电脑上已经安装的Spark版本是否支持Hive" class="headerlink" title="测试一下电脑上已经安装的Spark版本是否支持Hive"></a>测试一下电脑上已经安装的Spark版本是否支持Hive</h2><p>需要把Hive的配置文件hive-site.xml拷贝到Spark的conf目录下</p>
-<p>mysql驱动拷贝到$SPARK_HOME/jars下 或者spark-shell –driver-class-path /path/to/mysql-connector-java-5.1.44.jar</p>
-<p>对于2.0版本以后，入口变成了SparkSession，使用SparkSession.builder()来构建</p>
-<h2 id="依赖-spark-hive-2-11"><a href="#依赖-spark-hive-2-11" class="headerlink" title="依赖 spark-hive_2.11"></a>依赖 spark-hive_2.11</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.spark/spark-hive_2.11 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.spark<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spark-hive_2.11<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><ol>
-<li><a href="http://dblab.xmu.edu.cn/blog/1383-2/" target="_blank" rel="external">Spark2.1.0入门：连接Hive读写数据（DataFrame）</a></li>
-</ol>
+<p> Enabling Compression on a ColumnFamily of an Existing Table using HBaseShell</p>
+<p> 修改已经存在的表<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hbase&gt; <span class="built_in">disable</span> <span class="string">'test'</span></div><div class="line">hbase&gt; alter <span class="string">'test'</span>, &#123;NAME =&gt; <span class="string">'cf'</span>, COMPRESSION =&gt; <span class="string">'GZ'</span>&#125;</div><div class="line">hbase&gt; <span class="built_in">enable</span> <span class="string">'test'</span></div></pre></td></tr></table></figure></p>
+<p> Creating a New Table with Compression On a ColumnFamily</p>
+<p> 创建表时采用压缩算法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create <span class="string">'test2'</span>, &#123; NAME =&gt; <span class="string">'cf2'</span>, COMPRESSION =&gt; <span class="string">'SNAPPY'</span> &#125;</div></pre></td></tr></table></figure></p>
+<p>Verifying a ColumnFamily’s Compression Settings</p>
+<p>查看列簇的压缩方式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hive&gt; desc <span class="string">'test'</span></div><div class="line">&#123;NAME =&gt; <span class="string">'cf'</span>, BLOOMFILTER =&gt; <span class="string">'ROW'</span>, VERSIONS =&gt; <span class="string">'1'</span>, IN_MEMORY =&gt; <span class="string">'false'</span>, KEEP_DELETED_CELLS =&gt; <span class="string">'FALSE'</span>, DATA_BLOCK_ENCODING =&gt; <span class="string">'NONE'</span>, TTL =&gt; <span class="string">'FOREVER'</span>, CO</div><div class="line">MPRESSION =&gt; <span class="string">'GZ'</span>, MIN_VERSIONS =&gt; <span class="string">'0'</span>, BLOCKCACHE =&gt; <span class="string">'true'</span>, BLOCKSIZE =&gt; <span class="string">'65536'</span>, REPLICATION_SCOPE =&gt; <span class="string">'0'</span>&#125;                                                 </div><div class="line">&#123;NAME =&gt; <span class="string">'info'</span>, BLOOMFILTER =&gt; <span class="string">'ROW'</span>, VERSIONS =&gt; <span class="string">'1'</span>, IN_MEMORY =&gt; <span class="string">'false'</span>, KEEP_DELETED_CELLS =&gt; <span class="string">'FALSE'</span>, DATA_BLOCK_ENCODING =&gt; <span class="string">'NONE'</span>, TTL =&gt; <span class="string">'FOREVER'</span>,</div><div class="line">COMPRESSION =&gt; <span class="string">'NONE'</span>, MIN_VERSIONS =&gt; <span class="string">'0'</span>, BLOCKCACHE =&gt; <span class="string">'true'</span>, BLOCKSIZE =&gt; <span class="string">'65536'</span>, REPLICATION_SCOPE =&gt; <span class="string">'0'</span>&#125;                                             </div><div class="line">2 row(s) <span class="keyword">in</span> 0.0090 seconds</div></pre></td></tr></table></figure></p>
+<h1 id="hbase查询-filter"><a href="#hbase查询-filter" class="headerlink" title="hbase查询(filter)"></a>hbase查询(filter)</h1><p><a href="http://www.cnblogs.com/mayidudu/p/6056772.html" target="_blank" rel="external">HBase filter shell操作</a></p>
+<h1 id="接触大数据后，最大的收获是什么"><a href="#接触大数据后，最大的收获是什么" class="headerlink" title="接触大数据后，最大的收获是什么"></a>接触大数据后，最大的收获是什么</h1><p>#（我一系列懵逼之后）你擅长哪部分</p>
+<p>#</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/06/面试准备-spark-hive/" data-id="cj9oueh1k00akn7lxbcwmcsok" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/07/面试经验-xx技术面试/" data-id="cj9pm3ump00fsbplx9y71wq9e" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
 
     </footer>
   </div>
@@ -252,10 +526,10 @@
 
 
   
-    <article id="post-面试准备-flume篇" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-面试经验-凌志软件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/05/面试准备-flume篇/" class="article-date">
-  <time datetime="2016-11-05T13:40:56.000Z" itemprop="datePublished">2016-11-05</time>
+    <a href="/2017/11/07/面试经验-凌志软件/" class="article-date">
+  <time datetime="2017-11-07T09:51:42.000Z" itemprop="datePublished">2017-11-07</time>
 </a>
     
   </div>
@@ -266,7 +540,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
+      <a class="article-title" href="/2017/11/07/面试经验-凌志软件/">面试经验-凌志软件</a>
     </h1>
   
 
@@ -274,281 +548,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数据怎么采集到Kafka，实现方式"><a href="#数据怎么采集到Kafka，实现方式" class="headerlink" title="数据怎么采集到Kafka，实现方式"></a>数据怎么采集到Kafka，实现方式</h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/面试准备-flume篇/" data-id="cj9oueh18009en7lx9urh0bxp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flume/">flume</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-面试准备-java基础" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/03/面试准备-java基础/" class="article-date">
-  <time datetime="2016-11-03T03:08:42.000Z" itemprop="datePublished">2016-11-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/03/面试准备-java基础/">面试准备-java基础</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="String-是最基本的数据类型吗？"><a href="#String-是最基本的数据类型吗？" class="headerlink" title="String 是最基本的数据类型吗？"></a>String 是最基本的数据类型吗？</h1><p>不是。Java中的基本数据类型只有8个：byte、short、int、long、float、double、char、boolean；除了基本类型（primitive type）和枚举类型（enumeration type），剩下的都是引用类型（reference type）。</p>
-<h1 id="int和Integer有什么区别？"><a href="#int和Integer有什么区别？" class="headerlink" title="int和Integer有什么区别？"></a>int和Integer有什么区别？</h1><p>自动装箱/拆箱机制</p>
-<h1 id="用最有效率的方法计算2乘以8？"><a href="#用最有效率的方法计算2乘以8？" class="headerlink" title="用最有效率的方法计算2乘以8？"></a>用最有效率的方法计算2乘以8？</h1><p> 2 &lt;&lt; 3</p>
-<h1 id="数组有没有length-方法？String有没有length-方法？"><a href="#数组有没有length-方法？String有没有length-方法？" class="headerlink" title="数组有没有length()方法？String有没有length()方法？"></a>数组有没有length()方法？String有没有length()方法？</h1><p>答：数组没有length()方法，有length 的属性。String 有length()方法。JavaScript中，获得字符串的长度是通过length属性得到的，这一点容易和Java混淆。</p>
-<h1 id="在Java中，如何跳出当前的多重嵌套循环？"><a href="#在Java中，如何跳出当前的多重嵌套循环？" class="headerlink" title="在Java中，如何跳出当前的多重嵌套循环？"></a>在Java中，如何跳出当前的多重嵌套循环？</h1><p>java中支持带标签的break和continue语句，作用有点类似于C和C++中的goto语句,应尽量避免使用</p>
-<h1 id="两个对象值相同-x-equals-y-true-，但却可有不同的hash-code，这句话对不对？"><a href="#两个对象值相同-x-equals-y-true-，但却可有不同的hash-code，这句话对不对？" class="headerlink" title="两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对？"></a>两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对？</h1><p>(1)如果两个对象相同（equals方法返回true），那么它们的hashCode值一定要相同；(2)如果两个对象的hashCode相同，它们并不一定相同。<br>hash code的基本思想</p>
-<h1 id="是否可以继承String类？"><a href="#是否可以继承String类？" class="headerlink" title="是否可以继承String类？"></a>是否可以继承String类？</h1><p>String 类是final类，不可以被继承<br>这个没继承过，不过看下源码有没有final关键字修饰，就知道了<br>补充：继承String本身就是一个错误的行为，对String类型最好的重用方式是关联关系（Has-A）和依赖关系（Use-A）而不是继承关系（Is-A）。</p>
-<h1 id="解释内存中的栈-stack-、堆-heap-和静态区-static-area-的用法。"><a href="#解释内存中的栈-stack-、堆-heap-和静态区-static-area-的用法。" class="headerlink" title="解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。"></a>解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String str = <span class="keyword">new</span> String(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure>
-<p>上面的语句中变量str放在栈上，用new创建出来的字符串对象放在堆上，而”hello”这个字面量放在静态区。</p>
-<h1 id="Math-round-11-5-等于多少？Math-round-11-5-等于多少？"><a href="#Math-round-11-5-等于多少？Math-round-11-5-等于多少？" class="headerlink" title="Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？"></a>Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？</h1><p>答：Math.round(11.5)的返回值是12，Math.round(-11.5)的返回值是-11。四舍五入的原理是在参数上加0.5然后进行下取整。</p>
-<h1 id="类型转换问题"><a href="#类型转换问题" class="headerlink" title="类型转换问题"></a>类型转换问题</h1><p>short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？</p>
-<p>答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也是int 型，需要强制转换类型才能赋值给short型。而short s1 = 1; s1 += 1;可以正确编译，因为s1+= 1;相当于s1 = (short)(s1 + 1);其中有隐含的强制类型转换。</p>
-<p>float f=3.4;是否正确？<br>答:不正确。3.4是双精度数，将双精度型（double）赋值给浮点型（float）属于下转型（down-casting，也称为窄化）会造成精度损失，因此需要强制类型转换float f =(float)3.4; 或者写成float f =3.4F;。</p>
-<h1 id="谈谈你对反射机制的理解及其用途？"><a href="#谈谈你对反射机制的理解及其用途？" class="headerlink" title="谈谈你对反射机制的理解及其用途？"></a>谈谈你对反射机制的理解及其用途？</h1><p>运行时探测类的信息<br>CLASS.forName(xxx) xxx.class xxx.getClass<br>程序的灵活性，<br><strong>有类似API和相同行为</strong><br>的类，配置到xml文件中，比如JDBC加载oracle、mysql等<br>一般的框架只需要在配置文件中，把配置信息改一下就可以，这样在不改变源代码的情况下就可以实现数据源的切换类似的还有logger的选择</p>
-<h1 id="如果要重写一个对象的equals方法，还要考虑什么？"><a href="#如果要重写一个对象的equals方法，还要考虑什么？" class="headerlink" title="如果要重写一个对象的equals方法，还要考虑什么？"></a>如果要重写一个对象的equals方法，还要考虑什么？</h1><p>答案：hashCode。</p>
-<h1 id="sizeof是Java的关键字吗"><a href="#sizeof是Java的关键字吗" class="headerlink" title="sizeof是Java的关键字吗?"></a>sizeof是Java的关键字吗?</h1><p>不是。JAVA的基本数据类型大小是确定的，跟硬件及OS无关（平台无关性），没必要用sizeof</p>
-<h1 id="public-static-void写成static-public-void会怎样？"><a href="#public-static-void写成static-public-void会怎样？" class="headerlink" title="public static void写成static public void会怎样？"></a>public static void写成static public void会怎样？</h1><p>程序正常编译及运行。</p>
-<h1 id="Java支持哪种参数传递类型"><a href="#Java支持哪种参数传递类型" class="headerlink" title="Java支持哪种参数传递类型?"></a>Java支持哪种参数传递类型?</h1><p>Java参数都是进行传值。对于对象而言，传递的值是对象的引用，也就是说原始引用和参数引用的那个拷贝，都是指向同一个对象。</p>
-<h1 id="一个类能拥有多个main方法吗？"><a href="#一个类能拥有多个main方法吗？" class="headerlink" title="一个类能拥有多个main方法吗？"></a>一个类能拥有多个main方法吗？</h1><p>可以，但只能有一个main方法拥有以下签名：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="最常见到的runtime-exception"><a href="#最常见到的runtime-exception" class="headerlink" title="最常见到的runtime exception"></a>最常见到的runtime exception</h1><p>List，Set是<br>Map不是</p>
-<h1 id="启动一个线程是用run-还是start"><a href="#启动一个线程是用run-还是start" class="headerlink" title="启动一个线程是用run()还是start()?"></a>启动一个线程是用run()还是start()?</h1><p>启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</p>
-<h1 id="构造器Constructor是否可被override"><a href="#构造器Constructor是否可被override" class="headerlink" title="构造器Constructor是否可被override?"></a>构造器Constructor是否可被override?</h1><p>构造器Constructor不能被继承，因此不能重写Overriding，但可以被重载Overloading。</p>
-<h1 id="当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法"><a href="#当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法" class="headerlink" title="当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法?"></a>当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法?</h1><p>不能，一个对象的一个synchronized方法只能由一个线程访问。</p>
-<h1 id="try-里有一个return语句，那么紧跟在这个try后的finally-里的code会不会被执行，什么时候被执行，在return前还是后"><a href="#try-里有一个return语句，那么紧跟在这个try后的finally-里的code会不会被执行，什么时候被执行，在return前还是后" class="headerlink" title="try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?"></a>try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?</h1><p>  会执行，在return前执行</p>
+        <h1 id="基本形式-，面试人，面试次数"><a href="#基本形式-，面试人，面试次数" class="headerlink" title="基本形式 ，面试人，面试次数"></a>基本形式 ，面试人，面试次数</h1><p>电话  技术经理 初面</p>
+<h1 id="介绍一下自己的工作经历"><a href="#介绍一下自己的工作经历" class="headerlink" title="介绍一下自己的工作经历"></a>介绍一下自己的工作经历</h1><p>最好包含自己的技术点<br>大学</p>
+<h1 id="介绍一下在项目中的负责哪些工作"><a href="#介绍一下在项目中的负责哪些工作" class="headerlink" title="介绍一下在项目中的负责哪些工作"></a>介绍一下在项目中的负责哪些工作</h1><p>写一些ETL过程</p>
+<p>数据采集+数据过滤+报表开发<br>数据采集 用的什么架构 flume</p>
+<h1 id="说一下报表开发这块"><a href="#说一下报表开发这块" class="headerlink" title="说一下报表开发这块"></a>说一下报表开发这块</h1><p>时间维度报表： 日报，周报，月报，季报，年报<br>成交清算表<br>占比分析（topN）</p>
+<h1 id="非关系型数据库的数据关联"><a href="#非关系型数据库的数据关联" class="headerlink" title="非关系型数据库的数据关联"></a>非关系型数据库的数据关联</h1><p>把相同的字段整理成key，进行join</p>
+<h1 id="集群是你管理的吗，用的什么管理软件"><a href="#集群是你管理的吗，用的什么管理软件" class="headerlink" title="集群是你管理的吗，用的什么管理软件"></a>集群是你管理的吗，用的什么管理软件</h1><p>是的，用的clouderaManager(CM)<br>(集群管理指的是什么？管理、监控、诊断、集成)</p>
+<h1 id="spark-优化"><a href="#spark-优化" class="headerlink" title="spark 优化"></a>spark 优化</h1><h1 id="你有什么要问我的"><a href="#你有什么要问我的" class="headerlink" title="你有什么要问我的"></a>你有什么要问我的</h1><p>团队情况（人数），出差，工作地点，是否外包性质</p>
+<h1 id="薪资期望"><a href="#薪资期望" class="headerlink" title="薪资期望"></a>薪资期望</h1><p>根据平常的工作量</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/03/面试准备-java基础/" data-id="cj9oueh1g00a6n7lx90fgnt8j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/07/面试经验-凌志软件/" data-id="cj9pk4a47007rbplxyp9qet8w" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-面试准备-java设计模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/03/面试准备-java设计模式/" class="article-date">
-  <time datetime="2016-11-03T03:08:09.000Z" itemprop="datePublished">2016-11-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/03/面试准备-java设计模式/">面试准备-java设计模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><p>解释：<br>实现：</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/03/面试准备-java设计模式/" data-id="cj9oueh1h00a9n7lxlms2t2r0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-sbt实用操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/01/sbt实用操作/" class="article-date">
-  <time datetime="2016-11-01T08:40:59.000Z" itemprop="datePublished">2016-11-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/01/sbt实用操作/">sbt实用操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="国内镜像源"><a href="#国内镜像源" class="headerlink" title="国内镜像源"></a>国内镜像源</h1><p>在~/.sbt/下添加一个repositories文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[repositories]</div><div class="line"><span class="built_in">local</span></div><div class="line">osc: http://maven.aliyun.com/nexus/content/groups/public</div><div class="line">typesafe: http://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[<span class="built_in">type</span>]s/[artifact](-[classifier]).[ext], bootOnly</div><div class="line">sonatype-oss-releases</div><div class="line">maven-central</div><div class="line">sonatype-oss-snapshots</div></pre></td></tr></table></figure></p>
-<h1 id="国内镜像源生效"><a href="#国内镜像源生效" class="headerlink" title="国内镜像源生效"></a>国内镜像源生效</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sbt -Dsbt.override.build.repos=<span class="literal">true</span></div></pre></td></tr></table></figure>
-<h1 id="eclipse-项目"><a href="#eclipse-项目" class="headerlink" title="eclipse 项目"></a>eclipse 项目</h1><h1 id="build-sbt-添加了新的依赖但是eclipse未生效"><a href="#build-sbt-添加了新的依赖但是eclipse未生效" class="headerlink" title="build.sbt 添加了新的依赖但是eclipse未生效"></a>build.sbt 添加了新的依赖但是eclipse未生效</h1><p>进入项目根目录下打开sbt<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  ~ sbt -Dsbt.override.build.repos=<span class="literal">true</span></div><div class="line">update</div><div class="line"><span class="comment"># update 会下载新添加的依赖包，这一步好像不是必须的</span></div><div class="line">sbt&gt; update</div><div class="line"><span class="comment"># 重新执行eclipse</span></div><div class="line">sbt&gt; eclipse with-source=<span class="literal">true</span> execution-environment=JavaSE-1.8</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/01/sbt实用操作/" data-id="cj9oueh0r007un7lxi6ioi8na" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sbt/">sbt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scala/">scala</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-面试准备-sparkSql" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/01/面试准备-sparkSql/" class="article-date">
-  <time datetime="2016-11-01T06:52:37.000Z" itemprop="datePublished">2016-11-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/01/面试准备-sparkSql/">面试准备-sparkSql</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Spark-RDD、DataFrame和DataSet的区别"><a href="#Spark-RDD、DataFrame和DataSet的区别" class="headerlink" title="Spark RDD、DataFrame和DataSet的区别"></a>Spark RDD、DataFrame和DataSet的区别</h1><p><a href="http://blog.csdn.net/wo334499/article/details/51689549" target="_blank" rel="external">Spark RDD、DataFrame和DataSet的区别</a></p>
-<p>DataFrame  = RDD + SCHEMA + （off-heap意味着JVM堆以外的内存, 这些内存直接受操作系统管理（而不是JVM）。Spark能够以二进制的形式序列化数据(不包括结构)到off-heap中, 当要操作数据时, 就直接操作off-heap内存. 由于Spark理解schema, 所以知道该如何操作）</p>
-<p>DataFrame = DataSet[Row]</p>
-<p>DataFrame 又是DataSet的一种</p>
-<p>创建dataframe ：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> dataframe  = sc.createDataFrame(<span class="type">RowRDD</span>,structType)</div></pre></td></tr></table></figure></p>
-<h1 id="join-操作一定会产生宽依赖吗"><a href="#join-操作一定会产生宽依赖吗" class="headerlink" title="join 操作一定会产生宽依赖吗"></a>join 操作一定会产生宽依赖吗</h1><p>如果RDD的每个分区最多只能被一个Child RDD的一个分区使用，则称之为narrow dependency；若多个Child RDD分区都可以依赖，则称之为wide dependency。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/01/面试准备-sparkSql/" data-id="cj9oueh1j00ahn7lxtwx4h6nt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sparkSql/">sparkSql</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-elasticSearch学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/01/elasticSearch学习笔记/" class="article-date">
-  <time datetime="2016-11-01T03:22:41.000Z" itemprop="datePublished">2016-11-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/01/elasticSearch学习笔记/">elasticSearch学习笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="elasticSearch-安装与运行"><a href="#elasticSearch-安装与运行" class="headerlink" title="elasticSearch 安装与运行"></a>elasticSearch 安装与运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget  https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.3.tar.gz</div><div class="line"></div><div class="line">tar -xzvf elasticsearch-5.6.3.tar.gz</div><div class="line"><span class="built_in">cd</span> elasticsearch-5.6.3/bin</div><div class="line">./elasticsearch</div></pre></td></tr></table></figure>
-<h1 id="验证安装是否成功"><a href="#验证安装是否成功" class="headerlink" title="验证安装是否成功"></a>验证安装是否成功</h1><p>浏览器或者curl,wget  <a href="http://localhost:9200/" target="_blank" rel="external">http://localhost:9200/</a><br>正常即成功</p>
-<h1 id="kibana安装与运行"><a href="#kibana安装与运行" class="headerlink" title="kibana安装与运行"></a>kibana安装与运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget  https://artifacts.elastic.co/downloads/kibana/kibana-5.6.3-linux-x86_64.tar.gz</div><div class="line"></div><div class="line">tar -xzvf kibana-5.6.3-linux-x86_64</div><div class="line"><span class="built_in">cd</span> kibana-5.6.3-linux-x86_64/bin</div><div class="line">./kibana</div></pre></td></tr></table></figure>
-<p>kibana插件sense 主要解决curl 交互不方便<br>以前的安装方式 ./kibana-plugin install elastic/sense</p>
-<p>官网的安装方法已经过时了，在es 2.x是适用的，但是5.x后其实不再需要sense插件，因为kibana 界面有dev tools</p>
-<h1 id="kibana-使用"><a href="#kibana-使用" class="headerlink" title="kibana 使用"></a>kibana 使用</h1><p>访问端口 5601 <a href="http://localhost:5601/" target="_blank" rel="external">http://localhost:5601/</a><br>在dev tools 进行交互</p>
-<h1 id="elasticSearch-基本操作"><a href="#elasticSearch-基本操作" class="headerlink" title="elasticSearch 基本操作"></a>elasticSearch 基本操作</h1><p>{put|get|post|delete} + json</p>
-<h1 id="elasticSearch-基本查询"><a href="#elasticSearch-基本查询" class="headerlink" title="elasticSearch 基本查询"></a>elasticSearch 基本查询</h1><h2 id="查询全部记录"><a href="#查询全部记录" class="headerlink" title="查询全部记录"></a>查询全部记录</h2><p> 基本格式： GET /index/docment/id</p>
-<p> GET /log/test1/_search</p>
-<h2 id="根据某个字段进行查询-单个-match"><a href="#根据某个字段进行查询-单个-match" class="headerlink" title="根据某个字段进行查询(单个) match"></a>根据某个字段进行查询(单个) match</h2><p>GET /log/test1/_search?q=name:shuai</p>
-<p>Elasticsearch 提供了更加丰富灵活的查询语言,它被称作 Query<br>DSL,通过它你可以完成更加复杂、强大的搜索任务<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">GET /log/test1/_search</div><div class="line">&#123;</div><div class="line">  <span class="attr">"query"</span>: &#123;</div><div class="line">    <span class="attr">"match"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"shuai"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="根据某个字段范围查询（多个）"><a href="#根据某个字段范围查询（多个）" class="headerlink" title="根据某个字段范围查询（多个）"></a>根据某个字段范围查询（多个）</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">GET /log/weblog/_search</div><div class="line">&#123;</div><div class="line">  <span class="attr">"query"</span>: &#123;</div><div class="line">    <span class="attr">"range"</span>: &#123;</div><div class="line">      <span class="attr">"no"</span>: &#123;</div><div class="line">        <span class="attr">"gte"</span>: <span class="number">10</span>,</div><div class="line">        <span class="attr">"lte"</span>: <span class="number">20</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>gt :: 大于</li>
-<li>gte:: 大于等于</li>
-<li>lt :: 小于</li>
-<li>lte:: 小于等于<h1 id="elasticSearch-操作符及关键字"><a href="#elasticSearch-操作符及关键字" class="headerlink" title="elasticSearch 操作符及关键字"></a>elasticSearch 操作符及关键字</h1>可通过dev tools 的自动提示解决</li>
-</ol>
-<h1 id="and-查询"><a href="#and-查询" class="headerlink" title="and 查询"></a>and 查询</h1><h1 id="多字段查询"><a href="#多字段查询" class="headerlink" title="多字段查询"></a>多字段查询</h1><h1 id="elasticSearch性能"><a href="#elasticSearch性能" class="headerlink" title="elasticSearch性能"></a>elasticSearch性能</h1><table>
-<thead>
-<tr>
-<th>weblog表（102537575行）</th>
-<th>时间</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>hive</td>
-<td>47.553 seconds</td>
-</tr>
-<tr>
-<td>es</td>
-<td>瞬间</td>
-</tr>
-</tbody>
-</table>
-<h1 id="es-hive-整合"><a href="#es-hive-整合" class="headerlink" title="es hive 整合"></a>es hive 整合</h1><h2 id="添加jar包"><a href="#添加jar包" class="headerlink" title="添加jar包"></a>添加jar包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hive&gt; add jar /opt/jars/elasticsearch-hadoop-hive-5.6.3.jar;</div><div class="line"><span class="comment"># Added [/opt/jars/elasticsearch-hadoop-hive-5.6.3.jar] to class path</span></div><div class="line"><span class="comment"># Added resources: [/opt/jars/elasticsearch-hadoop-hive-5.6.3.jar]</span></div></pre></td></tr></table></figure>
-<h2 id="创建外部表"><a href="#创建外部表" class="headerlink" title="创建外部表"></a>创建外部表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hive&gt;CREATE EXTERNAL TABLE es_weblog(no int,ip string, time string)</div><div class="line">STORED BY <span class="string">'org.elasticsearch.hadoop.hive.EsStorageHandler'</span></div><div class="line">TBLPROPERTIES(<span class="string">'es.resource'</span> = <span class="string">'log/weblog'</span>,<span class="string">'es.index.auto.create'</span> = <span class="string">'true'</span>,<span class="string">'es.mapping.names'</span> = <span class="string">'no:no,ip:ip,time:time'</span>);</div></pre></td></tr></table></figure>
-<p>es.mapping.names 是建立mapping ,前面为内部表的字段，后面为外部表的字段</p>
-<p>遇到的问题</p>
-<p>es.mapping.names  字段对照错误</p>
-<h2 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hive&gt; INSERT OVERWRITE TABLE es_weblog select no,ip,time from weblog;</div></pre></td></tr></table></figure>
-<p>这个过程是比较慢的</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/01/elasticSearch学习笔记/" data-id="cj9ouegz2001pn7lxj3k66amb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
 
     </footer>
   </div>
@@ -560,7 +576,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -573,23 +589,23 @@
       <ul>
         
           <li>
-            <a href="/2017/11/06/面试准备-大数据算法/">面试准备-大数据算法</a>
+            <a href="/2017/11/09/面试准备-javaIO/">面试准备-javaIO</a>
           </li>
         
           <li>
-            <a href="/2017/11/06/面试准备-hive-hbase/">面试准备-hive-hbase整合</a>
+            <a href="/2017/11/08/hbase-JAVA-API/">hbase-JAVA API</a>
           </li>
         
           <li>
-            <a href="/2017/11/06/面试准备-sparkStreaming数据流/">面试准备-sparkStreaming数据流</a>
+            <a href="/2017/11/08/java操作hive/">java操作hive</a>
           </li>
         
           <li>
-            <a href="/2017/11/06/面试准备-spark-hive/">面试准备-spark+hive</a>
+            <a href="/2017/11/08/hive学习笔记-udf-udaf/">hive学习笔记-udf-udaf</a>
           </li>
         
           <li>
-            <a href="/2016/11/05/面试准备-flume篇/">面试准备-flume篇</a>
+            <a href="/2017/11/08/面试经验-永仑车汇/">面试经验-永仑车汇</a>
           </li>
         
       </ul>
@@ -621,7 +637,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 10px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.25px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 15px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 10px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.5px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.25px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.25px;">git</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 12.5px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 11.25px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 16.25px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 11.25px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.75px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 10px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.25px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 15px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.25px;">shell</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.5px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 10px;">sparkSql</a> <a href="/tags/sparkStreaming/" style="font-size: 10px;">sparkStreaming</a> <a href="/tags/sql/" style="font-size: 16.25px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.25px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/vim/" style="font-size: 11.25px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 10px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 10px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.25px;">语法</a> <a href="/tags/重点/" style="font-size: 10px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/面试/" style="font-size: 13.75px;">面试</a> <a href="/tags/项目/" style="font-size: 10px;">项目</a>
+      <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/ETL篇/" style="font-size: 10px;">ETL篇</a> <a href="/tags/FAQ/" style="font-size: 10px;">FAQ</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SSM/" style="font-size: 11.11px;">SSM</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/archLinux/" style="font-size: 10px;">archLinux</a> <a href="/tags/aria2c/" style="font-size: 10px;">aria2c</a> <a href="/tags/awk/" style="font-size: 10px;">awk</a> <a href="/tags/bigdata/" style="font-size: 20px;">bigdata</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/datagrid/" style="font-size: 14.44px;">datagrid</a> <a href="/tags/datanode/" style="font-size: 10px;">datanode</a> <a href="/tags/dd/" style="font-size: 10px;">dd</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/display/" style="font-size: 10px;">display</a> <a href="/tags/dmp/" style="font-size: 10px;">dmp</a> <a href="/tags/doc/" style="font-size: 10px;">doc</a> <a href="/tags/docker/" style="font-size: 12.22px;">docker</a> <a href="/tags/dokcer/" style="font-size: 10px;">dokcer</a> <a href="/tags/easyui/" style="font-size: 12.22px;">easyui</a> <a href="/tags/eclipse/" style="font-size: 11.11px;">eclipse</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/flash/" style="font-size: 10px;">flash</a> <a href="/tags/flume/" style="font-size: 11.11px;">flume</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/git/" style="font-size: 11.11px;">git</a> <a href="/tags/hadoop/" style="font-size: 15.56px;">hadoop</a> <a href="/tags/hbase/" style="font-size: 15.56px;">hbase</a> <a href="/tags/hdfs/" style="font-size: 11.11px;">hdfs</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hive/" style="font-size: 17.78px;">hive</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 13.33px;">java</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kafka/" style="font-size: 12.22px;">kafka</a> <a href="/tags/kfaka/" style="font-size: 10px;">kfaka</a> <a href="/tags/linux/" style="font-size: 18.89px;">linux</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/map-reduce/" style="font-size: 10px;">map-reduce</a> <a href="/tags/markdown/" style="font-size: 11.11px;">markdown</a> <a href="/tags/mybatis/" style="font-size: 12.22px;">mybatis</a> <a href="/tags/oracle/" style="font-size: 14.44px;">oracle</a> <a href="/tags/oracle11g/" style="font-size: 10px;">oracle11g</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pl-sql/" style="font-size: 10px;">pl/sql</a> <a href="/tags/ppt/" style="font-size: 10px;">ppt</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/request/" style="font-size: 10px;">request</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/shell/" style="font-size: 11.11px;">shell</a> <a href="/tags/snappy/" style="font-size: 10px;">snappy</a> <a href="/tags/source/" style="font-size: 10px;">source</a> <a href="/tags/spark/" style="font-size: 17.78px;">spark</a> <a href="/tags/sparkSql/" style="font-size: 10px;">sparkSql</a> <a href="/tags/sparkStreaming/" style="font-size: 10px;">sparkStreaming</a> <a href="/tags/sql/" style="font-size: 15.56px;">sql</a> <a href="/tags/sqlplus/" style="font-size: 10px;">sqlplus</a> <a href="/tags/static-ip/" style="font-size: 10px;">static ip</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/topN/" style="font-size: 10px;">topN</a> <a href="/tags/ubuntu/" style="font-size: 11.11px;">ubuntu</a> <a href="/tags/ubuntu-17-04/" style="font-size: 10px;">ubuntu 17.04</a> <a href="/tags/udaf/" style="font-size: 10px;">udaf</a> <a href="/tags/udf/" style="font-size: 10px;">udf</a> <a href="/tags/vim/" style="font-size: 11.11px;">vim</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/wordcount/" style="font-size: 10px;">wordcount</a> <a href="/tags/xargs/" style="font-size: 10px;">xargs</a> <a href="/tags/yarn/" style="font-size: 10px;">yarn</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/乱码/" style="font-size: 10px;">乱码</a> <a href="/tags/代码整合/" style="font-size: 10px;">代码整合</a> <a href="/tags/估值/" style="font-size: 10px;">估值</a> <a href="/tags/关联查询/" style="font-size: 10px;">关联查询</a> <a href="/tags/内嵌json/" style="font-size: 10px;">内嵌json</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/匹配行/" style="font-size: 10px;">匹配行</a> <a href="/tags/启动盘/" style="font-size: 10px;">启动盘</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/多线程下载/" style="font-size: 10px;">多线程下载</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/录制视频/" style="font-size: 10px;">录制视频</a> <a href="/tags/数据共享/" style="font-size: 10px;">数据共享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/数据渲染/" style="font-size: 10px;">数据渲染</a> <a href="/tags/无父分支/" style="font-size: 10px;">无父分支</a> <a href="/tags/权限问题/" style="font-size: 10px;">权限问题</a> <a href="/tags/查询条件下拉/" style="font-size: 10px;">查询条件下拉</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/消息中间件/" style="font-size: 10px;">消息中间件</a> <a href="/tags/理论基础/" style="font-size: 10px;">理论基础</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/缓存式编辑/" style="font-size: 10px;">缓存式编辑</a> <a href="/tags/自动输入密码/" style="font-size: 10px;">自动输入密码</a> <a href="/tags/表单下拉/" style="font-size: 10px;">表单下拉</a> <a href="/tags/表格编辑时下拉/" style="font-size: 10px;">表格编辑时下拉</a> <a href="/tags/表结构/" style="font-size: 10px;">表结构</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法/" style="font-size: 11.11px;">语法</a> <a href="/tags/重点/" style="font-size: 10px;">重点</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/面试/" style="font-size: 16.67px;">面试</a> <a href="/tags/项目/" style="font-size: 10px;">项目</a>
     </div>
   </div>
 
